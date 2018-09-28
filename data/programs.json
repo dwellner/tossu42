@@ -1,0 +1,34 @@
+[
+  {
+    "targetTime": "3:30",
+    "weeks": [
+      [
+         { "distance": 6, "type": "pa" },
+         { "distance": 6, "type": "m" },
+         { "distance": 6, "type": "pe" },
+         { "distance": 5, "type": "t" },
+         { "distance": 0, "type": "lepo" },
+         { "distance": 7, "type": "k" },
+         { "distance": 14, "type": "pi" }
+      ],
+      [
+         { "distance": 6, "type": "pa" },
+         { "distance": 5, "type": "t" },
+         { "distance": 6, "type": "pe" },
+         { "distance": 5, "type": "k" },
+         { "distance": 0, "type": "lepo" },
+         { "distance": 7, "type": "pa" },
+         { "distance": 18, "type": "pi" }
+      ],
+      [
+         { "distance": 6, "type": "pa" },
+         { "distance": 0.8, "type": "iv", "repeat": 2 },
+         { "distance": 6, "type": "pe" },
+         { "distance": 5, "type": "t" },
+         { "distance": 0, "type": "lepo" },
+         { "distance": 8, "type": "k" },
+         { "distance": 10, "type": "pi" }
+      ]
+    ]
+  }
+]
