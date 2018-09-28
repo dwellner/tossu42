@@ -16,14 +16,21 @@ const dateToDayLabelShort = date => {
 const dateToDayLabel = date => {
     const d = new Date(date);
     const dayLabel = Texts.weekDays[d.getDay()];
-    return `${dayLabel} ${d.getDate()}.${d.getMonth()}.`
+    return `${dayLabel} ${d.getDate()}.${d.getMonth()+1}.`
 }
 
+const dateToDateLabel = date => {
+    const d = new Date(date);
+    return `${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`
+}
+
+
 export default {
-  dayToDistanceDesc: dayToDistanceDesc,
+  dayToDistanceDesc,
   dayToTypeDesc: day => Texts.runTypes[day.type],
   dayToTypeDescShort:  day => Texts.runTypesShort[day.type],
 
   dateToDayLabel,
   dateToDayLabelShort,
+  dateToDateLabel,
 };

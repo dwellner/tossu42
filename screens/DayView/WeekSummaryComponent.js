@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import WeekSummaryDayComponent from "./WeekSummaryDayComponent";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
+const getDistance = day => day.type === "iv" ? (day.distance * day.repeat) + 3 : day.distance; 
+
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {
     week: PropTypes.array.isRequired,
@@ -15,8 +17,10 @@ export default class WeekSummaryComponent extends React.Component {
     this.state = { selected: "2018-09-27" };
   }
 
+
   render() {
     const { date, week, changeDate } = this.props;
+    const weekTotal = week.map(getDistance).reduce((a,b)=> a+b); 
 
     const dayComponents = week.map(day => (
       <TouchableOpacity
@@ -32,7 +36,7 @@ export default class WeekSummaryComponent extends React.Component {
       <View style={styles.component}>
         <Text style={styles.text_label}>Viikon ohjelma</Text>
 
-        <Text style={styles.text_distTotal}>72 km</Text>
+        <Text style={styles.text_distTotal}>{weekTotal} km</Text>
 
         <View style={{ flex: 1, flexDirection: "row" }}>{dayComponents}</View>
       </View>

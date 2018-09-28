@@ -3,13 +3,6 @@ import PropTypes from "prop-types";
 import { StyleSheet, Text, View } from "react-native";
 import Colors from "../../constants/Colors";
 import Formatters from "../../utils/Formatters"
-import Texts from "../../constants/Texts";
-
-const getDayLabel = date => {
-  const dayLabel = Texts.weekDays[new Date(date).getDay()];
-  return dayLabel.substr(0,2);
-}
-
 
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {
@@ -21,7 +14,7 @@ export default class WeekSummaryComponent extends React.Component {
     const { day, selected } = this.props;
     return (
       <View style={selected ? styles.component_selected : styles.component}>
-        <Text style={styles.text_day}>{getDayLabel(day.date)}</Text>
+        <Text style={styles.text_day}>{Formatters.dateToDayLabelShort(day.date)}</Text>
         <Text style={styles.text_distance}>{Formatters.dayToDistanceDesc(day)}</Text>
         <Text style={styles.text_type}>{Formatters.dayToTypeDescShort(day)}</Text>
       </View>
