@@ -47,7 +47,7 @@ export default class WeekSummaryComponent extends React.Component {
 const styles = StyleSheet.create({
   component: {
     alignItems: "center",
-    backgroundColor: "#111",
+    backgroundColor: "#1119",
     paddingTop: 10,
     paddingBottom: 20,
     borderWidth: 1,
@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
   },
 
   text_label: {
-    color: "#fff",
+    color: "#bbb",
     fontSize: 16,
     marginBottom: 8
   },
 
   text_distTotal: {
     color: "#fff",
-    fontSize: 32,
+    fontSize: 24,
     margin: 20
   }
 });

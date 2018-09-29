@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, ImageBackground } from "react-native";
 import DayGoalComponent from "./DayGoalComponent";
 import DayHeaderComponent from "./DayHeaderComponent";
 import WeekSummaryComponent from "./WeekSummaryComponent";
@@ -53,10 +53,14 @@ export default class HomeScreen extends React.Component {
       week !== undefined ? (
         this.renderDayProgramComponent(week, date, maxHr, targetTime)
       ) : (
-        <Text style={{ color: "#F33", margin: 130 }}>No program :(</Text>
+        <View style={{marginTop: 100, alignItems: "center"}}>
+          <Text style={{ color: "#fff", fontSize: 24 }}>Juoksuohjelma on asetettu</Text>
+          <Text style={{ color: "#fff", fontSize: 24 }}>jaksolle 1.5.18 - 2.4.18</Text>
+        </View>
+      
       );
     return (
-      <View style={styles.container}>
+      <ImageBackground source={require('../../assets/images/darkroad.png')} style={styles.container}>
         <View style={styles.header}>
           <DayHeaderComponent
             targetEvent={targetEvent}
@@ -70,30 +74,29 @@ export default class HomeScreen extends React.Component {
         >
           {viewContent}
         </ScrollView>
-      </View>
+      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%', height: '100%',
     paddingTop: 40,
     backgroundColor: "#000",
     flex: 1
   },
 
   header: {
-    height: 100
+    height: 150
   },
 
   scrollView: {},
 
   contentContainer: {
-    paddingBottom: 100
   },
 
   contentComponent: {
-    marginTop: 30,
     marginBottom: 30,
     flex: 1
   }

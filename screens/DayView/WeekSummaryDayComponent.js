@@ -47,12 +47,13 @@ const styles = StyleSheet.create({
 
   text_day: {
     color: Colors.defaultText,
-    fontSize: 16,
+    fontSize: 24,
     marginBottom: 8
   },
 
   text_distance: {
     color: Colors.defaultText,
+    fontSize: 12,
     fontWeight: "bold"
   },
 

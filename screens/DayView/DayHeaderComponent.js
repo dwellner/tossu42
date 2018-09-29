@@ -23,8 +23,8 @@ export default class DayHeaderComponent extends React.Component {
             padding: 10,
             borderWidth: 1,
             borderTopColor: "#333",
-            borderBottomColor: "#333",
-            alignItems: "center"
+            alignItems: "center",
+            backgroundColor: "#1117"
           }}
         >
           <View style={{ flex: 1, flexDirection: "row" }}>
@@ -40,11 +40,12 @@ export default class DayHeaderComponent extends React.Component {
 
     return (
       <View style={styles.component}>
-        <View style={{ flex: 1, flexDirection: "row" }}>
+        <View style={{ flex: 1, flexDirection: "row", backgroundColor: "#1115"}}>
           <View style={{ flex: 1 }}>
             <Button
-              title="<"
-              onPress={() => changeDate(DateUtils.nextDate(date, -1))}
+              color="#333"
+              title="◀"
+              onPress={() => changeDate(DateUtils.nextDate(date, -7))}
             />
           </View>
           <View style={{ flex: 4, alignItems: "center" }}>
@@ -54,8 +55,9 @@ export default class DayHeaderComponent extends React.Component {
           </View>
           <View style={{ flex: 1 }}>
             <Button
-              title=">"
-              onPress={() => changeDate(DateUtils.nextDate(date, 1))}
+              color="#333"
+              title="▶"
+              onPress={() => changeDate(DateUtils.nextDate(date, 7))}
             />
           </View>
         </View>
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
   },
   text_days_until: {
     color: "#f442df",
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: "bold"
   },
   text_date: {
@@ -83,12 +85,12 @@ const styles = StyleSheet.create({
   text_label: {
     color: "#fff",
     textAlignVertical: "center",
-    fontSize: 16,
+    fontSize: 24,
     marginLeft: 4
   },
   text_targetName: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: "900"
   }
 });

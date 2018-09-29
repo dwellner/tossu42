@@ -4,7 +4,7 @@ const dayToDistanceDesc = day => {
     if (day.type === "iv")
         return `${day.repeat}x${day.distance * 1000}m`;
     if (day.type === "lepo")
-        return "🛏";
+        return " ";
   return `${day.distance} km`;
 };
 

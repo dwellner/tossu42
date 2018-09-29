@@ -54,7 +54,7 @@ export default class DayGoalComponent extends React.Component {
 const styles = StyleSheet.create({
   component: {
     alignItems: "center",
-    backgroundColor: "#111",
+    backgroundColor: "#1119",
     paddingTop: 10,
     paddingBottom: 20,
     borderWidth: 1,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
 
   text_label: {
-    color: "#fff",
+    color: "#bbb",
     fontSize: 16
   },
 
@@ -74,11 +74,11 @@ const styles = StyleSheet.create({
 
   text_runType: {
     color: "#fff",
-    fontSize: 32
+    fontSize: 24
   },
 
   text_bpmRange: {
     color: "#fff",
-    fontSize: 16
+    fontSize: 24
   }
 });
