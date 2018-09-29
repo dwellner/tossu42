@@ -7,7 +7,7 @@ const getDistance = day => day.type === "iv" ? (day.distance * day.repeat) + 3 :
 
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {
-    week: PropTypes.array.isRequired,
+    week: PropTypes.object.isRequired,
     date: PropTypes.string.isRequired,
     changeDate: PropTypes.func.isRequired
   };
@@ -20,9 +20,9 @@ export default class WeekSummaryComponent extends React.Component {
 
   render() {
     const { date, week, changeDate } = this.props;
-    const weekTotal = week.map(getDistance).reduce((a,b)=> a+b); 
+    const weekTotal = week.days.map(getDistance).reduce((a,b)=> a+b); 
 
-    const dayComponents = week.map(day => (
+    const dayComponents = week.days.map(day => (
       <TouchableOpacity
         style={{ flex: 1 }}
         onPress={() => changeDate(day.date)}
@@ -37,7 +37,8 @@ export default class WeekSummaryComponent extends React.Component {
         <Text style={styles.text_label}>Viikon ohjelma</Text>
 
         <Text style={styles.text_distTotal}>{weekTotal} km</Text>
-
+        <Text style={styles.text_distTotal}>{week.distanceLevel}</Text>
+        <Text style={styles.text_distTotal}>{week.intensityLevel}</Text>
         <View style={{ flex: 1, flexDirection: "row" }}>{dayComponents}</View>
       </View>
     );

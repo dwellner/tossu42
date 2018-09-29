@@ -18,6 +18,7 @@ export default class HomeScreen extends React.Component {
     const maxHr = 189;
     const targetTime = 210; 
     const weekProgram = ProgramModel.getWeekProgram(targetEvent.date);
+    console.log(weekProgram);
     this.state = { maxHr, targetTime, date, targetEvent, weekProgram };
   }
 
@@ -26,7 +27,7 @@ export default class HomeScreen extends React.Component {
   }
 
   renderDayProgramComponent(week, date, maxHr, targetTime) {
-    const day = week.find(day => day.date === date);
+    const day = week.days.find(day => day.date === date);
 
     return (
       <View>
@@ -47,7 +48,7 @@ export default class HomeScreen extends React.Component {
   render() {
     const { date, maxHr, targetTime, targetEvent, weekProgram } = this.state;
     const week = weekProgram.find(
-      week => week.findIndex(d => d.date === date) >= 0
+      week => week.days.findIndex(d => d.date === date) >= 0
     );
     const viewContent =
       week !== undefined ? (
