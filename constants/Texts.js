@@ -4,8 +4,12 @@ export default {
       takeItEasy: "Ota iisisti 😌",
       goGirl: "💪 Anna palaa",
       dayProgram: "Päivän ohjelma",
+      weekProgram: "Viikon ohjelma",
       daysUntil: "päivää ennen",
-      dayUntil: "päivä ennen"
+      dayUntil: "päivä ennen",
+      totalDistance: "Kokonaismatka",
+      intensity: "Intensiteetti",
+      programSetFor: "Juoksuohjelma on asetettu jaksolle"
   },
 
   weekDays: [

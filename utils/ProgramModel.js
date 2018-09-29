@@ -4,9 +4,11 @@ import programs from "../data/programs.json";
 // TODO: select program in settings, maybe even adapt to target format
 const selectedProgram = programs[0];
 
-const getDayDistance = day => day.type === "iv" ? (day.distance * day.repeat) + 5 : day.distance;
+const getDayDistance = day =>
+  day.type === "iv" ? day.distance * day.repeat + 5 : day.distance;
 
-const getWeekDistance = week => week.map(getDayDistance).reduce((a,b)=> a+b);
+const getWeekDistance = week =>
+  week.map(getDayDistance).reduce((a, b) => a + b);
 
 const getIntensity = week =>
   week
@@ -29,20 +31,29 @@ export default {
     let i = 0;
 
     const maxWeekDistance = selectedProgram.weeks
-    .map(getWeekDistance)
-    .reduce((a,b) => Math.max(a,b),0);
+      .map(getWeekDistance)
+      .reduce((a, b) => Math.max(a, b), 0);
 
     const maxIntensity = selectedProgram.weeks
       .map(getIntensity)
       .reduce((max, w) => Math.max(max, w), 0);
 
-    return selectedProgram.weeks.map(week => ({
-      intensityLevel: getIntensity(week) / maxIntensity,
-      distanceLevel: getWeekDistance(week) / maxWeekDistance,
-      days: week.map(day => ({
-        ...day,
-        date: DateUtils.nextDate(firstDate, i++)
-      }))
-    }));
+    const weeks = selectedProgram.weeks.map(week => {
+      distance = getWeekDistance(week);
+      return {
+        distance,
+        intensityLevel: getIntensity(week) / maxIntensity,
+        distanceLevel: distance / maxWeekDistance,
+        days: week.map(day => ({
+          ...day,
+          date: DateUtils.nextDate(firstDate, i++)
+        }))
+      };
+    });
+
+    return {
+      targetTime: selectedProgram.targetTime,
+      weeks,
+    }
   }
 };

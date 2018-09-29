@@ -4,9 +4,9 @@ import ProgressBar from "react-native-progress/Bar";
 
 import WeekSummaryDayComponent from "./WeekSummaryDayComponent";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-
-const getDistance = day =>
-  day.type === "iv" ? day.distance * day.repeat + 3 : day.distance;
+import Colors from "../../constants/Colors";
+import Texts from "../../constants/Texts";
+import Styles from "../../constants/Styles";
 
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {
@@ -15,39 +15,64 @@ export default class WeekSummaryComponent extends React.Component {
     changeDate: PropTypes.func.isRequired
   };
 
-  constructor(props) {
-    super(props);
-    this.state = { selected: "2018-09-27" };
+  createLevelComponent(label, level, textValue, fillColor, emptyColor) {
+    return (
+      <View style={styles.levelContainer}>
+        <Text style={styles.text_label}>{label}</Text>
+        <ProgressBar
+          progress={level}
+          height={8}
+          color={fillColor}
+          unfilledColor={emptyColor}
+          borderColor={Colors.barBorder}
+          borderWidth={1}
+        />
+        <Text style={styles.text_value}>{textValue}</Text>
+      </View>
+    );
   }
 
-  render() {
-    const { date, week, changeDate } = this.props;
-    const weekTotal = week.days.map(getDistance).reduce((a, b) => a + b);
+  createDayComponent(day) {
+    const { date, changeDate } = this.props;
 
-    const dayComponents = week.days.map(day => (
+    return (
       <TouchableOpacity
-        style={{ flex: 1 }}
+        style={styles.dayComponentContainer}
         onPress={() => changeDate(day.date)}
         key={day.date}
       >
         <WeekSummaryDayComponent day={day} selected={day.date === date} />
       </TouchableOpacity>
-    ));
+    );
+  }
+
+  render() {
+    const { week } = this.props;
+
+    const distanceLevel = this.createLevelComponent(
+      Texts.labels.totalDistance,
+      week.distanceLevel,
+      `${week.distance.toFixed(0)} km`,
+      Colors.distanceFilled,
+      Colors.distanceEmpty
+    );
+
+    const intensityLevel = this.createLevelComponent(
+      Texts.labels.intensity,
+      week.intensityLevel,
+      (week.intensityLevel * 5).toFixed(1),
+      Colors.intensityFilled,
+      Colors.intensityEmpty
+    );
+
+    const dayComponents = week.days.map(day => this.createDayComponent(day));
 
     return (
       <View style={styles.component}>
-        <Text style={styles.text_label}>Viikon ohjelma</Text>
+        <Text style={styles.text_label}>{Texts.labels.weekProgram}</Text>
         <View style={{ flex: 1, flexDirection: "row" }}>
-          <View style={{flex: 1,     alignItems: "center"}}>
-            <Text style={styles.text_label}>Kokonaismatka</Text>
-            <ProgressBar progress={week.distanceLevel} height={8} color="#00f" unfilledColor="#88f" borderColor="#000" borderWidth={2}/>
-            <Text style={styles.text_distTotal}>{weekTotal.toFixed(0)} km</Text>
-          </View>
-          <View style={{flex: 1,     alignItems: "center"}}>
-            <Text style={styles.text_label}>Intensiteetti</Text>
-            <ProgressBar progress={week.intensityLevel} height={8} color="#f00" unfilledColor="#f88" borderColor="#000" borderWidth={2}/>
-            <Text style={styles.text_distTotal}>{(week.intensityLevel * 5).toFixed(1)  }</Text>
-          </View>
+          {distanceLevel}
+          {intensityLevel}
         </View>
         <View style={{ flex: 1, flexDirection: "row" }}>{dayComponents}</View>
       </View>
@@ -57,24 +82,17 @@ export default class WeekSummaryComponent extends React.Component {
 
 const styles = StyleSheet.create({
   component: {
+    ...Styles.widgetContainer,
+    alignItems: "center"
+  },
+  levelContainer: {
+    flex: 1,
     alignItems: "center",
-    backgroundColor: "#1119",
-    paddingTop: 10,
-    paddingBottom: 20,
-    borderWidth: 1,
-    borderTopColor: "#333",
-    borderBottomColor: "#333"
-  },
-
-  text_label: {
-    color: "#bbb",
-    fontSize: 16,
     marginBottom: 8
   },
-
-  text_distTotal: {
-    color: "#fff",
-    fontSize: 24,
-    marginBottom: 8
-  }
+  dayComponentContainer: {
+    flex: 1
+  },
+  text_label: { ...Styles.label },
+  text_value: { ...Styles.defaultContent }
 });

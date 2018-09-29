@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Formatters from "../../utils/Formatters";
 import { StyleSheet, Text, View } from "react-native";
 import Texts from "../../constants/Texts";
+import Styles from "../../constants/Styles";
 
 const getTargetMetricsGoals = (day, maxHr, targetTime) => {
   const getHrPct = pct => Math.round(maxHr * pct);
@@ -53,13 +54,8 @@ export default class DayGoalComponent extends React.Component {
 
 const styles = StyleSheet.create({
   component: {
+    ...Styles.widgetContainer,
     alignItems: "center",
-    backgroundColor: "#1119",
-    paddingTop: 10,
-    paddingBottom: 20,
-    borderWidth: 1,
-    borderTopColor: "#333",
-    borderBottomColor: "#333"
   },
 
   text_label: {
