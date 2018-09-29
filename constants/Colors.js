@@ -22,9 +22,9 @@ export default {
   // Level indicators
   barBorder: "#000",
 
-  distanceFilled: "#00f", 
-  distanceEmpty: "#88f",
-  intensityFilled: "#f00",
-  intensityEmpty: "#f88"
+  distanceFilled: "#55f", 
+  distanceEmpty: "#226",
+  intensityFilled: tintColor,
+  intensityEmpty: "#633"
 
 };

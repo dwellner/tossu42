@@ -6,14 +6,16 @@ import {
 } from "react-navigation";
 
 import TabBarIcon from "../components/TabBarIcon";
-import HomeScreen from "../screens/DayView/HomeScreen";
+import DayScreen from "../screens/Day/DayScreen";
+import ProgramScreen from "../screens/Program/ProgramScreen";
+
 import SettingsScreen from "../screens/SettingsScreen";
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen
+const DayStack = createStackNavigator({
+  Day: DayScreen
 });
 
-HomeStack.navigationOptions = {
+DayStack.navigationOptions = {
   tabBarLabel: "Päivänäkymä",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -22,6 +24,24 @@ HomeStack.navigationOptions = {
         Platform.OS === "ios"
           ? `ios-calendar${focused ? "" : "-outline"}`
           : "md-calendar"
+      }
+    />
+  )
+};
+
+const ProgramStack = createStackNavigator({
+  Program: ProgramScreen
+});
+
+ProgramStack.navigationOptions = {
+  tabBarLabel: "Ohjelma",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === "ios"
+          ? `ios-list${focused ? "" : "-outline"}`
+          : "md-list"
       }
     />
   )
@@ -47,7 +67,8 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator(
   {
-    HomeStack,
+    DayStack,
+    ProgramStack,
     SettingsStack
   },
   {

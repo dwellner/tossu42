@@ -21,22 +21,19 @@ export default class HomeScreen extends React.Component {
 
   constructor(props) {
     super(props);
-
-    const date = new Date().toISOString().substr(0, 10);
     const targetEvent = { name: "Helsinki City Maraton", date: "2018-09-30" };
     const maxHr = 189;
     const weekProgram = ProgramModel.getWeekProgram(targetEvent.date);
     const targetTime = weekProgram.targetTime;
-    this.state = { maxHr, targetTime, date, targetEvent, weekProgram };
+    this.state = { maxHr, targetTime, targetEvent, weekProgram };
   }
 
   selectDate(date) {
-    this.setState(() => ({ date: date }));
+    this.props.navigation.setParams({ date: date });
   }
 
-  createDayProgramComponent(week) {
-    const { date, maxHr, targetTime } = this.state;
-
+  createDayProgramComponent(week, date) {
+    const { maxHr, targetTime } = this.state;
     const day = week.days.find(day => day.date === date);
 
     return (
@@ -53,12 +50,16 @@ export default class HomeScreen extends React.Component {
 
   createNoProgramComponent() {
     const { weekProgram } = this.state;
-    const firstDate = Formatters.dateToDateLabel(weekProgram.weeks[0].days[0].date);
-    const lastDate = Formatters.dateToDateLabel(weekProgram.weeks.slice(-1)[0].days.slice(-1)[0].date);
+    const firstDate = Formatters.dateToDateLabel(
+      weekProgram.weeks[0].days[0].date
+    );
+    const lastDate = Formatters.dateToDateLabel(
+      weekProgram.weeks.slice(-1)[0].days.slice(-1)[0].date
+    );
 
     return (
       <View style={{ marginTop: 100, marginLeft: 16, marginRight: 16 }}>
-        <Text style={{ ...Styles.defaultContent, textAlign: 'center' }}>
+        <Text style={{ ...Styles.defaultContent, textAlign: "center" }}>
           {Texts.labels.programSetFor} {firstDate} - {lastDate}
         </Text>
       </View>
@@ -66,14 +67,18 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { date, targetEvent, weekProgram } = this.state;
+    const date = this.props.navigation.getParam(
+      "date",
+      new Date().toISOString().substr(0, 10)
+    );
+    const { targetEvent, weekProgram } = this.state;
     const week = weekProgram.weeks.find(
       week => week.days.findIndex(d => d.date === date) >= 0
     );
 
     const viewContent =
       week !== undefined
-        ? this.createDayProgramComponent(week)
+        ? this.createDayProgramComponent(week, date)
         : this.createNoProgramComponent();
 
     return (
