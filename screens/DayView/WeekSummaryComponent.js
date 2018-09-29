@@ -1,9 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ProgressBar from "react-native-progress/Bar";
+
 import WeekSummaryDayComponent from "./WeekSummaryDayComponent";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-const getDistance = day => day.type === "iv" ? (day.distance * day.repeat) + 3 : day.distance; 
+const getDistance = day =>
+  day.type === "iv" ? day.distance * day.repeat + 3 : day.distance;
 
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {
@@ -17,10 +20,9 @@ export default class WeekSummaryComponent extends React.Component {
     this.state = { selected: "2018-09-27" };
   }
 
-
   render() {
     const { date, week, changeDate } = this.props;
-    const weekTotal = week.days.map(getDistance).reduce((a,b)=> a+b); 
+    const weekTotal = week.days.map(getDistance).reduce((a, b) => a + b);
 
     const dayComponents = week.days.map(day => (
       <TouchableOpacity
@@ -35,10 +37,18 @@ export default class WeekSummaryComponent extends React.Component {
     return (
       <View style={styles.component}>
         <Text style={styles.text_label}>Viikon ohjelma</Text>
-
-        <Text style={styles.text_distTotal}>{weekTotal} km</Text>
-        <Text style={styles.text_distTotal}>{week.distanceLevel}</Text>
-        <Text style={styles.text_distTotal}>{week.intensityLevel}</Text>
+        <View style={{ flex: 1, flexDirection: "row" }}>
+          <View style={{flex: 1,     alignItems: "center"}}>
+            <Text style={styles.text_label}>Kokonaismatka</Text>
+            <ProgressBar progress={week.distanceLevel} height={8} color="#00f" unfilledColor="#88f" borderColor="#000" borderWidth={2}/>
+            <Text style={styles.text_distTotal}>{weekTotal.toFixed(0)} km</Text>
+          </View>
+          <View style={{flex: 1,     alignItems: "center"}}>
+            <Text style={styles.text_label}>Intensiteetti</Text>
+            <ProgressBar progress={week.intensityLevel} height={8} color="#f00" unfilledColor="#f88" borderColor="#000" borderWidth={2}/>
+            <Text style={styles.text_distTotal}>{(week.intensityLevel * 5).toFixed(1)  }</Text>
+          </View>
+        </View>
         <View style={{ flex: 1, flexDirection: "row" }}>{dayComponents}</View>
       </View>
     );
@@ -65,6 +75,6 @@ const styles = StyleSheet.create({
   text_distTotal: {
     color: "#fff",
     fontSize: 24,
-    margin: 20
+    marginBottom: 8
   }
 });

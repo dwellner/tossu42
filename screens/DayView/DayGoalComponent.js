@@ -40,7 +40,7 @@ export default class DayGoalComponent extends React.Component {
       <View style={styles.component}>
         <Text style={styles.text_label}>{Texts.labels.dayProgram}</Text>
         <Text style={styles.text_days_until}>
-          {Formatters.dayToDistanceDesc(day)}
+          {day.type !== "lepo" ? Formatters.dayToDistanceDesc(day) : "😎"}
         </Text>
         <Text style={styles.text_runType}>{Formatters.dayToTypeDesc(day)}</Text>
         <Text style={styles.text_bpmRange}>

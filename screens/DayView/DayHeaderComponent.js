@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Formatters from "../../utils/Formatters";
 import DateUtils from "../../utils/DateUtils";
-import Texts from "../../constants/Texts"
+import Texts from "../../constants/Texts";
 import { StyleSheet, Text, View, Button } from "react-native";
 
 export default class DayHeaderComponent extends React.Component {
@@ -12,11 +12,13 @@ export default class DayHeaderComponent extends React.Component {
     changeDate: PropTypes.func.isRequired
   };
 
-  render() {
-    const { date, targetEvent, changeDate } = this.props;
-    const daysUntil = DateUtils.difference(targetEvent.date, date) -1;
+  getTargetComponent(targetEvent, date) {
+    const daysUntil = DateUtils.difference(targetEvent.date, date) - 1;
 
-    const targetComponent = daysUntil > 0 ? (
+    if (daysUntil < 0) return undefined;
+
+    if (daysUntil > 0)
+      return (
         <View
           style={{
             flex: 1,
@@ -29,18 +31,43 @@ export default class DayHeaderComponent extends React.Component {
         >
           <View style={{ flex: 1, flexDirection: "row" }}>
             <Text style={styles.text_days_until}>{daysUntil}</Text>
-            <Text style={styles.text_label}>{daysUntil > 1 ? Texts.labels.daysUntil : Texts.labels.dayUntil}</Text>
+            <Text style={styles.text_label}>
+              {daysUntil > 1 ? Texts.labels.daysUntil : Texts.labels.dayUntil}
+            </Text>
           </View>
           <Text style={styles.text_targetName}>
             {targetEvent.name} - {Formatters.dateToDateLabel(targetEvent.date)}
           </Text>
         </View>
-
-    ): undefined;
+      );
 
     return (
+      <View
+        style={{
+          flex: 1,
+          padding: 10,
+          borderWidth: 1,
+          borderTopColor: "#333",
+          alignItems: "center",
+          backgroundColor: "#1117"
+        }}
+      >
+        <Text style={styles.text_targetName}>
+          {targetEvent.name}
+        </Text>
+      </View>
+    );
+  }
+
+  render() {
+    const { date, targetEvent, changeDate } = this.props;
+
+    const targetComponent = this.getTargetComponent(targetEvent,date);
+    return (
       <View style={styles.component}>
-        <View style={{ flex: 1, flexDirection: "row", backgroundColor: "#1115"}}>
+        <View
+          style={{ flex: 1, flexDirection: "row", backgroundColor: "#1115" }}
+        >
           <View style={{ flex: 1 }}>
             <Button
               color="#333"
