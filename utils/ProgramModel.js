@@ -4,8 +4,11 @@ import ProgramService from "../data/ProgramService";
 // TODO: select program in settings, maybe even adapt to target format
 const selectedProgram = ProgramService.getAll()[5];
 
-const getDayDistance = day =>
-  day.type === "iv" ? day.distance * day.repeat + 5 : day.distance;
+const getDayDistance = day => {
+  if (day.type === "iv") return day.distance * day.repeat + 5;
+  if (day.type === "lepo") return 0;
+  return day.distance;
+};
 
 const getWeekDistance = week =>
   week.map(getDayDistance).reduce((a, b) => a + b);
@@ -53,7 +56,7 @@ export default {
 
     return {
       targetTime: selectedProgram.targetTime,
-      weeks,
-    }
+      weeks
+    };
   }
 };

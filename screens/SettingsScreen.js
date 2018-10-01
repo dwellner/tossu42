@@ -71,7 +71,7 @@ export default class SettingsScreen extends React.Component {
           </Text>
           <TextField 
               label="Tapahtuman nimi" 
-              maxLength={24}
+              maxLength={30}
               value={eventName}
               onChangeText={v => this.setState({ eventName: v })}
 />

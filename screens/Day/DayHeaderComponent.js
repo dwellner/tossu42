@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     color: Colors.tintColor,
     fontWeight: "bold"
   },
-  text_date: { ...Styles.defaultContent },
+  text_date: { ...Styles.defaultContent, fontSize: 24 },
   
   text_label: {
     ...Styles.defaultContent,

@@ -2,7 +2,7 @@ import Colors from "./Colors"
 
 export default {
     defaultContent: {
-        fontSize: 24,
+        fontSize: 20,
         color: Colors.defaultText,
     },
 

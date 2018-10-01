@@ -21,8 +21,7 @@ const dateToDayLabel = date => {
 }
 
 const dateToDateLabel = date => {
-    const d = new Date(date);
-    return `${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`
+    return moment.utc(date).format('D.M.YY');
 }
 
 const dateRangetoLabel = (date1,date2) => {

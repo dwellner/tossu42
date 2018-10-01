@@ -333,6 +333,43 @@ exports[`App snapshot renders the root without loading screen 1`] = `
                             }
                           }
                         >
+                          <View
+                            style={
+                              Object {
+                                "flex": 1,
+                                "flexDirection": "row",
+                              }
+                            }
+                          >
+                            <Text
+                              accessible={true}
+                              allowFontScaling={true}
+                              ellipsizeMode="tail"
+                              style={
+                                Object {
+                                  "color": "#f442df",
+                                  "fontSize": 20,
+                                  "fontWeight": "bold",
+                                }
+                              }
+                            >
+                              28
+                            </Text>
+                            <Text
+                              accessible={true}
+                              allowFontScaling={true}
+                              ellipsizeMode="tail"
+                              style={
+                                Object {
+                                  "color": "#fff",
+                                  "fontSize": 20,
+                                  "marginLeft": 4,
+                                }
+                              }
+                            >
+                              päivää ennen
+                            </Text>
+                          </View>
                           <Text
                             accessible={true}
                             allowFontScaling={true}
@@ -340,16 +377,13 @@ exports[`App snapshot renders the root without loading screen 1`] = `
                             style={
                               Object {
                                 "color": "#fff",
-                                "fontSize": 24,
-                                "textAlign": "center",
+                                "fontSize": 20,
                               }
                             }
                           >
-                            Juoksuohjelma on asetettu jaksolle
-                             
-                            15.4.2018
+                            Helsinki City Maraton
                              - 
-                            29.9.2018
+                            30.10.18
                           </Text>
                         </View>
                       </View>
