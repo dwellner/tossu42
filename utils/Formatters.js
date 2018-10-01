@@ -31,6 +31,13 @@ const dateRangetoLabel = (date1,date2) => {
     return `${d1.format('D.M.')} - ${d2.format('D.M.YY')}`
 }
 
+const minutesToTimeLabel = mins => {
+    const h = Math.trunc(mins / 60).toFixed(0);
+    const m = `${mins % 60}`.padStart(2, "0");
+    return `${h}:${m}`;
+  };
+  
+
 export default {
   dayToDistanceDesc,
   dayToTypeDesc: day => Texts.runTypes[day.type],
@@ -40,5 +47,7 @@ export default {
   dateToDayLabelShort,
   dateToDateLabel,
 
-  dateRangetoLabel, 
+  dateRangetoLabel,
+  
+  minutesToTimeLabel,
 };
