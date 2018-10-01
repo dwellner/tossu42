@@ -1,9 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity
+} from "react-native";
 import { Dropdown } from "react-native-material-dropdown";
 import { TextField } from "react-native-material-textfield";
 import Formatters from "../utils/Formatters";
 import Styles from "../constants/Styles";
+import DateTimePicker from "react-native-modal-datetime-picker";
 
 import ProgramService from "../data/ProgramService";
 
@@ -20,7 +27,9 @@ export default class SettingsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // TODO: remove this default, handle unnamed event
       eventName: "Helsinki City Maraton",
+      eventDate: new Date().toISOString().substr(0,10), // TODO: this should be default everywhere
       targetTime: 240,
       programId: "tossu_2018_24_400",
       heartRate: undefined
@@ -42,14 +51,26 @@ export default class SettingsScreen extends React.Component {
     }));
   }
 
-  render() {
-    const { eventName, targetTime, programId, heartRate } = this.state;
+  _showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
 
-    const data = [
-      { value: 44, label: "first" },
-      { value: 55, label: "second" },
-      { value: 33, label: "third" }
-    ];
+  _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
+
+  _confirmDatePicked = date => {
+    this.setState(() => ({
+      eventDate: date.toISOString().substr(0, 10),
+      isDateTimePickerVisible: false
+    }));
+  };
+  render() {
+    const {
+      eventName,
+      eventDate,
+      targetTime,
+      programId,
+      heartRate
+    } = this.state;
+
+    console.log(eventDate);
 
     return (
       <ScrollView>
@@ -61,10 +82,11 @@ export default class SettingsScreen extends React.Component {
         >
           <View style={styles.section}>
             <Text style={styles.sectionHeader}>
-              Mitä maraton aiot juosta seuraavaksi?              
+              Mitä maraton aiot juosta seuraavaksi?
             </Text>
-            <Text style={{ fontSize: 16, color: "#777"}}>
-              Juoksuohjelma räätelöidään sinua varten tapahtuman ajankohdasta taaksepäin.    
+            <Text style={{ fontSize: 16, color: "#777" }}>
+              Juoksuohjelma räätelöidään sinua varten tapahtuman ajankohdasta
+              taaksepäin.
             </Text>
 
             <TextField
@@ -73,15 +95,28 @@ export default class SettingsScreen extends React.Component {
               value={eventName}
               onChangeText={v => this.setState({ eventName: v })}
             />
-            <Dropdown label="Ajankohta" data={data} />
+            <TouchableOpacity onPress={() => this._showDateTimePicker()}>
+              <TextField
+                editable={false}
+                label="Ajankohta"
+                value={Formatters.dateToDateLabel(eventDate)}
+                onBlur={() => this._showDateTimePicker()}
+              />
+            </TouchableOpacity>
+            <DateTimePicker
+              isVisible={this.state.isDateTimePickerVisible}
+              onConfirm={date => this._confirmDatePicked(date)}
+              onCancel={this._hideDateTimePicker}
+            />
           </View>
 
           <View style={styles.section}>
             <Text style={styles.sectionHeader}>
               Miten haluaisit valmistautua?
             </Text>
-            <Text style={{ fontSize: 16, color: "#777"}}>
-              Valitse ensin itselle sopiva tavoiteaika maratonille. Tossu42 ehdottaa tavoitteellesi sopivimmat juoksuohjelmat.    
+            <Text style={{ fontSize: 16, color: "#777" }}>
+              Valitse ensin itselle sopiva tavoiteaika maratonille. Tossu42
+              ehdottaa tavoitteellesi sopivimmat juoksuohjelmat.
             </Text>
 
             <Dropdown
@@ -106,7 +141,7 @@ export default class SettingsScreen extends React.Component {
 
           <View style={styles.section}>
             <Text style={styles.sectionHeader}>Raja-arvot</Text>
-            <Text style={{ fontSize: 16, color: "#777"}}>
+            <Text style={{ fontSize: 16, color: "#777" }}>
               Maksimisykeen avulla voidaan laskea harjoituksille sykealueet
             </Text>
             <Dropdown
