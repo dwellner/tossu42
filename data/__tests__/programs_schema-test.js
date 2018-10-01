@@ -47,10 +47,6 @@ const programSchema = Joi.object().keys({
     .required()
 });
 
-// TODO: test all against schema!
-
-// TODO: test program ids are unique
-
 describe("Program schema should be valid for", () => {
   it("3:30 programs", () => {
     const programs = require("../programs_330.json");

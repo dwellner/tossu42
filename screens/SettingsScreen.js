@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Dropdown } from "react-native-material-dropdown";
+import { TextField } from 'react-native-material-textfield';
+
 import ProgramService from "../data/ProgramService";
 
 const programs = ProgramService.getAll();
@@ -31,7 +33,7 @@ export default class SettingsScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { targetTime: 240, programId: "tossu_2018_24_400" };
+    this.state = { eventName: "Helsinki City Maraton", targetTime: 240, programId: "tossu_2018_24_400" };
   }
 
   onChangeTargetTime(newTargetTime) {
@@ -48,7 +50,7 @@ export default class SettingsScreen extends React.Component {
   }
 
   render() {
-    const { targetTime, programId } = this.state;
+    const { eventName, targetTime, programId } = this.state;
 
     const data = [
       { value: 44, label: "first" },
@@ -67,7 +69,12 @@ export default class SettingsScreen extends React.Component {
           <Text style={styles.sectionHeader}>
             Mitä maraton aiot juosta seuraavaksi?
           </Text>
-          <Dropdown label="Tapahtuman nimi" data={data} />
+          <TextField 
+              label="Tapahtuman nimi" 
+              maxLength={24}
+              value={eventName}
+              onChangeText={v => this.setState({ eventName: v })}
+/>
           <Dropdown label="Ajankohta" data={data} />
         </View>
 

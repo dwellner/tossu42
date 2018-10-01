@@ -21,7 +21,7 @@ export default class HomeScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    const targetEvent = { name: "Helsinki City Maraton", date: "2018-09-30" };
+    const targetEvent = { name: "Helsinki City Maraton", date: "2018-10-30" };
     const maxHr = 189;
     const weekProgram = ProgramModel.getWeekProgram(targetEvent.date);
     const targetTime = weekProgram.targetTime;
