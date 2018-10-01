@@ -79,7 +79,7 @@ export default class HomeScreen extends React.Component {
     const viewContent =
       week !== undefined
         ? this.createDayProgramComponent(week, date)
-        : this.createNoProgramComponent();
+        : undefined;
 
     return (
       <ImageBackground
@@ -88,6 +88,7 @@ export default class HomeScreen extends React.Component {
       >
         <View style={styles.header}>
           <DayHeaderComponent
+            weekProgram={weekProgram}
             targetEvent={targetEvent}
             date={date}
             changeDate={date => this.selectDate(date)}
@@ -102,11 +103,10 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: "100%",
-    paddingTop: 30
+    height: "100%"
   },
 
   header: {
-    height: 170
+    height: 190
   }
 });

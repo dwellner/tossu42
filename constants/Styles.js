@@ -23,8 +23,8 @@ export default {
         backgroundColor: Colors.widgetBackground,
         paddingTop: 8,
         paddingBottom: 16,
-        borderWidth: 1,
-        borderTopColor: Colors.defaultBorder,
-        borderBottomColor: Colors.defaultBorder    
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
+        borderColor: Colors.defaultBorder,
     }
 }

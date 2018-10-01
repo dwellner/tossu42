@@ -1,5 +1,13 @@
 [
   {
+    "id": "tossu_2018_24_300",
+    "name": "24vk valmistava ohjelma | 3:00t tavoiteaika",
+    "targetTime": 180,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_24_330",
+    "name": "24vk valmistava ohjelma | 3:30t tavoiteaika",
     "targetTime": 210,
     "weeks": [
       [
@@ -219,5 +227,113 @@
         { "distance": 42.2, "type": "r" }
       ]
     ]
+  },
+  {
+    "id": "tossu_2018_24_400",
+    "name": "24vk valmistava ohjelma | 4:00t tavoiteaika",
+    "targetTime": 240,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_24_500",
+    "name": "24vk Valmistava ohjelma | 5:00t tavoiteaika",
+    "targetTime": 300,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_8_300",
+    "name": "8vk väliohjelma | 3:00t tavoiteaika",
+    "targetTime": 180,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_8_330",
+    "name": "8vk väliohjelma | 3:30t tavoiteaika",
+    "targetTime": 210,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_8_400",
+    "name": "8vk väliohjelma | 4:00t tavoiteaika",
+    "targetTime": 240,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_8_500",
+    "name": "8vk väliohjelma | 5:00t tavoiteaika",
+    "targetTime": 300,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_6_300",
+    "name": "6vk väliohjelma | 3:00t tavoiteaika",
+    "targetTime": 180,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_6_330",
+    "name": "6vk väliohjelma | 3:30t tavoiteaika",
+    "targetTime": 210,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_6_400",
+    "name": "6vk väliohjelma | 4:00t tavoiteaika",
+    "targetTime": 240,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_6_500",
+    "name": "6vk väliohjelma | 5:00t tavoiteaika",
+    "targetTime": 300,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_4_300",
+    "name": "4vk väliohjelma | 3:00t tavoiteaika",
+    "targetTime": 180,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_4_330",
+    "name": "4vk väliohjelma | 3:30t tavoiteaika",
+    "targetTime": 210,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_4_400",
+    "name": "4vk väliohjelma | 4:00t tavoiteaika",
+    "targetTime": 240,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_4_500",
+    "name": "4vk väliohjelma | 5:00t tavoiteaika",
+    "targetTime": 300,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_2_300",
+    "name": "2vk väliohjelma | 3:00t tavoiteaika",
+    "targetTime": 180,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_2_330",
+    "name": "2vk väliohjelma | 3:30t tavoiteaika",
+    "targetTime": 210,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_2_400",
+    "name": "2vk väliohjelma | 4:00t tavoiteaika",
+    "targetTime": 240,
+    "weeks": []
+  },
+  {
+    "id": "tossu_2018_2_500",
+    "name": "2vk väliohjelma | 5:00t tavoiteaika",
+    "targetTime": 300,
+    "weeks": []
   }
 ]

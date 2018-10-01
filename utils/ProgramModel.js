@@ -2,7 +2,7 @@ import DateUtils from "./DateUtils";
 import programs from "../data/programs.json";
 
 // TODO: select program in settings, maybe even adapt to target format
-const selectedProgram = programs[0];
+const selectedProgram = programs[1];
 
 const getDayDistance = day =>
   day.type === "iv" ? day.distance * day.repeat + 5 : day.distance;

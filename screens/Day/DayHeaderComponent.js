@@ -9,17 +9,36 @@ import Styles from "../../constants/Styles";
 
 export default class DayHeaderComponent extends React.Component {
   static propTypes = {
+    weekProgram: PropTypes.object.isRequired,
     date: PropTypes.string.isRequired,
     targetEvent: PropTypes.object.isRequired,
     changeDate: PropTypes.func.isRequired
   };
+
+  createNoProgramComponent() {
+    const { weekProgram } = this.props;
+    const firstDate = Formatters.dateToDateLabel(
+      weekProgram.weeks[0].days[0].date
+    );
+    const lastDate = Formatters.dateToDateLabel(
+      weekProgram.weeks.slice(-1)[0].days.slice(-1)[0].date
+    );
+
+    return (
+      <View style={styles.goalContainer}>
+         <Text style={{ ...Styles.defaultContent, textAlign: "center" }}>
+          {Texts.labels.programSetFor} {firstDate} - {lastDate}
+        </Text>
+      </View>
+    );
+  }
 
   getTargetComponent() {
     const { date, targetEvent } = this.props;
 
     const daysUntil = DateUtils.difference(targetEvent.date, date) - 1;
     const eventName = targetEvent.name;
-    if (daysUntil < 0) return undefined;
+    if (daysUntil < 0) return this.createNoProgramComponent();
 
     if (daysUntil > 0)
       return (
@@ -75,6 +94,7 @@ export default class DayHeaderComponent extends React.Component {
 const styles = StyleSheet.create({
   component: {
     ...Styles.widgetContainer,
+    paddingTop: 30,
     flex: 1,
     alignItems: "center",
     alignItems: "stretch",
