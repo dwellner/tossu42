@@ -9,7 +9,7 @@ import TabBarIcon from "../components/TabBarIcon";
 import DayScreen from "../screens/Day/DayScreen";
 import ProgramScreen from "../screens/Program/ProgramScreen";
 
-import SettingsScreen from "../screens/SettingsScreen";
+import SettingsScreen from "../screens/Settings/SettingsScreen";
 
 const DayStack = createStackNavigator({
   Day: DayScreen
