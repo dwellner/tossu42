@@ -14,6 +14,8 @@ export default {
     eventDate: "Ajankohta",
     targetTime: "Tavoiteaika",
     program: "Juoksuohjelma",
+    weekShort: "Vk",
+    weekProgram: "Viikon ohjelma",
     settingsGoalHeader: "Mitä maraton aiot juosta seuraavaksi?",
     settingsGoalSubHeader:
       "Juoksuohjelma räätelöidään sinua varten tapahtuman ajankohdasta taaksepäin",
@@ -21,7 +23,7 @@ export default {
     settingsProgramSubHeader: "Valitse ensin itselle sopiva tavoiteaika maratonille. Tossu42 ehdottaa tavoitteellesi sopivimmat juoksuohjelmat",
     settingsMetaHeader: "Raja-arvot",
     settingsMetaSubHeader: "Maksimisykeen avulla voidaan laskea harjoituksille sykealueet",
-    maxHeartRate: "Maksimisyke"
+    maxHeartRate: "Maksimisyke",
   },
 
   weekDays: [
