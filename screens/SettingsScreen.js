@@ -1,7 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Dropdown } from "react-native-material-dropdown";
-import programs from "../data/programs.json";
+import ProgramService from "../data/ProgramService";
+
+const programs = ProgramService.getAll();
 
 const targetTimes = [180, 195, 210, 225, 240, 255, 270, 285, 300];
 

@@ -16,6 +16,8 @@
     "@expo/samples": "2.1.1",
     "@expo/vector-icons": "^6.3.1",
     "expo": "^30.0.1",
+    "jest": "^23.6.0",
+    "joi": "^13.7.0",
     "moment": "^2.22.2",
     "native-base": "^2.8.0",
     "react": "16.3.1",

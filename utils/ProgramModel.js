@@ -1,8 +1,8 @@
 import DateUtils from "./DateUtils";
-import programs from "../data/programs.json";
+import ProgramService from "../data/ProgramService";
 
 // TODO: select program in settings, maybe even adapt to target format
-const selectedProgram = programs[1];
+const selectedProgram = ProgramService.getAll()[5];
 
 const getDayDistance = day =>
   day.type === "iv" ? day.distance * day.repeat + 5 : day.distance;

@@ -1,0 +1,33 @@
+[
+    {
+      "id": "tossu_2018_24_300",
+      "name": "24vk valmistava ohjelma | 3:00t tavoiteaika",
+      "targetTime": 180,
+      "weeks": []
+    },
+    {
+      "id": "tossu_2018_8_300",
+      "name": "8vk väliohjelma | 3:00t tavoiteaika",
+      "targetTime": 180,
+      "weeks": []
+    },
+    {
+      "id": "tossu_2018_6_300",
+      "name": "6vk väliohjelma | 3:00t tavoiteaika",
+      "targetTime": 180,
+      "weeks": []
+    },
+    {
+      "id": "tossu_2018_4_300",
+      "name": "4vk väliohjelma | 3:00t tavoiteaika",
+      "targetTime": 180,
+      "weeks": []
+    },
+    {
+      "id": "tossu_2018_2_300",
+      "name": "2vk väliohjelma | 3:00t tavoiteaika",
+      "targetTime": 180,
+      "weeks": []
+    }
+  ]
+  

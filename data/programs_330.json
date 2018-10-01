@@ -1,11 +1,5 @@
 [
   {
-    "id": "tossu_2018_24_300",
-    "name": "24vk valmistava ohjelma | 3:00t tavoiteaika",
-    "targetTime": 180,
-    "weeks": []
-  },
-  {
     "id": "tossu_2018_24_330",
     "name": "24vk valmistava ohjelma | 3:30t tavoiteaika",
     "targetTime": 210,
@@ -15,7 +9,7 @@
         { "distance": 6, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 5, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 7, "type": "k" },
         { "distance": 14, "type": "pi" }
       ],
@@ -24,7 +18,7 @@
         { "distance": 5, "type": "t" },
         { "distance": 6, "type": "pe" },
         { "distance": 5, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 7, "type": "pa" },
         { "distance": 18, "type": "pi" }
       ],
@@ -33,7 +27,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 2 },
         { "distance": 6, "type": "pe" },
         { "distance": 5, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "k" },
         { "distance": 10, "type": "pi" }
       ],
@@ -42,7 +36,7 @@
         { "distance": 5, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 5, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "k" },
         { "distance": 18, "type": "pi" }
       ],
@@ -51,7 +45,7 @@
         { "distance": 7, "type": "t" },
         { "distance": 6, "type": "pe" },
         { "distance": 5, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 9, "type": "pa" },
         { "distance": 20, "type": "pi" }
       ],
@@ -60,7 +54,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 3 },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 9, "type": "k" },
         { "distance": 12, "type": "pi" }
       ],
@@ -69,7 +63,7 @@
         { "distance": 4, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 8, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 10, "type": "k" },
         { "distance": 26, "type": "pi" }
       ],
@@ -78,7 +72,7 @@
         { "distance": 6, "type": "t" },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 10, "type": "pa" },
         { "distance": 20, "type": "pi" }
       ],
@@ -87,7 +81,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 4 },
         { "distance": 7, "type": "pe" },
         { "distance": 8, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 11, "type": "k" },
         { "distance": 26, "type": "pi" }
       ],
@@ -96,7 +90,7 @@
         { "distance": 5, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "k" },
         { "distance": 18, "type": "pi" }
       ],
@@ -105,7 +99,7 @@
         { "distance": 7, "type": "t" },
         { "distance": 6, "type": "pe" },
         { "distance": 5, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 9, "type": "pa" },
         { "distance": 20, "type": "pi" }
       ],
@@ -114,7 +108,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 3 },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 9, "type": "k" },
         { "distance": 12, "type": "pi" }
       ],
@@ -123,7 +117,7 @@
         { "distance": 4, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 8, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 10, "type": "k" },
         { "distance": 26, "type": "pi" }
       ],
@@ -132,7 +126,7 @@
         { "distance": 6, "type": "t" },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 10, "type": "pa" },
         { "distance": 20, "type": "pi" }
       ],
@@ -141,7 +135,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 4 },
         { "distance": 7, "type": "pe" },
         { "distance": 8, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 11, "type": "k" },
         { "distance": 26, "type": "pi" }
       ],
@@ -150,7 +144,7 @@
         { "distance": 5, "type": "m" },
         { "distance": 7, "type": "pe" },
         { "distance": 6, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 11, "type": "k" },
         { "distance": 24, "type": "pi" }
       ],
@@ -159,7 +153,7 @@
         { "distance": 7, "type": "t" },
         { "distance": 7, "type": "pe" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 12, "type": "pa" },
         { "distance": 30, "type": "pi" }
       ],
@@ -168,7 +162,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 5 },
         { "distance": 8, "type": "pe" },
         { "distance": 8, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 9, "type": "k" },
         { "distance": 16, "type": "pi" }
       ],
@@ -177,7 +171,7 @@
         { "distance": 8, "type": "m" },
         { "distance": 8, "type": "pe" },
         { "distance": 10, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 12, "type": "k" },
         { "distance": 30, "type": "pi" }
       ],
@@ -186,7 +180,7 @@
         { "distance": 7, "type": "t" },
         { "distance": 8, "type": "pe" },
         { "distance": 8, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "pa" },
         { "distance": 16, "type": "pi" }
       ],
@@ -195,7 +189,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 6 },
         { "distance": 7, "type": "pe" },
         { "distance": 8, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 12, "type": "k" },
         { "distance": 30, "type": "pi" }
       ],
@@ -204,7 +198,7 @@
         { "distance": 6, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "k" },
         { "distance": 16, "type": "pi" }
       ],
@@ -213,7 +207,7 @@
         { "distance": 4, "type": "t" },
         { "distance": 5, "type": "pe" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 6, "type": "pa" },
         { "distance": 12, "type": "pi" }
       ],
@@ -221,30 +215,12 @@
         { "distance": 6, "type": "pa" },
         { "distance": 0.8, "type": "iv", "repeat": 3 },
         { "distance": 4, "type": "pe" },
-        { "distance": 0, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 4, "type": "pa" },
         { "distance": 42.2, "type": "r" }
       ]
     ]
-  },
-  {
-    "id": "tossu_2018_24_400",
-    "name": "24vk valmistava ohjelma | 4:00t tavoiteaika",
-    "targetTime": 240,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_24_500",
-    "name": "24vk Valmistava ohjelma | 5:00t tavoiteaika",
-    "targetTime": 300,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_8_300",
-    "name": "8vk väliohjelma | 3:00t tavoiteaika",
-    "targetTime": 180,
-    "weeks": []
   },
   {
     "id": "tossu_2018_8_330",
@@ -252,11 +228,11 @@
     "targetTime": 210,
     "weeks": [
       [
-        { "distance": 0, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 5, "type": "pa" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 6, "type": "pa" },
         { "distance": 12, "type": "pi" }
       ],
@@ -265,7 +241,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 5 },
         { "distance": 8, "type": "pe" },
         { "distance": 8, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 9, "type": "k" },
         { "distance": 16, "type": "pi" }
       ],
@@ -274,7 +250,7 @@
         { "distance": 8, "type": "m" },
         { "distance": 8, "type": "pe" },
         { "distance": 10, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 12, "type": "k" },
         { "distance": 30, "type": "pi" }
       ],
@@ -283,7 +259,7 @@
         { "distance": 7, "type": "t" },
         { "distance": 8, "type": "pe" },
         { "distance": 8, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "pa" },
         { "distance": 16, "type": "pi" }
       ],
@@ -292,7 +268,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 6 },
         { "distance": 7, "type": "pe" },
         { "distance": 8, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 12, "type": "k" },
         { "distance": 30, "type": "pi" }
       ],
@@ -301,7 +277,7 @@
         { "distance": 6, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "k" },
         { "distance": 16, "type": "pi" }
       ],
@@ -310,7 +286,7 @@
         { "distance": 4, "type": "t" },
         { "distance": 5, "type": "pe" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 6, "type": "pa" },
         { "distance": 12, "type": "pi" }
       ],
@@ -318,30 +294,12 @@
         { "distance": 6, "type": "pa" },
         { "distance": 0.4, "type": "iv", "repeat": 4 },
         { "distance": 4, "type": "pe" },
-        { "distance": 0, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 4, "type": "pa" },
         { "distance": 42.2, "type": "r" }
       ]
     ]
-  },
-  {
-    "id": "tossu_2018_8_400",
-    "name": "8vk väliohjelma | 4:00t tavoiteaika",
-    "targetTime": 240,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_8_500",
-    "name": "8vk väliohjelma | 5:00t tavoiteaika",
-    "targetTime": 300,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_6_300",
-    "name": "6vk väliohjelma | 3:00t tavoiteaika",
-    "targetTime": 180,
-    "weeks": []
   },
   {
     "id": "tossu_2018_6_330",
@@ -349,11 +307,11 @@
     "targetTime": 210,
     "weeks": [
       [
-        { "distance": 0, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 5, "type": "pa" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 6, "type": "pa" },
         { "distance": 12, "type": "pi" }
       ],
@@ -362,7 +320,7 @@
         { "distance": 7, "type": "t" },
         { "distance": 8, "type": "pe" },
         { "distance": 8, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "pa" },
         { "distance": 16, "type": "pi" }
       ],
@@ -371,7 +329,7 @@
         { "distance": 0.8, "type": "iv", "repeat": 6 },
         { "distance": 7, "type": "pe" },
         { "distance": 8, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 12, "type": "k" },
         { "distance": 30, "type": "pi" }
       ],
@@ -380,7 +338,7 @@
         { "distance": 6, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "k" },
         { "distance": 16, "type": "pi" }
       ],
@@ -389,7 +347,7 @@
         { "distance": 4, "type": "t" },
         { "distance": 5, "type": "pe" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 6, "type": "pa" },
         { "distance": 12, "type": "pi" }
       ],
@@ -397,30 +355,12 @@
         { "distance": 6, "type": "pa" },
         { "distance": 0.4, "type": "iv", "repeat": 4 },
         { "distance": 4, "type": "pe" },
-        { "distance": 0, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 4, "type": "pa" },
         { "distance": 42.2, "type": "r" }
       ]
     ]
-  },
-  {
-    "id": "tossu_2018_6_400",
-    "name": "6vk väliohjelma | 4:00t tavoiteaika",
-    "targetTime": 240,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_6_500",
-    "name": "6vk väliohjelma | 5:00t tavoiteaika",
-    "targetTime": 300,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_4_300",
-    "name": "4vk väliohjelma | 3:00t tavoiteaika",
-    "targetTime": 180,
-    "weeks": []
   },
   {
     "id": "tossu_2018_4_330",
@@ -428,11 +368,11 @@
     "targetTime": 210,
     "weeks": [
       [
-        { "distance": 0, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 5, "type": "pa" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 6, "type": "pa" },
         { "distance": 12, "type": "pi" }
       ],
@@ -441,7 +381,7 @@
         { "distance": 6, "type": "m" },
         { "distance": 6, "type": "pe" },
         { "distance": 6, "type": "t" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 8, "type": "k" },
         { "distance": 16, "type": "pi" }
       ],
@@ -450,7 +390,7 @@
         { "distance": 4, "type": "t" },
         { "distance": 5, "type": "pe" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 6, "type": "pa" },
         { "distance": 12, "type": "pi" }
       ],
@@ -458,30 +398,12 @@
         { "distance": 6, "type": "pa" },
         { "distance": 0.4, "type": "iv", "repeat": 4 },
         { "distance": 4, "type": "pe" },
-        { "distance": 0, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 4, "type": "pa" },
         { "distance": 42.2, "type": "r" }
       ]
     ]
-  },
-  {
-    "id": "tossu_2018_4_400",
-    "name": "4vk väliohjelma | 4:00t tavoiteaika",
-    "targetTime": 240,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_4_500",
-    "name": "4vk väliohjelma | 5:00t tavoiteaika",
-    "targetTime": 300,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_2_300",
-    "name": "2vk väliohjelma | 3:00t tavoiteaika",
-    "targetTime": 180,
-    "weeks": []
   },
   {
     "id": "tossu_2018_2_330",
@@ -489,35 +411,23 @@
     "targetTime": 210,
     "weeks": [
       [
-        { "distance": 0, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 5, "type": "pa" },
         { "distance": 6, "type": "k" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 6, "type": "pa" },
         { "distance": 12, "type": "pi" }
       ],
       [
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 0.4, "type": "iv", "repeat": 3 },
         { "distance": 4, "type": "pe" },
-        { "distance": 5, "type": "lepo" },
-        { "distance": 0, "type": "lepo" },
+        { "type": "lepo" },
+        { "type": "lepo" },
         { "distance": 4, "type": "pa" },
         { "distance": 42.2, "type": "r" }
       ]
     ]
-  },
-  {
-    "id": "tossu_2018_2_400",
-    "name": "2vk väliohjelma | 4:00t tavoiteaika",
-    "targetTime": 240,
-    "weeks": []
-  },
-  {
-    "id": "tossu_2018_2_500",
-    "name": "2vk väliohjelma | 5:00t tavoiteaika",
-    "targetTime": 300,
-    "weeks": []
   }
 ]
