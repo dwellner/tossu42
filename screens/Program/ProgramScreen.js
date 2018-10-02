@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import {
   ScrollView,
   StyleSheet,
@@ -14,20 +16,10 @@ import ProgressBar from "react-native-progress/Bar";
 import Colors from "../../constants/Colors";
 import Texts from "../../constants/Texts";
 
-export default class HomeScreen extends React.Component {
+class ProgramScreen extends React.Component {
   static navigationOptions = {
     header: null
   };
-
-  constructor(props) {
-    super(props);
-
-    const date = new Date().toISOString().substr(0, 10);
-    const targetEvent = { name: "Helsinki City Maraton", date: "2018-10-30" };
-    const weekProgram = ProgramModel.getWeekProgram(targetEvent.date);
-    const targetTime = weekProgram.targetTime;
-    this.state = { targetTime, date, targetEvent, weekProgram };
-  }
 
   createLevelBar(key, value, filled, empty) {
     return (
@@ -64,7 +56,7 @@ export default class HomeScreen extends React.Component {
   }
 
   createRaceInfo() {
-    const { targetEvent } = this.state;
+    const { targetEvent } = this.props;
 
     return (
       <View style={{ flex: 1, flexDirection: "row" }}>
@@ -77,8 +69,7 @@ export default class HomeScreen extends React.Component {
     );
   }
 
-  createWeekComponent(week, index) {
-    const { weekProgram } = this.state;
+  createWeekComponent(week, index, weekProgram) {
     const weekNumber = weekProgram.weeks.length - index;
     const { navigate } = this.props.navigation;
 
@@ -130,10 +121,10 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { weekProgram } = this.state;
+    const { targetEvent, weekProgram } = this.props;
 
     const weeks = weekProgram.weeks.map((week, index) =>
-      this.createWeekComponent(week, index)
+      this.createWeekComponent(week, index, weekProgram)
     );
 
     const listHeader = this.createListHeader();
@@ -205,3 +196,11 @@ const styles = StyleSheet.create({
     textAlign: "right"
   }
 });
+
+const mapStateToProps = state => {
+  const { targetEvent, targetTime, programId } = state.settings;
+  const weekProgram = ProgramModel.getWeekProgram(targetEvent.date, programId);
+  return { targetEvent, targetTime, weekProgram };
+};
+
+export default connect(mapStateToProps)(ProgramScreen);

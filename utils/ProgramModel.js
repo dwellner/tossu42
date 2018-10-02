@@ -1,9 +1,6 @@
 import DateUtils from "./DateUtils";
 import ProgramService from "../data/ProgramService";
 
-// TODO: select program in settings, maybe even adapt to target format
-const selectedProgram = ProgramService.getAll()[5];
-
 const getDayDistance = day => {
   if (day.type === "iv") return day.distance * day.repeat + 5;
   if (day.type === "lepo") return 0;
@@ -26,22 +23,23 @@ const getIntensity = week =>
     .reduce((a, b) => a + b);
 
 export default {
-  getWeekProgram: date => {
-    const programLength = selectedProgram.weeks
+  getWeekProgram: (date,programId) => {
+    const program = ProgramService.getById(programId);
+    const programLength = program.weeks
       .map(week => week.length)
       .reduce((a, b) => a + b, 0);
     const firstDate = DateUtils.nextDate(date, programLength * -1);
     let i = 0;
 
-    const maxWeekDistance = selectedProgram.weeks
+    const maxWeekDistance = program.weeks
       .map(getWeekDistance)
       .reduce((a, b) => Math.max(a, b), 0);
 
-    const maxIntensity = selectedProgram.weeks
+    const maxIntensity = program.weeks
       .map(getIntensity)
       .reduce((max, w) => Math.max(max, w), 0);
 
-    const weeks = selectedProgram.weeks.map(week => {
+    const weeks = program.weeks.map(week => {
       distance = getWeekDistance(week);
       return {
         distance,
@@ -53,9 +51,8 @@ export default {
         }))
       };
     });
-
     return {
-      targetTime: selectedProgram.targetTime,
+      targetTime: program.targetTime,
       weeks
     };
   }

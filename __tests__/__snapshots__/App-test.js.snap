@@ -263,7 +263,7 @@ exports[`App snapshot renders the root without loading screen 1`] = `
                                 }
                               }
                             >
-                              Maanantai 1.10.
+                              Tiistai 2.10.
                             </Text>
                           </View>
                           <View
@@ -353,7 +353,7 @@ exports[`App snapshot renders the root without loading screen 1`] = `
                                 }
                               }
                             >
-                              28
+                              27
                             </Text>
                             <Text
                               accessible={true}

@@ -1,51 +1,28 @@
 import React from "react";
+import { connect } from "react-redux";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Dropdown } from "react-native-material-dropdown";
 import { TextField } from "react-native-material-textfield";
+
+import {
+  targetEventNameChanged,
+  targetEventDateChanged,
+  maxHrChanged,
+  targetTimeChanged,
+  programIdChanged
+} from "../../Actions";
 import Formatters from "../../utils/Formatters";
 import EventDatePicker from "./EventDatePicker";
 import ProgramService from "../../data/ProgramService";
 import Texts from "../../constants/Texts";
 
-const targetTimes = [180, 195, 210, 225, 240, 255, 270, 285, 300];
-const heartRates = Array(81)
-  .fill()
-  .map((_, i) => 220 - i);
-
-export default class SettingsScreen extends React.Component {
+class SettingsScreen extends React.Component {
   static navigationOptions = {
     header: null
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      // TODO: remove this default, handle unnamed event
-      eventName: "Helsinki City Maraton",
-      eventDate: new Date().toISOString().substr(0, 10), // TODO: remove default, handle undefined
-      targetTime: 240,
-      programId: "tossu_2018_24_400",
-      heartRate: undefined
-    };
-  }
-
-  onChangeTargetTime(newTargetTime) {
-    const { programId } = this.state;
-    const validPrograms = ProgramService.getProgramsByTargetTime(
-      newTargetTime
-    ).map(p => p.id);
-    const newProgramId =
-      validPrograms.indexOf(programId) >= 0
-        ? programId
-        : ProgramService.getBestMatch(newTargetTime).id;
-    this.setState(() => ({
-      targetTime: newTargetTime,
-      programId: newProgramId
-    }));
-  }
-
   createTargetEventSection() {
-    const { eventName, eventDate } = this.state;
+    const { eventName, eventDate } = this.props;
 
     return (
       <View key="target" style={styles.section}>
@@ -60,18 +37,28 @@ export default class SettingsScreen extends React.Component {
           label={Texts.labels.eventName}
           maxLength={30}
           value={eventName}
-          onChangeText={v => this.setState({ eventName: v })}
+          onChangeText={this.props.onEventNameChanged}
         />
         <EventDatePicker
           value={eventDate}
-          onChange={date => this.setState({ eventDate: date })}
+          onChange={this.props.onEventDateChanged}
         />
       </View>
     );
   }
 
   createProgramSection() {
-    const { targetTime, programId } = this.state;
+    const targetTimes = [180, 195, 210, 225, 240, 255, 270, 285, 300].map(
+      v => ({
+        value: v,
+        label: Formatters.minutesToTimeLabel(v)
+      })
+    );
+
+    let {  } = this.props;
+
+    const { targetTime, programId } = this.props;
+
     return (
       <View key="program" style={styles.section}>
         <Text style={styles.sectionHeader}>
@@ -83,12 +70,9 @@ export default class SettingsScreen extends React.Component {
 
         <Dropdown
           label={Texts.labels.targetTime}
-          data={targetTimes.map(v => ({
-            value: v,
-            label: Formatters.minutesToTimeLabel(v)
-          }))}
+          data={targetTimes}
           value={targetTime}
-          onChangeText={v => this.onChangeTargetTime(v)}
+          onChangeText={this.props.onTargetTimeChanged}
         />
 
         <Dropdown
@@ -97,14 +81,18 @@ export default class SettingsScreen extends React.Component {
           value={programId}
           labelExtractor={p => p.name}
           valueExtractor={p => p.id}
-          onChangeText={p => this.setState({ program: p.programId })}
+          onChangeText={this.props.onProgramIdChanged}
         />
       </View>
     );
   }
 
   createMetadataSection() {
-    const { heartRate } = this.state;
+    const heartRates = Array(81)
+      .fill()
+      .map((_, i) => ({ value: 220 - i }));
+
+    const { maxHr } = this.props;
 
     return (
       <View key="meta" style={styles.section}>
@@ -116,9 +104,9 @@ export default class SettingsScreen extends React.Component {
         </Text>
         <Dropdown
           label={Texts.labels.maxHeartRate}
-          data={heartRates.map(r => ({ value: r }))}
-          value={heartRate}
-          onChangeText={v => this.setState({ heartRate: v })}
+          data={heartRates}
+          value={maxHr}
+          onChangeText={this.props.onMaxHrChanged}
         />
       </View>
     );
@@ -136,7 +124,7 @@ export default class SettingsScreen extends React.Component {
     const sections = this.createSections();
     return (
       <ScrollView style={styles.container}>
-        <View style={{flex: 1}}>{sections}</View>
+        <View style={{ flex: 1 }}>{sections}</View>
       </ScrollView>
     );
   }
@@ -146,7 +134,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 8,
-    paddingTop: 50 
+    paddingTop: 50
   },
 
   section: {
@@ -161,3 +149,23 @@ const styles = StyleSheet.create({
     color: "#777"
   }
 });
+
+const mapStateToProps = state => {
+  const { name, date } = state.settings.targetEvent;
+  const { maxHr, targetTime, programId } = state.settings;
+  return { eventName: name, eventDate: date, targetTime, programId, maxHr };
+};
+
+const mapDispatchToProps = dispatch => ({
+  onEventNameChanged: name => dispatch(targetEventNameChanged(name)),
+  onEventDateChanged: date => dispatch(targetEventDateChanged(date)),
+  onMaxHrChanged: hr => dispatch(maxHrChanged(hr)),
+  onTargetTimeChanged: time => dispatch(targetTimeChanged(time)),
+  onProgramIdChanged: id => dispatch(programIdChanged(id))
+
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SettingsScreen);
