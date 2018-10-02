@@ -7,6 +7,43 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import Colors from "../../constants/Colors";
 import Styles from "../../constants/Styles";
 
+NoDayProgram = ({ weekProgram }) => {
+  const firstDate = Formatters.dateToDateLabel(
+    weekProgram.weeks[0].days[0].date
+  );
+  const lastDate = Formatters.dateToDateLabel(
+    weekProgram.weeks.slice(-1)[0].days.slice(-1)[0].date
+  );
+
+  return (
+    <View style={styles.goalContainer}>
+      <Text style={{ ...Styles.defaultContent, textAlign: "center" }}>
+        {Texts.labels.programSetFor} {firstDate} - {lastDate}
+      </Text>
+    </View>
+  );
+};
+
+const TargetEvent = ({ eventName }) => (
+  <View style={styles.goalContainer}>
+    <Text style={styles.text_targetName}>{eventName}</Text>
+  </View>
+);
+
+const DaysUntilTargetEvent = ({ targetEvent, daysUntil }) => (
+  <View style={styles.goalContainer}>
+    <View style={{ flex: 1, flexDirection: "row" }}>
+      <Text style={styles.text_days_until}>{daysUntil}</Text>
+      <Text style={styles.text_label}>
+        {daysUntil > 1 ? Texts.labels.daysUntil : Texts.labels.dayUntil}
+      </Text>
+    </View>
+    <Text style={styles.text_targetName}>
+      {targetEvent.name} - {Formatters.dateToDateLabel(targetEvent.date)}
+    </Text>
+  </View>
+);
+
 export default class DayHeaderComponent extends React.Component {
   static propTypes = {
     weekProgram: PropTypes.object.isRequired,
@@ -15,60 +52,21 @@ export default class DayHeaderComponent extends React.Component {
     changeDate: PropTypes.func.isRequired
   };
 
-  createNoProgramComponent() {
-    const { weekProgram } = this.props;
-    const firstDate = Formatters.dateToDateLabel(
-      weekProgram.weeks[0].days[0].date
-    );
-    const lastDate = Formatters.dateToDateLabel(
-      weekProgram.weeks.slice(-1)[0].days.slice(-1)[0].date
-    );
-
-    return (
-      <View style={styles.goalContainer}>
-         <Text style={{ ...Styles.defaultContent, textAlign: "center" }}>
-          {Texts.labels.programSetFor} {firstDate} - {lastDate}
-        </Text>
-      </View>
-    );
-  }
-
-  getTargetComponent() {
-    const { date, targetEvent } = this.props;
-
-    const daysUntil = DateUtils.difference(targetEvent.date, date) - 1;
-    const eventName = targetEvent.name;
-    if (daysUntil < 0) return this.createNoProgramComponent();
-
-    if (daysUntil > 0)
-      return (
-        <View style={styles.goalContainer}>
-          <View style={{ flex: 1, flexDirection: "row" }}>
-            <Text style={styles.text_days_until}>{daysUntil}</Text>
-            <Text style={styles.text_label}>
-              {daysUntil > 1 ? Texts.labels.daysUntil : Texts.labels.dayUntil}
-            </Text>
-          </View>
-          <Text style={styles.text_targetName}>
-            {eventName} - {Formatters.dateToDateLabel(targetEvent.date)}
-          </Text>
-        </View>
-      );
-
-    return (
-      <View style={styles.goalContainer}>
-        <Text style={styles.text_targetName}>{eventName}</Text>
-      </View>
-    );
-  }
-
   render() {
-    const { date, changeDate } = this.props;
+    const { date, weekProgram, changeDate, targetEvent } = this.props;
+    const daysUntil = DateUtils.difference(targetEvent.date, date) - 1;
 
     const prevWeek = () => changeDate(DateUtils.nextDate(date, -7));
     const nextWeek = () => changeDate(DateUtils.nextDate(date, 7));
 
-    const targetComponent = this.getTargetComponent();
+    const targetComponent =
+      daysUntil < 0 ? (
+        <NoDayProgram weekProgram={weekProgram} />
+      ) : daysUntil > 0 ? (
+        <DaysUntilTargetEvent targetEvent={targetEvent} daysUntil={daysUntil} />
+      ) : (
+        <TargetEvent eventName={targetEvent.name} />
+      );
 
     return (
       <View style={styles.component}>
@@ -97,7 +95,7 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     flex: 1,
     alignItems: "center",
-    alignItems: "stretch",
+    alignItems: "stretch"
   },
 
   goalContainer: {
@@ -111,10 +109,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   text_date: { ...Styles.defaultContent, fontSize: 24 },
-  
+
   text_label: {
     ...Styles.defaultContent,
     marginLeft: 4
   },
-  text_targetName: { ...Styles.defaultContent  }
+  text_targetName: { ...Styles.defaultContent }
 });

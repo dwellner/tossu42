@@ -8,6 +8,21 @@ import Colors from "../../constants/Colors";
 import Texts from "../../constants/Texts";
 import Styles from "../../constants/Styles";
 
+const LevelBar = ({ label, level, textValue, fillColor, emptyColor }) => (
+  <View style={styles.levelContainer}>
+    <Text style={styles.text_label}>{label}</Text>
+    <ProgressBar
+      progress={level}
+      height={8}
+      color={fillColor}
+      unfilledColor={emptyColor}
+      borderColor={Colors.barBorder}
+      borderWidth={1}
+    />
+    <Text style={styles.text_value}>{textValue}</Text>
+  </View>
+);
+
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {
     week: PropTypes.object.isRequired,
@@ -15,27 +30,10 @@ export default class WeekSummaryComponent extends React.Component {
     changeDate: PropTypes.func.isRequired
   };
 
-  createLevelComponent(label, level, textValue, fillColor, emptyColor) {
-    return (
-      <View style={styles.levelContainer}>
-        <Text style={styles.text_label}>{label}</Text>
-        <ProgressBar
-          progress={level}
-          height={8}
-          color={fillColor}
-          unfilledColor={emptyColor}
-          borderColor={Colors.barBorder}
-          borderWidth={1}
-        />
-        <Text style={styles.text_value}>{textValue}</Text>
-      </View>
-    );
-  }
+  render() {
+    const { week, date, changeDate } = this.props;
 
-  createDayComponent(day) {
-    const { date, changeDate } = this.props;
-
-    return (
+    const dayComponents = week.days.map(day => (
       <TouchableOpacity
         style={styles.dayComponentContainer}
         onPress={() => changeDate(day.date)}
@@ -43,36 +41,26 @@ export default class WeekSummaryComponent extends React.Component {
       >
         <WeekSummaryDayComponent day={day} selected={day.date === date} />
       </TouchableOpacity>
-    );
-  }
-
-  render() {
-    const { week } = this.props;
-
-    const distanceLevel = this.createLevelComponent(
-      Texts.labels.totalDistance,
-      week.distanceLevel,
-      `${week.distance.toFixed(0)} km`,
-      Colors.distanceFilled,
-      Colors.distanceEmpty
-    );
-
-    const intensityLevel = this.createLevelComponent(
-      Texts.labels.intensity,
-      week.intensityLevel,
-      (week.intensityLevel * 5).toFixed(1),
-      Colors.intensityFilled,
-      Colors.intensityEmpty
-    );
-
-    const dayComponents = week.days.map(day => this.createDayComponent(day));
+    ));
 
     return (
       <View style={styles.component}>
         <Text style={styles.text_label}>{Texts.labels.weekProgram}</Text>
         <View style={{ flex: 1, flexDirection: "row" }}>
-          {distanceLevel}
-          {intensityLevel}
+          <LevelBar
+            label={Texts.labels.totalDistance}
+            level={week.distanceLevel}
+            textValue={`${week.distance.toFixed(0)} km`}
+            fillColor={Colors.distanceFilled}
+            emptyColor={Colors.distanceEmpty}
+          />
+          <LevelBar
+            label={Texts.labels.intensity}
+            level={week.intensityLevel}
+            textValue={(week.intensityLevel * 5).toFixed(1)}
+            fillColor={Colors.intensityFilled}
+            emptyColor={Colors.intensityEmpty}
+          />
         </View>
         <View style={{ flex: 1, flexDirection: "row" }}>{dayComponents}</View>
       </View>

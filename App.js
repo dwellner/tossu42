@@ -1,17 +1,25 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { createStore, combineReducers } from "redux";
+import { createStore } from "redux";
+import { persistStore, persistCombineReducers } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
+import { PersistGate } from "redux-persist/lib/integration/react";
 import { AppLoading, Asset, Font, Icon } from "expo";
 import settingsReducer from "./reducers/SettingsReducer";
 import AppNavigator from "./navigation/AppNavigator";
 
-const rootReducer = combineReducers({
+const persistanceConfig = {
+  key: "root",
+  storage
+};
+
+const rootReducer = persistCombineReducers(persistanceConfig, {
   settings: settingsReducer
 });
 
-// TODO: store initial state should be loaded from persistance
 const store = createStore(rootReducer);
+const persistor = persistStore(store);
 
 export default class App extends React.Component {
   state = {
@@ -30,10 +38,12 @@ export default class App extends React.Component {
     } else {
       return (
         <Provider store={store}>
-          <View style={styles.container}>
-            {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-            <AppNavigator />
-          </View>
+          <PersistGate loading={null} persistor={persistor}>
+            <View style={styles.container}>
+              {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+              <AppNavigator />
+            </View>
+          </PersistGate>
         </Provider>
       );
     }
