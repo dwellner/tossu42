@@ -4,7 +4,6 @@ import { createStore } from "redux";
 import { persistStore, persistCombineReducers } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import { PersistGate } from "redux-persist/lib/integration/react";
 import { AppLoading, Asset, Font, Icon } from "expo";
 import settingsReducer from "./reducers/SettingsReducer";
 import AppNavigator from "./navigation/AppNavigator";
@@ -19,15 +18,23 @@ const rootReducer = persistCombineReducers(persistanceConfig, {
 });
 
 const store = createStore(rootReducer);
-const persistor = persistStore(store);
 
 export default class App extends React.Component {
+  persistor = persistStore(store, {}, () =>
+    this.setState({ isStoreHydrated: true })
+  );
+
   state = {
+    isStoreHydrated: false,
     isLoadingComplete: false
   };
 
   render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+    if (
+      !this.state.isLoadingComplete &&
+      !this.state.isStoreHydrated &&
+      !this.props.skipLoadingScreen
+    ) {
       return (
         <AppLoading
           startAsync={this._loadResourcesAsync}
@@ -38,12 +45,10 @@ export default class App extends React.Component {
     } else {
       return (
         <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <View style={styles.container}>
-              {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-              <AppNavigator />
-            </View>
-          </PersistGate>
+          <View style={styles.container}>
+            {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+            <AppNavigator />
+          </View>
         </Provider>
       );
     }

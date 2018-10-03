@@ -2,7 +2,7 @@ import Joi from "joi";
 
 const typeSchema = Joi.string()
   .required()
-  .valid("pi", "r", "pa", "t", "k", "m", "iv", "lepo", "pe");
+  .valid("pi", "r", "pa", "t", "k", "m", "iv", "lepo", "pe", "ve");
 
 const daySchema = Joi.object().keys({
   type: typeSchema,
@@ -52,4 +52,10 @@ describe("Program schema should be valid for", () => {
     const programs = require("../programs_330.json");
     programs.forEach(p => Joi.assert(p, programSchema));
   });
+
+  it("4:00 programs", () => {
+    const programs = require("../programs_400.json");
+    programs.forEach(p => Joi.assert(p, programSchema));
+  });
+
 });

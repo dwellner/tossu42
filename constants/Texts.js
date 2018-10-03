@@ -45,7 +45,8 @@ export default {
     lepo: "Lepo",
     k: "Kilpavauhti",
     m: "Mäkivedot",
-    r: "Maraton"
+    r: "Maraton",
+    ve: "Verryttely"
   },
   runTypesShort: {
     iv: "IV",

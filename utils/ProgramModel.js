@@ -13,12 +13,14 @@ const getWeekDistance = week =>
 const getIntensity = week =>
   week
     .map(day => {
-      if (day.type === "iv") return 2.5 * getDayDistance(day);
+      const distance = getDayDistance(day);
+      if (day.type === "iv") return 2.5 * distance;
       if (day.type === "m" || day.type === "r" || day.type === "t")
-        return 2 * getDayDistance(day);
+        return 2 * distance;
       if (day.type === "k" || day.type === "pi" || day.type === "pe")
-        return 1.5 * getDayDistance(day);
-      return getDayDistance(day);
+        return 1.5 * distance;
+      if (day.type === "ve") return 0.5 * distance; 
+      return distance;
     })
     .reduce((a, b) => a + b);
 
