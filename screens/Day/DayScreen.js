@@ -5,6 +5,7 @@ import DayComponent from "./DayComponent";
 import { ScrollView, StyleSheet, View, ImageBackground } from "react-native";
 import DayHeaderComponent from "./DayHeaderComponent";
 import ProgramModel from "../../utils/ProgramModel";
+import DateUtils from "../../utils/DateUtils";
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -16,10 +17,7 @@ class HomeScreen extends React.Component {
   }
 
   render() {
-    const date = this.props.navigation.getParam(
-      "date",
-      new Date().toISOString().substr(0, 10)
-    );
+    const date = this.props.navigation.getParam("date", DateUtils.currentDate);
 
     const { targetEvent, targetTime, maxHr, weekProgram } = this.props;
 

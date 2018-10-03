@@ -9,18 +9,16 @@ export const targetEventDateChanged = date => ({
 });
 
 export const maxHrChanged = hr => ({
-    type: "MAX_HR_CHANGED",
-    hr
-  });
+  type: "MAX_HR_CHANGED",
+  hr
+});
 
-  export const targetTimeChanged = time => ({
-    type: "TARGET_TIME_CHANGED",
-    time
-  });
+export const targetTimeChanged = time => ({
+  type: "TARGET_TIME_CHANGED",
+  time
+});
 
-  export const programIdChanged = id => ({
-    type: "PROGRAM_ID_CHANGED",
-    id
-  });
-
-  
+export const programIdChanged = id => ({
+  type: "PROGRAM_ID_CHANGED",
+  id
+});

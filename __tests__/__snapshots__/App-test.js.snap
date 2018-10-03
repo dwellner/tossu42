@@ -263,7 +263,7 @@ exports[`App snapshot renders the root without loading screen 1`] = `
                                 }
                               }
                             >
-                              Keskiviikko 3.10.
+                              Maanantai 1.10.
                             </Text>
                           </View>
                           <View
@@ -353,7 +353,7 @@ exports[`App snapshot renders the root without loading screen 1`] = `
                                 }
                               }
                             >
-                              26
+                              28
                             </Text>
                             <Text
                               accessible={true}

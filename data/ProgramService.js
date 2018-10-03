@@ -13,8 +13,8 @@ const allPrograms = [].concat(
 // TODO: also consider time range
 const getBestMatch = targetTime =>
   allPrograms
-    .map(p => ({ id: p.id, diff: Math.abs(p.targetTime - targetTime) }))
-    .reduce((a, b) => (a.diff < b.diff ? a : b));
+    .map(p => ({ program: p, diff: Math.abs(p.targetTime - targetTime) }))
+    .reduce((a, b) => (a.diff <= b.diff ? a : b)).program;
 
 /** returns programs which targetTime is within 30 mins of provedided target time */
 const getProgramsByTargetTime = targetTime =>

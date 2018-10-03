@@ -12,9 +12,9 @@ describe("ProgramService", () => {
   });
 
   it("getBestMatch should return first match closest to given targetTime", () => {
-    expect(ProgramService.getBestMatch(310).id).toEqual("tossu_2018_2_500");
-    expect(ProgramService.getBestMatch(270).id).toEqual("tossu_2018_2_500");
-    expect(ProgramService.getBestMatch(269).id).toEqual("tossu_2018_2_400");
+    expect(ProgramService.getBestMatch(310).id).toEqual("tossu_2018_24_500");
+    expect(ProgramService.getBestMatch(270).id).toEqual("tossu_2018_24_400");
+    expect(ProgramService.getBestMatch(269).id).toEqual("tossu_2018_24_400");
   });
 
   it("getProgramsByTargetTime should return programs within 30 mins from target time", () => {
