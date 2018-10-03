@@ -3,6 +3,7 @@
     "id": "tossu_2018_24_330",
     "name": "24vk valmistava ohjelma | 3:30t tavoiteaika",
     "targetTime": 210,
+    "stretchRules": { "minWeeks": 18, "maxWeeks": 40, "repeat": 3 },
     "weeks": [
       [
         { "distance": 6, "type": "pa" },

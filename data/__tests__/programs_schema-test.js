@@ -3,7 +3,6 @@ import Joi from "joi";
 const typeSchema = Joi.string()
   .required()
   .valid("pi", "r", "pa", "t", "k", "m", "iv", "lepo", "pe", "ve");
-
 const daySchema = Joi.object().keys({
   type: typeSchema,
   distance: Joi.when("type", {
@@ -30,6 +29,24 @@ const weekSchema = Joi.array()
   .min(7)
   .max(7);
 
+const stretchRuleSchema = Joi.object().keys({
+  minWeeks: Joi.number()
+    .integer()
+    .min(0)
+    .max(52)
+    .required(),
+  maxWeeks: Joi.number()
+    .integer()
+    .min(0)
+    .max(52)
+    .required(),
+  repeat: Joi.number()
+    .integer()
+    .min(0)
+    .max(52)
+    .required()
+});
+
 const programSchema = Joi.object().keys({
   id: Joi.string()
     .min(4)
@@ -41,6 +58,7 @@ const programSchema = Joi.object().keys({
     .integer()
     .min(120)
     .max(300),
+  stretchRules: stretchRuleSchema.optional(),
   weeks: Joi.array()
     .items(weekSchema)
     .min(2)
@@ -57,5 +75,4 @@ describe("Program schema should be valid for", () => {
     const programs = require("../programs_400.json");
     programs.forEach(p => Joi.assert(p, programSchema));
   });
-
 });

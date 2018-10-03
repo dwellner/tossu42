@@ -19,7 +19,7 @@ const getBestMatch = targetTime =>
 /** returns programs which targetTime is within 30 mins of provedided target time */
 const getProgramsByTargetTime = targetTime =>
 allPrograms.filter(
-    p => p.targetTime >= targetTime - 30 && p.targetTime <= targetTime + 30
+    p => p.targetTime >= targetTime - 20 && p.targetTime <= targetTime + 20
   );
 
 export default {

@@ -59,6 +59,7 @@ export default {
     lepo: "Lepo",
     k: "Kilpa",
     m: "Mäki",
-    r: "Kilpailu"
+    r: "Kilpailu",
+    ve: "Verryttely"
   }
 };
