@@ -3,6 +3,8 @@ export default {
     ivLeg: "Veto",
     takeItEasy: "Ota iisisti 😌",
     goGirl: "💪 Anna palaa",
+    lightExercise: "Kevyt liikunta tai kuntosali",
+    race: "Fiiliksen mukaan kohti 🏁",
     dayProgram: "Päivän ohjelma",
     weekProgram: "Viikon ohjelma",
     daysUntil: "päivää ennen",

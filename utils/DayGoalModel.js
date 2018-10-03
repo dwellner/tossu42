@@ -1,34 +1,40 @@
 import Texts from "../constants/Texts";
 
-const getPace = nr => {
-  const hours = Math.trunc(nr);
-  const minutes = `${Math.round((nr * 60) % 60)}`.padStart(2, "0");
-  return `${hours}:${minutes}`;
+const getPaceGoal = targetTime => {
+  const getPace = pct => {
+    const pace = (targetTime / 42.2) * pct;
+    const hours = Math.trunc(pace);
+    const minutes = `${Math.round((pace * 60) % 60)}`.padStart(2, "0");
+    return `${hours}:${minutes}`;
+  };
+  return `⏱  ${getPace(0.95)} - ${getPace(1.05)}`;
+};
+
+const getHeartRateGoal = (maxHr, low, high) => {
+  const getHrPct = pct => Math.round(maxHr * pct);
+  return `❤ ${getHrPct(low)} - ${getHrPct(high)} bpm`;
 };
 
 const getTargetMetricsGoals = (day, maxHr, targetTime) => {
-  const getHrPct = pct => Math.round(maxHr * pct);
   switch (day.type) {
     case "pa":
-      return `❤ ${getHrPct(0.55)} - ${getHrPct(0.7)} bpm`;
+      return getHeartRateGoal(maxHr, 0.55, 0.7);
     case "pi":
-      return `❤ ${getHrPct(0.55) - 5} - ${getHrPct(0.75) - 5} bpm`;
+      return getHeartRateGoal(maxHr, 0.55, 0.72);
     case "pe":
-      return `❤ ${getHrPct(0.55)} - ${getHrPct(0.75)} bpm`;
+      return getHeartRateGoal(maxHr, 0.6, 0.75);
     case "t":
-      return `❤ ${getHrPct(0.75)} - ${getHrPct(0.9)} bpm`;
+      return getHeartRateGoal(maxHr, 0.75, 0.9);
     case "iv":
-      return `${Texts.labels.ivLeg} ❤ ${getHrPct(0.9)} - ${getHrPct(1)} bpm`;
+      return `${Texts.labels.ivLeg} ${getHeartRateGoal(maxHr, 0.75, 0.9)}`;
+    case "k":
+      return getPaceGoal(targetTime);
     case "m":
       return Texts.labels.goGirl;
-    case "k":
-      return `⏱  ${getPace((targetTime / 42.2) * 0.9)} - ${getPace(
-        targetTime / 42.2
-      )}`;
     case "r":
-      return "🏁🏁🏁 GO! 🏁🏁🏁";
+      return Texts.labels.race;
     case "ve":
-      return "Kevyt liikunta tai kuntosali";
+      return Texts.labels.lightExercise;
     default:
       return Texts.labels.takeItEasy;
   }
