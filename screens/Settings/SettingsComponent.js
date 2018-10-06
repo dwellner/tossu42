@@ -34,34 +34,71 @@ const targetTimes = [180, 195, 210, 225, 240, 255, 270, 285, 300].map(v => ({
 const ProgramSection = ({
   targetTime,
   onTargetTimeChanged,
-  programId,
-  onProgramIdChanged
-}) => (
-  <View key="program" style={styles.section}>
-    <Text style={styles.sectionHeader}>
-      {Texts.labels.settingsProgramHeader}
-    </Text>
-    <Text style={styles.sectionSubHeader}>
-      {Texts.labels.settingsProgramSubHeader}
-    </Text>
+  programName,
+  onProgramNameChanged,
+  programLength,
+  onProgramLengthChanged
+}) => {
+  const unique = arr => [...new Set(arr)];
 
-    <Dropdown
-      label={Texts.labels.targetTime}
-      data={targetTimes}
-      value={targetTime}
-      onChangeText={onTargetTimeChanged}
-    />
+  const range = (min, max) =>
+    Array(max - min)
+      .fill()
+      .map((_, i) => i + min);
 
-    <Dropdown
-      label={Texts.labels.program}
-      data={ProgramService.getProgramsByTargetTime(targetTime)}
-      value={programId}
-      labelExtractor={p => p.name}
-      valueExtractor={p => p.id}
-      onChangeText={onProgramIdChanged}
-    />
-  </View>
-);
+  const programNames = unique(
+    ProgramService.getPrograms(targetTime).map(p => p.name)
+  ).map(name => ({
+    value: name
+  }));
+
+  const getValidProgramLengths = p =>
+    p.stretchRules !== undefined
+      ? range(p.stretchRules.minWeeks, p.stretchRules.maxWeeks + 1)
+      : [p.weeks.length];
+
+  const programLengths = unique(
+    ProgramService.getPrograms(targetTime, programName).map(
+      getValidProgramLengths
+    )
+  )
+    .reduce((a, b) => a.concat(b), [])
+    .map(length => ({
+      value: length,
+      label: `${length} viikkoa`
+    }));
+  return (
+    <View key="program" style={styles.section}>
+      <Text style={styles.sectionHeader}>
+        {Texts.labels.settingsProgramHeader}
+      </Text>
+      <Text style={styles.sectionSubHeader}>
+        {Texts.labels.settingsProgramSubHeader}
+      </Text>
+
+      <Dropdown
+        label={Texts.labels.targetTime}
+        data={targetTimes}
+        value={targetTime}
+        onChangeText={onTargetTimeChanged}
+      />
+
+      <Dropdown
+        label={Texts.labels.program}
+        data={programNames}
+        value={programName}
+        onChangeText={onProgramNameChanged}
+      />
+
+      <Dropdown
+        label={"Ohjelman kesto"}
+        data={programLengths}
+        value={programLength}
+        onChangeText={onProgramLengthChanged}
+      />
+    </View>
+  );
+};
 
 const heartRates = Array(81)
   .fill()
@@ -93,8 +130,11 @@ export default class SettingsScreen extends React.Component {
     targetTime: PropTypes.number.isRequired,
     onTargetTimeChanged: PropTypes.func.isRequired,
 
-    programId: PropTypes.string.isRequired,
-    onProgramIdChanged: PropTypes.func.isRequired,
+    programName: PropTypes.string.isRequired,
+    onProgramNameChanged: PropTypes.func.isRequired,
+
+    programLength: PropTypes.number.isRequired,
+    onProgramLengthChanged: PropTypes.func.isRequired,
 
     maxHr: PropTypes.number.isRequired,
     onMaxHrChanged: PropTypes.func.isRequired
@@ -112,8 +152,10 @@ export default class SettingsScreen extends React.Component {
         <ProgramSection
           targetTime={this.props.targetTime}
           onTargetTimeChanged={this.props.onTargetTimeChanged}
-          programId={this.props.programId}
-          onProgramIdChanged={this.props.onProgramIdChanged}
+          programName={this.props.programName}
+          onProgramNameChanged={this.props.onProgramNameChanged}
+          programLength={this.props.programLength}
+          onProgramLengthChanged={this.props.onProgramLengthChanged}
         />
         <MetadataSection
           maxHr={this.props.maxHr}

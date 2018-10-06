@@ -59,6 +59,8 @@ export default class DayHeaderComponent extends React.Component {
     const prevWeek = () => changeDate(DateUtils.nextDate(date, -7));
     const nextWeek = () => changeDate(DateUtils.nextDate(date, 7));
 
+    if (weekProgram === undefined) return <Text>No program</Text>; // TODO
+
     const targetComponent =
       daysUntil < 0 ? (
         <NoDayProgram weekProgram={weekProgram} />

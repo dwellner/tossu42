@@ -1,7 +1,6 @@
 [
   {
-    "id": "tossu_2018_24_330",
-    "name": "24vk valmistava ohjelma | 3:30t tavoiteaika",
+    "name": "Tossu.com 3.5 tunnin täysohjelma",
     "targetTime": 210,
     "stretchRules": { "minWeeks": 18, "maxWeeks": 40, "repeat": 3 },
     "weeks": [
@@ -224,8 +223,7 @@
     ]
   },
   {
-    "id": "tossu_2018_8_330",
-    "name": "8vk väliohjelma | 3:30t tavoiteaika",
+    "name": "Tossu.com 3.5 tunnin väliohjelma",
     "targetTime": 210,
     "weeks": [
       [
@@ -303,8 +301,7 @@
     ]
   },
   {
-    "id": "tossu_2018_6_330",
-    "name": "6vk väliohjelma | 3:30t tavoiteaika",
+    "name": "Tossu.com 3.5 tunnin väliohjelma",
     "targetTime": 210,
     "weeks": [
       [
@@ -364,8 +361,7 @@
     ]
   },
   {
-    "id": "tossu_2018_4_330",
-    "name": "4vk väliohjelma | 3:30t tavoiteaika",
+    "name": "Tossu.com 3.5 tunnin väliohjelma",
     "targetTime": 210,
     "weeks": [
       [
@@ -407,8 +403,7 @@
     ]
   },
   {
-    "id": "tossu_2018_2_330",
-    "name": "2vk väliohjelma | 3:30t tavoiteaika",
+    "name": "Tossu.com 3.5 tunnin väliohjelma",
     "targetTime": 210,
     "weeks": [
       [

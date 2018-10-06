@@ -1,53 +1,29 @@
 import { combineReducers } from "redux";
-import ProgramService from "../data/ProgramService"
+import { ActionTypes } from "../Actions";
+import ProgramReducer from "./ProgramReducer"
 
 // TODO: remove defaults, handle undefined
+const defaultHr = 189;
+const defaultEventName = "Helsinki City Maraton";
+const defaultEventDate = "2018-10-30";
+
 const targetEvent = (
-  state = { name: "Helsinki City Maraton", date: "2018-10-30" },
+  state = { name: defaultEventName, date: defaultEventDate },
   action
 ) => {
   switch (action.type) {
-    case "TARGET_EVENT_NAME_CHANGED":
+    case ActionTypes.targetEventNameChanged:
       return { ...state, name: action.name };
-    case "TARGET_EVENT_DATE_CHANGED":
+    case ActionTypes.targetEventDateChanged:
       return { ...state, date: action.date };
     default:
       return state;
   }
 };
 
-// TODO: remove default, handle undefined
-const targetTime = (state = 210, action) => {
+const maxHr = (state = defaultHr, action) => {
   switch (action.type) {
-    case "TARGET_TIME_CHANGED":
-      return action.time;
-    default:
-      return state;
-  }
-};
-
-// TODO: remove default, handle undefined
-const programId = (state = "tossu_2018_24_400", action) => {
-    console.log(action);
-    switch (action.type) {
-    case "PROGRAM_ID_CHANGED": 
-        return action.id;
-    case "TARGET_TIME_CHANGED":
-      const validIds = ProgramService.getProgramsByTargetTime(action.time).map(
-        p => p.id
-      );
-      return validIds.indexOf(state) >= 0
-        ? state
-        : ProgramService.getBestMatch(action.time).id;
-    default:
-      return state;
-  }
-};
-
-// TODO: remove default, handle undefined
-const maxHr = (state = 189, action) => {
-  switch (action.type) {
-    case "MAX_HR_CHANGED":
+    case ActionTypes.maxHrChanged:
       return action.hr;
     default:
       return state;
@@ -56,7 +32,6 @@ const maxHr = (state = 189, action) => {
 
 export default combineReducers({
   targetEvent,
-  targetTime,
-  programId,
+  program: ProgramReducer,
   maxHr
 });

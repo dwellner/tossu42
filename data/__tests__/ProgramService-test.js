@@ -12,31 +12,64 @@ describe("ProgramService", () => {
   });
 
   it("getBestMatch should return first match closest to given targetTime", () => {
-    expect(ProgramService.getBestMatch(310).id).toEqual("tossu_2018_24_500");
-    expect(ProgramService.getBestMatch(270).id).toEqual("tossu_2018_24_400");
-    expect(ProgramService.getBestMatch(269).id).toEqual("tossu_2018_24_400");
+    expect(ProgramService.getBestMatch(310).id).toEqual(
+      "Tossu.com5tunnintäysohjelma_300_24"
+    );
+    expect(ProgramService.getBestMatch(270).id).toEqual(
+      "Tossu.com4tunnintäysohjelma_240_24"
+    );
+    expect(ProgramService.getBestMatch(269).id).toEqual(
+      "Tossu.com4tunnintäysohjelma_240_24"
+    );
   });
 
-  it("getProgramsByTargetTime should return programs within 30 mins from target time", () => {
-    getPrograms = target =>
-      ProgramService.getProgramsByTargetTime(target).map(p => p.id);
-
-    expect(getPrograms(210)).toEqual([
-      "tossu_2018_24_300",
-      "tossu_2018_8_300",
-      "tossu_2018_6_300",
-      "tossu_2018_4_300",
-      "tossu_2018_2_300",
-      "tossu_2018_24_330",
-      "tossu_2018_8_330",
-      "tossu_2018_6_330",
-      "tossu_2018_4_330",
-      "tossu_2018_2_330",
-      "tossu_2018_24_400",
-      "tossu_2018_8_400",
-      "tossu_2018_6_400",
-      "tossu_2018_4_400",
-      "tossu_2018_2_400"
+  it("getPrograms by targetTime should return programs within 30 mins from target time", () => {
+    const programs = ProgramService.getPrograms(225).map(p => p.id);
+    expect(programs).toEqual([
+      "Tossu.com3.5tunnintäysohjelma_210_24",
+      "Tossu.com3.5tunninväliohjelma_210_8",
+      "Tossu.com3.5tunninväliohjelma_210_6",
+      "Tossu.com3.5tunninväliohjelma_210_4",
+      "Tossu.com3.5tunninväliohjelma_210_2",
+      "Tossu.com4tunnintäysohjelma_240_24",
+      "Tossu.com4tunninväliohjelma_240_8",
+      "Tossu.com4tunninväliohjelma_240_6",
+      "Tossu.com4tunninväliohjelma_240_4",
+      "Tossu.com4tunninväliohjelma_240_2"
     ]);
+  });
+
+  it("getPrograms by targetTime and name should return only valid programs", () => {
+    const programs = ProgramService.getPrograms(
+      225,
+      "Tossu.com 4 tunnin väliohjelma"
+    ).map(p => p.id);
+
+    expect(programs).toEqual([
+      "Tossu.com4tunninväliohjelma_240_8",
+      "Tossu.com4tunninväliohjelma_240_6",
+      "Tossu.com4tunninväliohjelma_240_4",
+      "Tossu.com4tunninväliohjelma_240_2"
+    ]);
+  });
+
+  it("getPrograms by targetTime, name and length should return only valid programs", () => {
+    const programs = ProgramService.getPrograms(
+      225,
+      "Tossu.com 4 tunnin väliohjelma",
+      6
+    ).map(p => p.id);
+
+    expect(programs).toEqual(["Tossu.com4tunninväliohjelma_240_6"]);
+  });
+
+  it("getPrograms by targetTime, name and length should validate against stretchRules if defined", () => {
+    const programs = ProgramService.getPrograms(
+      225,
+      "Tossu.com 3.5 tunnin täysohjelma",
+      26
+    ).map(p => p.id);
+
+    expect(programs).toEqual(["Tossu.com3.5tunnintäysohjelma_210_24"]);
   });
 });

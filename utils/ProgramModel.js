@@ -37,7 +37,7 @@ const getIntensity = week => week.map(getDayIntensity).reduce((a, b) => a + b);
 const getStretchedProgramStart = (program, programLength, totalLength) => {
   let repeats = [];
 
-  const stretchLengthInWeeks = Math.ceil((totalLength - programLength) / 7);
+  const stretchLengthInWeeks = Math.ceil(totalLength - programLength);
   const repeatBlock = program.weeks.slice(0, program.stretchRules.repeat);
   const numberOfRepeatBlocks = Math.ceil(
     stretchLengthInWeeks / repeatBlock.length
@@ -46,32 +46,21 @@ const getStretchedProgramStart = (program, programLength, totalLength) => {
     repeats = repeats.concat(repeatBlock.map(days => [].concat(days)));
   }
   const excessWeeks = repeats.length - stretchLengthInWeeks;
-  repeats = repeats.slice(excessWeeks);
-
-  const excessDays = repeats.length * 7 - (totalLength - programLength);
-  repeats[0] = repeats[0].map(
-    (day, index) => (index < excessDays ? { type: "lepo" } : day)
-  );
-  return repeats;
+  return repeats.slice(excessWeeks);
 };
 
-const getProgramWeeks = (program, targetDate, startDate) => {
-  const programLength = program.weeks.length * 7;
+const getProgramWeeks = (program, length) => {
+  const programLength = program.weeks.length;
 
-  const firstDate =
-    startDate || DateUtils.nextDate(targetDate, programLength * -1 + 1);
-
-  const totalLength = DateUtils.difference(targetDate, firstDate) + 1;
-
-  if (totalLength === programLength || program.stretchRules === undefined) {
+  if (length === programLength || program.stretchRules === undefined) {
     return program.weeks;
   }
 
-  if (totalLength > programLength) {
+  if (length > programLength) {
     const stretchedStart = getStretchedProgramStart(
       program,
       programLength,
-      Math.min(totalLength, program.stretchRules.maxWeeks * 7)
+      length
     );
     return [].concat(stretchedStart, program.weeks);
   }
@@ -81,11 +70,12 @@ const getProgramWeeks = (program, targetDate, startDate) => {
 };
 
 export default {
-  getWeekProgram: (targetDate, programId, startDate = null) => {
-    const program = ProgramService.getById(programId);
+  getWeekProgram: (targetDate, { targetTime, name, length }) => {
+    const programs = ProgramService.getPrograms(targetTime, name, length);
+    if (programs.length === 0) return null;
+    const program = programs[0];
 
-    const programWeeks = getProgramWeeks(program, targetDate, startDate);
-
+    const programWeeks = getProgramWeeks(program, length);
     const firstDate = DateUtils.nextDate(
       targetDate,
       programWeeks.length * -7 + 1

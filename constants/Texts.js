@@ -16,6 +16,7 @@ export default {
     eventDate: "Ajankohta",
     targetTime: "Tavoiteaika",
     program: "Juoksuohjelma",
+    programType: "Juoksuohjelman tyyppi",
     weekShort: "Vk",
     weekProgram: "Viikon ohjelma",
     settingsGoalHeader: "Mitä maraton aiot juosta seuraavaksi?",
@@ -38,6 +39,10 @@ export default {
     "Lauantai",
     "Sunnuntai"
   ],
+  programTypes: {
+    "full": "Täysimittainen valmisteluohjelma",
+    "inter": "Maratonien väliohjelma"
+  },
   runTypes: {
     iv: "Interval",
     t: "Tempo",

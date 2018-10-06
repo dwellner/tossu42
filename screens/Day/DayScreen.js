@@ -21,9 +21,12 @@ class HomeScreen extends React.Component {
 
     const { targetEvent, targetTime, maxHr, weekProgram } = this.props;
 
-    const week = weekProgram.weeks.find(
-      week => week.days.findIndex(d => d.date === date) >= 0
-    );
+    const week =
+      weekProgram !== null
+        ? weekProgram.weeks.find(
+            week => week.days.findIndex(d => d.date === date) >= 0
+          )
+        : undefined;
 
     const viewContent =
       week !== undefined ? (
@@ -69,8 +72,10 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-  const { targetEvent, targetTime, programId, maxHr } = state.settings;
-  const weekProgram = ProgramModel.getWeekProgram(targetEvent.date, programId);
+  console.log('here');
+  const { targetEvent, maxHr, program } = state.settings;
+  const { targetTime } = program;
+  const weekProgram = ProgramModel.getWeekProgram(targetEvent.date, program);
   return { targetEvent, targetTime, weekProgram, maxHr };
 };
 

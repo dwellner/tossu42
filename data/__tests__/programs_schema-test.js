@@ -48,9 +48,6 @@ const stretchRuleSchema = Joi.object().keys({
 });
 
 const programSchema = Joi.object().keys({
-  id: Joi.string()
-    .min(4)
-    .required(),
   name: Joi.string()
     .min(4)
     .required(),

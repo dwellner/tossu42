@@ -3,28 +3,44 @@ import programs330 from "./programs_330.json";
 import programs400 from "./programs_400.json";
 import programs500 from "./programs_500.json";
 
-const allPrograms = [].concat(
-  programs300,
-  programs330,
-  programs400,
-  programs500
-);
+const addId = program => ({
+  ...program,
+  id: `${program.name.replace(/[^0-9a-ö.,]/gi, "")}_${program.targetTime}_${
+    program.weeks.length
+  }`
+});
+const allPrograms = []
+  .concat(programs300, programs330, programs400, programs500)
+  .map(addId);
 
-// TODO: also consider time range
-const getBestMatch = targetTime =>
-  allPrograms
+const getBestMatch = targetTime => {
+  const bestMatch = allPrograms
     .map(p => ({ program: p, diff: Math.abs(p.targetTime - targetTime) }))
-    .reduce((a, b) => (a.diff <= b.diff ? a : b)).program;
+    .reduce((a, b) => (a.diff <= b.diff ? a : b));
+  return bestMatch !== null ? bestMatch.program : null;
+};
 
-/** returns programs which targetTime is within 30 mins of provedided target time */
-const getProgramsByTargetTime = targetTime =>
-allPrograms.filter(
-    p => p.targetTime >= targetTime - 20 && p.targetTime <= targetTime + 20
-  );
+const getPrograms = (targetTime, name = null, length = null) => {
+  const targetTimeFilter = p =>
+    p.targetTime >= targetTime - 20 && p.targetTime <= targetTime + 20;
+
+  const lengthFilter = p => {
+    return (
+      p.weeks.length === length ||
+      (p.stretchRules !== undefined &&
+        p.stretchRules.minWeeks <= length &&
+        p.stretchRules.maxWeeks >= length)
+    );
+  };
+  return allPrograms
+    .filter(targetTimeFilter)
+    .filter(p => (name != null ? p.name === name : true))
+    .filter(p => (length != null ? lengthFilter(p) : true));
+};
 
 export default {
   getAll: () => allPrograms,
   getById: id => allPrograms.find(p => p.id === id),
   getBestMatch,
-  getProgramsByTargetTime
+  getPrograms
 };

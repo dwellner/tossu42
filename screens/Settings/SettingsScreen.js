@@ -8,7 +8,8 @@ import {
   targetEventDateChanged,
   maxHrChanged,
   targetTimeChanged,
-  programIdChanged
+  programNameChanged,
+  programLengthChanged
 } from "../../Actions";
 
 class SettingsScreen extends React.Component {
@@ -26,8 +27,10 @@ class SettingsScreen extends React.Component {
           onEventDateChanged={this.props.onEventDateChanged}
           targetTime={this.props.targetTime}
           onTargetTimeChanged={this.props.onTargetTimeChanged}
-          programId={this.props.programId}
-          onProgramIdChanged={this.props.onProgramIdChanged}
+          programName={this.props.programName}
+          onProgramNameChanged={this.props.onProgramNameChanged}
+          programLength={this.props.programLength}
+          onProgramLengthChanged={this.props.onProgramLengthChanged}
           maxHr={this.props.maxHr}
           onMaxHrChanged={this.props.onMaxHrChanged}
         />
@@ -45,9 +48,15 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-  const { name, date } = state.settings.targetEvent;
-  const { maxHr, targetTime, programId } = state.settings;
-  return { eventName: name, eventDate: date, targetTime, programId, maxHr };
+  const { maxHr, targetEvent, program } = state.settings;
+  return {
+    eventName: targetEvent.name,
+    eventDate: targetEvent.date,
+    targetTime: program.targetTime,
+    programName: program.name,
+    programLength: program.length,
+    maxHr
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -55,7 +64,8 @@ const mapDispatchToProps = dispatch => ({
   onEventDateChanged: date => dispatch(targetEventDateChanged(date)),
   onMaxHrChanged: hr => dispatch(maxHrChanged(hr)),
   onTargetTimeChanged: time => dispatch(targetTimeChanged(time)),
-  onProgramIdChanged: id => dispatch(programIdChanged(id))
+  onProgramNameChanged: id => dispatch(programNameChanged(id)),
+  onProgramLengthChanged: id => dispatch(programLengthChanged(id))
 });
 
 export default connect(

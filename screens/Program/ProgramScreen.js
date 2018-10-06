@@ -30,9 +30,9 @@ class ProgramScreen extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const { targetEvent, targetTime, programId } = state.settings;
-  const weekProgram = ProgramModel.getWeekProgram(targetEvent.date, programId);
-  return { targetEvent, targetTime, weekProgram };
+  const { targetEvent, program } = state.settings;
+  const weekProgram = ProgramModel.getWeekProgram(targetEvent.date, program);
+  return { targetEvent, weekProgram };
 };
 
 export default connect(mapStateToProps)(ProgramScreen);
