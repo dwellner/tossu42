@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { Dropdown } from "react-native-material-dropdown";
 import { TextField } from "react-native-material-textfield";
 
+import DateUtils from "../../utils/DateUtils";
 import Formatters from "../../utils/Formatters";
 import EventDatePicker from "./EventDatePicker";
 import ProgramService from "../../data/ProgramService";
@@ -32,6 +33,7 @@ const targetTimes = [180, 195, 210, 225, 240, 255, 270, 285, 300].map(v => ({
 }));
 
 const ProgramSection = ({
+  eventDate,
   targetTime,
   onTargetTimeChanged,
   programName,
@@ -65,7 +67,9 @@ const ProgramSection = ({
     .reduce((a, b) => a.concat(b), [])
     .map(length => ({
       value: length,
-      label: `${length} viikkoa`
+      label: `${length} viikkoa. (Alkaen ${Formatters.dateToDateLabel(
+        DateUtils.nextDate(eventDate, length * -7)
+      )})`
     }));
   return (
     <View key="program" style={styles.section}>
@@ -150,6 +154,7 @@ export default class SettingsScreen extends React.Component {
           onDateChanged={this.props.onEventDateChanged}
         />
         <ProgramSection
+          eventDate={this.props.eventDate}
           targetTime={this.props.targetTime}
           onTargetTimeChanged={this.props.onTargetTimeChanged}
           programName={this.props.programName}

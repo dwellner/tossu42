@@ -1,7 +1,7 @@
 [
   {
     "name": "Tossu.com 3 tunnin täysohjelma",
-    "targetTime": 180,
+    "targetTime": { "target": 180, "min": 165, "max": 195 },
     "weeks": [
       [
         { "type": "lepo" },
@@ -223,7 +223,7 @@
   },
   {
     "name": "Tossu.com 3 tunnin väliohjelma",
-    "targetTime": 180,
+    "targetTime": { "target": 180, "min": 165, "max": 195 },
     "weeks": [
       [
         { "type": "lepo" },
@@ -301,7 +301,7 @@
   },
   {
     "name": "Tossu.com 3 tunnin väliohjelma",
-    "targetTime": 180,
+    "targetTime": { "target": 180, "min": 165, "max": 195 },
     "weeks": [
       [
         { "type": "lepo" },
@@ -361,7 +361,7 @@
   },
   {
     "name": "Tossu.com 3 tunnin väliohjelma",
-    "targetTime": 180,
+    "targetTime": { "target": 180, "min": 165, "max": 195 },
     "weeks": [
       [
         { "type": "lepo" },
@@ -403,7 +403,7 @@
   },
   {
     "name": "Tossu.com 3 tunnin väliohjelma",
-    "targetTime": 180,
+    "targetTime": { "target": 180, "min": 165, "max": 195 },
     "weeks": [
       [
         { "type": "lepo" },

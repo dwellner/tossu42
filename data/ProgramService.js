@@ -5,9 +5,7 @@ import programs500 from "./programs_500.json";
 
 const addId = program => ({
   ...program,
-  id: `${program.name.replace(/[^0-9a-ö.,]/gi, "")}_${program.targetTime}_${
-    program.weeks.length
-  }`
+  id: `${program.name.replace(/[^0-9a-ö.,]/gi, "")}_${program.weeks.length}`
 });
 const allPrograms = []
   .concat(programs300, programs330, programs400, programs500)
@@ -15,14 +13,14 @@ const allPrograms = []
 
 const getBestMatch = targetTime => {
   const bestMatch = allPrograms
-    .map(p => ({ program: p, diff: Math.abs(p.targetTime - targetTime) }))
+    .map(p => ({ program: p, diff: Math.abs(p.targetTime.target - targetTime) }))
     .reduce((a, b) => (a.diff <= b.diff ? a : b));
   return bestMatch !== null ? bestMatch.program : null;
 };
 
 const getPrograms = (targetTime, name = null, length = null) => {
   const targetTimeFilter = p =>
-    p.targetTime >= targetTime - 20 && p.targetTime <= targetTime + 20;
+    p.targetTime.min <= targetTime && p.targetTime.max >= targetTime;
 
   const lengthFilter = p => {
     return (

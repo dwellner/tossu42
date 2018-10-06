@@ -1,429 +1,428 @@
 [
-    {
-      "name": "Tossu.com 4 tunnin täysohjelma",
-      "targetTime": 240,
-      "weeks": [
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 5, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "k" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 5, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "pa" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 5, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 7, "type": "k" },
-          { "distance": 10, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 5, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 7, "type": "k" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 20, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "k" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 9, "type": "k" },
-          { "distance": 24, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 7, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 7, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 20, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 7, "type": "pe" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 7, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "k" },
-          { "distance": 14, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 5, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 7, "type": "k" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 20, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "k" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 9, "type": "k" },
-          { "distance": 24, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 7, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 7, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 20, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 7, "type": "pe" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 7, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "k" },
-          { "distance": 14, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 7, "type": "pe" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 7, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "k" },
-          { "distance": 24, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 8, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "pa" },
-          { "distance": 30, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 10, "type": "pa" },
-          { "distance": 8, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "k" },
-          { "distance": 22, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 10, "type": "pa" },
-          { "distance": 8, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "k" },
-          { "distance": 30, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 10, "type": "pa" },
-          { "distance": 8, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 18, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 7, "type": "pe" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 7, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "k" },
-          { "distance": 30, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "k" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 5, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 4, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 4, "type": "pa" },
-          { "distance": 42.2, "type": "r" }
-        ]
+  {
+    "name": "Tossu.com 4 tunnin täysohjelma",
+    "targetTime": { "target": 240, "min": 225, "max": 270 },
+    "weeks": [
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "k" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "pa" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 7, "type": "k" },
+        { "distance": 10, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 7, "type": "k" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 20, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "k" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 9, "type": "k" },
+        { "distance": 24, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 7, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 20, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "k" },
+        { "distance": 14, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 7, "type": "k" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 20, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "k" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 9, "type": "k" },
+        { "distance": 24, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 7, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 20, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "k" },
+        { "distance": 14, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "k" },
+        { "distance": 24, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 8, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 30, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "k" },
+        { "distance": 22, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "k" },
+        { "distance": 30, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 18, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "k" },
+        { "distance": 30, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "k" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 4, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 4, "type": "pa" },
+        { "distance": 42.2, "type": "r" }
       ]
-    },
-    {
-      "name": "Tossu.com 4 tunnin väliohjelma",
-      "targetTime": 240,
-      "weeks": [
-        [
-          { "type": "lepo" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 10, "type": "pa" },
-          { "distance": 8, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "k" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 10, "type": "pa" },
-          { "distance": 8, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "k" },
-          { "distance": 30, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 10, "type": "pa" },
-          { "distance": 8, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 7, "type": "pe" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 7, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "k" },
-          { "distance": 30, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "k" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "type": "lepo" },
-          { "distance": 4, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 4, "type": "pa" },
-          { "distance": 42.2, "type": "r" }
-        ]
+    ]
+  },
+  {
+    "name": "Tossu.com 4 tunnin väliohjelma",
+    "targetTime": { "target": 240, "min": 225, "max": 270 },
+    "weeks": [
+      [
+        { "type": "lepo" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "k" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "k" },
+        { "distance": 30, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "k" },
+        { "distance": 30, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "k" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "type": "lepo" },
+        { "distance": 4, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 4, "type": "pa" },
+        { "distance": 42.2, "type": "r" }
       ]
-    },
-    {
-      "name": "Tossu.com 4 tunnin väliohjelma",
-      "targetTime": 240,
-      "weeks": [
-        [
-          { "type": "lepo" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 10, "type": "pa" },
-          { "distance": 8, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 7, "type": "pe" },
-          { "distance": 9, "type": "pa" },
-          { "distance": 7, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 10, "type": "k" },
-          { "distance": 30, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pa" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "k" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 5, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "type": "lepo" },
-          { "distance": 4, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 4, "type": "pa" },
-          { "distance": 42.2, "type": "r" }
-        ]
+    ]
+  },
+  {
+    "name": "Tossu.com 4 tunnin väliohjelma",
+    "targetTime": { "target": 240, "min": 225, "max": 270 },
+    "weeks": [
+      [
+        { "type": "lepo" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 10, "type": "k" },
+        { "distance": 30, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "k" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "type": "lepo" },
+        { "distance": 4, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 4, "type": "pa" },
+        { "distance": 42.2, "type": "r" }
       ]
-    },
-    {
-      "name": "Tossu.com 4 tunnin väliohjelma",
-      "targetTime": 240,
-      "weeks": [
-        [
-          { "type": "lepo" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 6, "type": "pe" },
-          { "distance": 8, "type": "pe" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "k" },
-          { "distance": 16, "type": "pi" }
-        ],
-        [
-          { "distance": 6, "type": "ve" },
-          { "distance": 5, "type": "pe" },
-          { "distance": 7, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "type": "lepo" },
-          { "distance": 4, "type": "pa" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 4, "type": "pa" },
-          { "distance": 42.2, "type": "r" }
-        ]
+    ]
+  },
+  {
+    "name": "Tossu.com 4 tunnin väliohjelma",
+    "targetTime": { "target": 240, "min": 225, "max": 270 },
+    "weeks": [
+      [
+        { "type": "lepo" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "k" },
+        { "distance": 16, "type": "pi" }
+      ],
+      [
+        { "distance": 6, "type": "ve" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "type": "lepo" },
+        { "distance": 4, "type": "pa" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 4, "type": "pa" },
+        { "distance": 42.2, "type": "r" }
       ]
-    },
-    {
-      "name": "Tossu.com 4 tunnin väliohjelma",
-      "targetTime": 240,
-      "weeks": [
-        [
-          { "type": "lepo" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 5, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 5, "type": "pa" },
-          { "distance": 12, "type": "pi" }
-        ],
-        [
-          { "type": "lepo" },
-          { "distance": 4, "type": "pa" },
-          { "type": "lepo" },
-          { "distance": 6, "type": "pe" },
-          { "type": "lepo" },
-          { "distance": 4, "type": "pa" },
-          { "distance": 42.2, "type": "r" }
-        ]
+    ]
+  },
+  {
+    "name": "Tossu.com 4 tunnin väliohjelma",
+    "targetTime": { "target": 240, "min": 225, "max": 270 },
+    "weeks": [
+      [
+        { "type": "lepo" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 5, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 5, "type": "pa" },
+        { "distance": 12, "type": "pi" }
+      ],
+      [
+        { "type": "lepo" },
+        { "distance": 4, "type": "pa" },
+        { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "type": "lepo" },
+        { "distance": 4, "type": "pa" },
+        { "distance": 42.2, "type": "r" }
       ]
-    }
-  ]
-  
+    ]
+  }
+]

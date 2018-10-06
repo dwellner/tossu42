@@ -142,6 +142,4 @@ describe("SettingsReducer", () => {
       programLengthChanged(27)
     );
   });
-
-  // test programLength updates programLength
 });

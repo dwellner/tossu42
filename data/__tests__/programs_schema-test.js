@@ -47,14 +47,22 @@ const stretchRuleSchema = Joi.object().keys({
     .required()
 });
 
+const targetTimeSchema = Joi.number()
+  .integer()
+  .min(120)
+  .max(300);
+
 const programSchema = Joi.object().keys({
   name: Joi.string()
     .min(4)
     .required(),
-  targetTime: Joi.number()
-    .integer()
-    .min(120)
-    .max(300),
+  targetTime: Joi.object()
+    .keys({
+      target: targetTimeSchema,
+      min: targetTimeSchema,
+      max: targetTimeSchema
+    })
+    .required(),
   stretchRules: stretchRuleSchema.optional(),
   weeks: Joi.array()
     .items(weekSchema)
