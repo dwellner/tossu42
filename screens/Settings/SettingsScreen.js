@@ -50,12 +50,12 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
   const { maxHr, targetEvent, program } = state.settings;
   return {
-    eventName: targetEvent.name,
-    eventDate: targetEvent.date,
+    eventName: targetEvent.name || undefined,
+    eventDate: targetEvent.date || undefined,
     targetTime: program.targetTime,
     programName: program.name,
     programLength: program.length,
-    maxHr
+    maxHr: maxHr || undefined
   };
 };
 

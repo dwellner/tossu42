@@ -8,7 +8,7 @@ import Texts from "../../constants/Texts"
 
 export default class EventDatePicker extends React.Component {
   static propTypes = {
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
     onChange: PropTypes.func.isRequired
   };
 
@@ -36,6 +36,7 @@ export default class EventDatePicker extends React.Component {
             editable={false}
             label={Texts.labels.eventDate}
             value={Formatters.dateToDateLabel(value)}
+            error={value == null ? "Pakollinen" : undefined}
           />
         </TouchableOpacity>
         <DateTimePicker

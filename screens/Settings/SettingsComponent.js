@@ -59,6 +59,11 @@ const ProgramSection = ({
       ? range(p.stretchRules.minWeeks, p.stretchRules.maxWeeks + 1)
       : [p.weeks.length];
 
+
+  const startAt = length => eventDate != null ?  `(Alkaen ${Formatters.dateToDateLabel(
+    DateUtils.nextDate(eventDate, length * -7)
+  )})` : "";
+
   const programLengths = unique(
     ProgramService.getPrograms(targetTime, programName).map(
       getValidProgramLengths
@@ -67,9 +72,7 @@ const ProgramSection = ({
     .reduce((a, b) => a.concat(b), [])
     .map(length => ({
       value: length,
-      label: `${length} viikkoa. (Alkaen ${Formatters.dateToDateLabel(
-        DateUtils.nextDate(eventDate, length * -7)
-      )})`
+      label: `${length} viikkoa. ${startAt(length)}`
     }));
   return (
     <View key="program" style={styles.section}>
@@ -117,7 +120,7 @@ const MetadataSection = ({ maxHr, onMaxHrChanged }) => (
     <Dropdown
       label={Texts.labels.maxHeartRate}
       data={heartRates}
-      value={maxHr}
+      value={maxHr || undefined}
       onChangeText={onMaxHrChanged}
     />
   </View>
@@ -125,10 +128,10 @@ const MetadataSection = ({ maxHr, onMaxHrChanged }) => (
 
 export default class SettingsScreen extends React.Component {
   static propTypes = {
-    eventName: PropTypes.string.isRequired,
+    eventName: PropTypes.string,
     onEventNameChanged: PropTypes.func.isRequired,
 
-    eventDate: PropTypes.string.isRequired,
+    eventDate: PropTypes.string,
     onEventDateChanged: PropTypes.func.isRequired,
 
     targetTime: PropTypes.number.isRequired,
@@ -140,7 +143,7 @@ export default class SettingsScreen extends React.Component {
     programLength: PropTypes.number.isRequired,
     onProgramLengthChanged: PropTypes.func.isRequired,
 
-    maxHr: PropTypes.number.isRequired,
+    maxHr: PropTypes.number,
     onMaxHrChanged: PropTypes.func.isRequired
   };
 

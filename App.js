@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { persistStore, persistCombineReducers } from "redux-persist";
@@ -12,7 +13,6 @@ const persistanceConfig = {
   key: "root",
   storage
 };
-
 const rootReducer = persistCombineReducers(persistanceConfig, {
   settings: settingsReducer
 });
@@ -23,7 +23,6 @@ export default class App extends React.Component {
   persistor = persistStore(store, {}, () =>
     this.setState({ isStoreHydrated: true })
   );
-
   state = {
     isStoreHydrated: false,
     isLoadingComplete: false
@@ -56,23 +55,15 @@ export default class App extends React.Component {
 
   _loadResourcesAsync = async () => {
     return Promise.all([
-      Asset.loadAsync([
-        require("./assets/images/robot-dev.png"),
-        require("./assets/images/robot-prod.png")
-      ]),
+      Asset.loadAsync([require("./assets/images/darkroad.png")]),
       Font.loadAsync({
         // This is the font that we are using for our tab bar
-        ...Icon.Ionicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free
-        // to remove this if you are not using it in your app
-        "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf")
+        ...Icon.Ionicons.font
       })
     ]);
   };
 
   _handleLoadingError = error => {
-    // In this case, you might want to report the error to your error
-    // reporting service, for example Sentry
     console.warn(error);
   };
 

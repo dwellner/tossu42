@@ -15,6 +15,7 @@ export default {
     eventName: "Tapahtuman nimi",
     eventDate: "Ajankohta",
     targetTime: "Tavoiteaika",
+    nextMaraton: "Seuraava maraton",
     program: "Juoksuohjelma",
     programType: "Juoksuohjelman tyyppi",
     weekShort: "Vk",

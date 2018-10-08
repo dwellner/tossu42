@@ -20,11 +20,11 @@ const DayGoal = ({ day, maxHr, targetTime }) => (
   </View>
 );
 
-export default class HomeScreen extends React.Component {
+export default class DayScreen extends React.Component {
   static propTypes = {
     week: propTypes.object.isRequired,
     date: propTypes.string.isRequired,
-    maxHr: propTypes.number.isRequired,
+    maxHr: propTypes.number,
     targetTime: propTypes.number.isRequired,
     changeDate: propTypes.func.isRequired
   };

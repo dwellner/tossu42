@@ -1,16 +1,8 @@
 import { combineReducers } from "redux";
 import { ActionTypes } from "../Actions";
-import ProgramReducer from "./ProgramReducer"
+import ProgramReducer from "./ProgramReducer";
 
-// TODO: remove defaults, handle undefined
-const defaultHr = 189;
-const defaultEventName = "Helsinki City Maraton";
-const defaultEventDate = "2018-10-30";
-
-const targetEvent = (
-  state = { name: defaultEventName, date: defaultEventDate },
-  action
-) => {
+const targetEvent = (state = { name: null, date: null }, action) => {
   switch (action.type) {
     case ActionTypes.targetEventNameChanged:
       return { ...state, name: action.name };
@@ -21,7 +13,7 @@ const targetEvent = (
   }
 };
 
-const maxHr = (state = defaultHr, action) => {
+const maxHr = (state = null, action) => {
   switch (action.type) {
     case ActionTypes.maxHrChanged:
       return action.hr;

@@ -11,6 +11,7 @@ const getPaceGoal = targetTime => {
 };
 
 const getHeartRateGoal = (maxHr, low, high) => {
+  if (maxHr == null) return "";
   const getHrPct = pct => Math.round(maxHr * pct);
   return `❤ ${getHrPct(low)} - ${getHrPct(high)} bpm`;
 };

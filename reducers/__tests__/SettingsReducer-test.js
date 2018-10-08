@@ -32,11 +32,11 @@ describe("SettingsReducer", () => {
   it("initialState", () => {
     assertNewState(
       {
-        targetEvent: { date: "2018-10-30", name: "Helsinki City Maraton" },
-        maxHr: 189,
+        targetEvent: { date: null, name: null },
+        maxHr: null,
         program: {
-          name: "Tossu.com 3.5 tunnin täysohjelma",
-          targetTime: 210,
+          name: "Tossu.com 4 tunnin täysohjelma",
+          targetTime: 240,
           length: 24
         }
       },
@@ -102,12 +102,12 @@ describe("SettingsReducer", () => {
       {
         program: {
           ...initState.program,
-          name: "Tossu.com 3.5 tunnin väliohjelma",
+          name: "Tossu.com 4 tunnin väliohjelma",
           length: 8
         }
       },
       initState,
-      programNameChanged("Tossu.com 3.5 tunnin väliohjelma")
+      programNameChanged("Tossu.com 4 tunnin väliohjelma")
     );
   });
 
@@ -121,12 +121,12 @@ describe("SettingsReducer", () => {
       {
         program: {
           ...initState.program,
-          name: "Tossu.com 3.5 tunnin väliohjelma",
+          name: "Tossu.com 4 tunnin väliohjelma",
           length: 4
         }
       },
       currentState,
-      programNameChanged("Tossu.com 3.5 tunnin väliohjelma")
+      programNameChanged("Tossu.com 4 tunnin väliohjelma")
     );
   });
 

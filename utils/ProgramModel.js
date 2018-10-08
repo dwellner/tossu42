@@ -71,6 +71,8 @@ const getProgramWeeks = (program, length) => {
 
 export default {
   getWeekProgram: (targetDate, { targetTime, name, length }) => {
+    if (targetDate === null) return null;
+    
     const programs = ProgramService.getPrograms(targetTime, name, length);
     if (programs.length === 0) return null;
     const program = programs[0];

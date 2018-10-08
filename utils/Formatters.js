@@ -21,7 +21,7 @@ const dateToDayLabel = date => {
 }
 
 const dateToDateLabel = date => {
-    return moment.utc(date).format('D.M.YY');
+    return date != null ? moment.utc(date).format('D.M.YY'): "";
 }
 
 const dateRangetoLabel = (date1,date2) => {
