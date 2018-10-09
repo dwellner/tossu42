@@ -18,6 +18,7 @@ export default {
     nextMaraton: "Seuraava maraton",
     program: "Juoksuohjelma",
     programType: "Juoksuohjelman tyyppi",
+    noProgram: "Et ole vielä asettanut ohjelmaa",
     weekShort: "Vk",
     weekProgram: "Viikon ohjelma",
     settingsGoalHeader: "Mitä maraton aiot juosta seuraavaksi?",

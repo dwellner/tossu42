@@ -55,12 +55,9 @@ export default class DayHeaderComponent extends React.Component {
   render() {
     const { date, weekProgram, changeDate, targetEvent } = this.props;
     const daysUntil = DateUtils.difference(targetEvent.date, date);
-    console.log({date, targetEvent, daysUntil})
 
     const prevWeek = () => changeDate(DateUtils.nextDate(date, -7));
     const nextWeek = () => changeDate(DateUtils.nextDate(date, 7));
-
-    if (weekProgram === undefined) return <Text>No program</Text>; // TODO
 
     const targetComponent =
       daysUntil < 0 ? (

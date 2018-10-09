@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import Texts from "../../constants/Texts";
-
 import ProgramComponent from "./ProgramComponent";
-import { ImageBackground, Text } from "react-native";
 import ProgramModel from "../../utils/ProgramModel";
+import NoProgram from "../../components/NoProgram";
+import BackgroundContainer from "../../components/BackgroundContainer";
 
 class ProgramScreen extends React.Component {
   static navigationOptions = {
@@ -15,19 +15,16 @@ class ProgramScreen extends React.Component {
     const { targetEvent, weekProgram } = this.props;
     const { navigate } = this.props.navigation;
 
-    if (weekProgram === null) return <Text>Piru</Text>;
+    if (weekProgram === null) return <NoProgram />;
 
     return (
-      <ImageBackground
-        source={require("../../assets/images/darkroad.png")}
-        style={{ width: "100%", height: "100%" }}
-      >
+      <BackgroundContainer>
         <ProgramComponent
           targetEvent={targetEvent}
           weekProgram={weekProgram}
           onWeekClicked={date => navigate("Day", { date })}
         />
-      </ImageBackground>
+      </BackgroundContainer>
     );
   }
 }

@@ -1,34 +1,39 @@
 import React from "react";
-
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import { persistStore, persistCombineReducers } from "redux-persist";
-import storage from "redux-persist/lib/storage";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
+import { NavigationActions } from "react-navigation";
 import { AppLoading, Asset, Font, Icon } from "expo";
-import settingsReducer from "./reducers/SettingsReducer";
 import AppNavigator from "./navigation/AppNavigator";
-
-const persistanceConfig = {
-  key: "root",
-  storage
-};
-const rootReducer = persistCombineReducers(persistanceConfig, {
-  settings: settingsReducer
-});
-
-const store = createStore(rootReducer);
+import createAndHydrateStore from "./Store";
 
 export default class App extends React.Component {
-  persistor = persistStore(store, {}, () =>
-    this.setState({ isStoreHydrated: true })
-  );
+  store = createAndHydrateStore(() => this.storeHydrated());
   state = {
     isStoreHydrated: false,
-    isLoadingComplete: false
+    isLoadingComplete: false,
+    shouldNavigateToInitialRoute: true,
   };
 
+  storeHydrated() {
+    this.setState({ isStoreHydrated: true });
+  }
+
+  navigateToInitialRoute(navigator, storeState) {
+    if (!this.state.shouldNavigateToInitialRoute) return;
+    this.setState({ shouldNavigateToInitialRoute: false });
+
+    if (storeState == null || storeState.settings.targetEvent.date == null) {
+      console.log({navigator, storeState, localState: this.state});
+      navigator.dispatch(
+        NavigationActions.navigate({
+          routeName: "Settings"
+        })
+      );
+    }
+  }
+
   render() {
+    const store = this.store;
     if (
       !this.state.isLoadingComplete &&
       !this.state.isStoreHydrated &&
@@ -46,7 +51,11 @@ export default class App extends React.Component {
         <Provider store={store}>
           <View style={styles.container}>
             {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-            <AppNavigator />
+            <AppNavigator
+              ref={navigator =>
+                this.navigateToInitialRoute(navigator, store.getState())
+              }
+            />
           </View>
         </Provider>
       );

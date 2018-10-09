@@ -2,18 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import DayComponent from "./DayComponent";
 import Texts from "../../constants/Texts";
-
-
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-  ImageBackground,
-  Text
-} from "react-native";
+import { ScrollView, View } from "react-native";
 import DayHeaderComponent from "./DayHeaderComponent";
 import ProgramModel from "../../utils/ProgramModel";
 import DateUtils from "../../utils/DateUtils";
+import NoProgram from "../../components/NoProgram";
+import BackgroundContainer from "../../components/BackgroundContainer";
 
 class DayScreen extends React.Component {
   static navigationOptions = {
@@ -28,7 +22,7 @@ class DayScreen extends React.Component {
     const date = this.props.navigation.getParam("date", DateUtils.currentDate);
 
     const { targetEvent, targetTime, maxHr, weekProgram } = this.props;
-    if (weekProgram === null) return <Text>Piru</Text>;
+    if (weekProgram === null) return <NoProgram />;
 
     const week =
       weekProgram !== null
@@ -51,11 +45,8 @@ class DayScreen extends React.Component {
       );
 
     return (
-      <ImageBackground
-        source={require("../../assets/images/darkroad.png")}
-        style={styles.container}
-      >
-        <View style={styles.header}>
+      <BackgroundContainer>
+        <View style={{ height: 190 }}>
           <DayHeaderComponent
             weekProgram={weekProgram}
             targetEvent={targetEvent}
@@ -64,24 +55,12 @@ class DayScreen extends React.Component {
           />
         </View>
         <ScrollView>{viewContent}</ScrollView>
-      </ImageBackground>
+      </BackgroundContainer>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    height: "100%"
-  },
-
-  header: {
-    height: 190
-  }
-});
-
 const mapStateToProps = state => {
-  console.log("here");
   const { maxHr, program } = state.settings;
   const { targetTime } = program;
   const targetEvent = {
