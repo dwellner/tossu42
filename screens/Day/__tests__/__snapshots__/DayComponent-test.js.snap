@@ -1,0 +1,799 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#1119",
+        "borderBottomWidth": 1,
+        "borderColor": "#333",
+        "borderTopWidth": 1,
+        "flex": 1,
+        "marginBottom": 16,
+        "paddingBottom": 16,
+        "paddingTop": 8,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#bbb",
+          "fontSize": 16,
+        }
+      }
+    >
+      Päivän ohjelma
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#f442df",
+          "fontSize": 64,
+        }
+      }
+    >
+      6 km
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 24,
+        }
+      }
+    >
+      Verryttely
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#fff",
+          "fontSize": 24,
+        }
+      }
+    >
+      Kevyt liikunta tai kuntosali
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#1119",
+        "borderBottomWidth": 1,
+        "borderColor": "#333",
+        "borderTopWidth": 1,
+        "flex": 1,
+        "marginBottom": 16,
+        "paddingBottom": 16,
+        "paddingTop": 8,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#bbb",
+          "fontSize": 16,
+          "marginBottom": 8,
+        }
+      }
+    >
+      Viikon ohjelma
+    </Text>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "marginBottom": 8,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#bbb",
+              "fontSize": 16,
+              "marginBottom": 8,
+            }
+          }
+        >
+          Kokonaismatka
+        </Text>
+        <View
+          animated={true}
+          animationConfig={
+            Object {
+              "bounciness": 0,
+            }
+          }
+          animationType="spring"
+          indeterminate={false}
+          onLayout={[Function]}
+          progress={0.5694444444444444}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#226",
+                "borderColor": "#000",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "overflow": "hidden",
+                "width": 150,
+              },
+              undefined,
+            ]
+          }
+          useNativeDriver={false}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#55f",
+                "height": 8,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateX": -31.861111111111114,
+                  },
+                  Object {
+                    "scaleX": 0.5694874999999999,
+                  },
+                ],
+              }
+            }
+          />
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#fff",
+              "fontSize": 20,
+            }
+          }
+        >
+          41 km
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "marginBottom": 8,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#bbb",
+              "fontSize": 16,
+              "marginBottom": 8,
+            }
+          }
+        >
+          Intensiteetti
+        </Text>
+        <View
+          animated={true}
+          animationConfig={
+            Object {
+              "bounciness": 0,
+            }
+          }
+          animationType="spring"
+          indeterminate={false}
+          onLayout={[Function]}
+          progress={0.48872180451127817}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#633",
+                "borderColor": "#000",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "overflow": "hidden",
+                "width": 150,
+              },
+              undefined,
+            ]
+          }
+          useNativeDriver={false}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#f442df",
+                "height": 8,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateX": -37.83458646616542,
+                  },
+                  Object {
+                    "scaleX": 0.488772932330827,
+                  },
+                ],
+              }
+            }
+          />
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#fff",
+              "fontSize": 20,
+            }
+          }
+        >
+          2.4
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#999",
+              "borderColor": "#f442df",
+              "borderWidth": 1,
+              "flex": 1,
+              "justifyContent": "center",
+              "margin": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 20,
+                "marginBottom": 8,
+              }
+            }
+          >
+            Ke
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            6 km
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+              }
+            }
+          >
+            Verryttely
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#777",
+              "borderColor": "#444",
+              "borderWidth": 1,
+              "flex": 1,
+              "justifyContent": "center",
+              "margin": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 20,
+                "marginBottom": 8,
+              }
+            }
+          >
+            To
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            5 km
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+              }
+            }
+          >
+            Perus
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#777",
+              "borderColor": "#444",
+              "borderWidth": 1,
+              "flex": 1,
+              "justifyContent": "center",
+              "margin": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 20,
+                "marginBottom": 8,
+              }
+            }
+          >
+            Pe
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            7 km
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+              }
+            }
+          >
+            Palautus
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#777",
+              "borderColor": "#444",
+              "borderWidth": 1,
+              "flex": 1,
+              "justifyContent": "center",
+              "margin": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 20,
+                "marginBottom": 8,
+              }
+            }
+          >
+            La
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            5 km
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+              }
+            }
+          >
+            Perus
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#777",
+              "borderColor": "#444",
+              "borderWidth": 1,
+              "flex": 1,
+              "justifyContent": "center",
+              "margin": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 20,
+                "marginBottom": 8,
+              }
+            }
+          >
+            Su
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }
+          >
+             
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+              }
+            }
+          >
+            Lepo
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#777",
+              "borderColor": "#444",
+              "borderWidth": 1,
+              "flex": 1,
+              "justifyContent": "center",
+              "margin": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 20,
+                "marginBottom": 8,
+              }
+            }
+          >
+            Ma
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            6 km
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+              }
+            }
+          >
+            Kilpa
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#777",
+              "borderColor": "#444",
+              "borderWidth": 1,
+              "flex": 1,
+              "justifyContent": "center",
+              "margin": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 20,
+                "marginBottom": 8,
+              }
+            }
+          >
+            Ti
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            12 km
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#fff",
+                "fontSize": 12,
+              }
+            }
+          >
+            Pitkä
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

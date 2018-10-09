@@ -23,7 +23,6 @@ export default class App extends React.Component {
     this.setState({ shouldNavigateToInitialRoute: false });
 
     if (storeState == null || storeState.settings.targetEvent.date == null) {
-      console.log({navigator, storeState, localState: this.state});
       navigator.dispatch(
         NavigationActions.navigate({
           routeName: "Settings"

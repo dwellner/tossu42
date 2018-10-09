@@ -5,6 +5,7 @@ import { TextField } from "react-native-material-textfield";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import Formatters from "../../utils/Formatters";
 import Texts from "../../constants/Texts"
+import moment from "moment";
 
 export default class EventDatePicker extends React.Component {
   static propTypes = {
@@ -40,6 +41,7 @@ export default class EventDatePicker extends React.Component {
           />
         </TouchableOpacity>
         <DateTimePicker
+          date={moment.utc(value).toDate()}
           isVisible={isPickerVisible}
           onConfirm={date => this.confirmDatePicked(date, onChange)}
           onCancel={hidePicker}

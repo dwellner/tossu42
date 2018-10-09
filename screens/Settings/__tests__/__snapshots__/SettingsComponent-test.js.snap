@@ -1,0 +1,2408 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "paddingBottom": 48,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 20,
+          "marginBottom": 16,
+        }
+      }
+    >
+      Mitä maraton aiot juosta seuraavaksi?
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#777",
+          "fontSize": 16,
+        }
+      }
+    >
+      Juoksuohjelma räätelöidään sinua varten tapahtuman ajankohdasta taaksepäin
+    </Text>
+    <View
+      onResponderRelease={[Function]}
+      onStartShouldSetResponder={[Function]}
+      pointerEvents="auto"
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "borderBottomColor": "rgba(0, 0, 0, 0.38)",
+            "borderBottomWidth": 0.5,
+            "height": 64,
+            "paddingBottom": 8,
+            "paddingTop": 32,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "position": "absolute",
+              "top": 16,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.38)",
+                "fontSize": 12,
+              }
+            }
+          >
+            Tapahtuman nimi
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <TextInput
+            allowFontScaling={true}
+            autoCapitalize="sentences"
+            disableFullscreenUI={true}
+            editable={true}
+            maxLength={30}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onChangeText={[Function]}
+            onContentSizeChange={[Function]}
+            onFocus={[Function]}
+            selectionColor="rgb(0, 145, 234)"
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                  "margin": 0,
+                  "padding": 0,
+                  "top": 2,
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, .87)",
+                  "fontSize": 16,
+                  "height": 24,
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+            underlineColorAndroid="transparent"
+            value="Foo maraton"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "height": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "flex-start",
+                "bottom": 0,
+                "left": 0,
+                "paddingVertical": 4,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(213, 0, 0)",
+                  "fontSize": 0,
+                  "opacity": 0,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "flex-start",
+                "bottom": 0,
+                "left": 0,
+                "paddingVertical": 4,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgba(0, 0, 0, .38)",
+                  "fontSize": 12,
+                  "opacity": 1,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="none"
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomColor": "rgba(0, 0, 0, 0.38)",
+                "borderBottomWidth": 0.5,
+                "height": 64,
+                "paddingBottom": 8,
+                "paddingTop": 32,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "position": "absolute",
+                  "top": 16,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.38)",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                Ajankohta
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                autoCapitalize="sentences"
+                disableFullscreenUI={true}
+                editable={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onChangeText={[Function]}
+                onContentSizeChange={[Function]}
+                onFocus={[Function]}
+                selectionColor="rgb(0, 145, 234)"
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "margin": 0,
+                      "padding": 0,
+                      "top": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, .87)",
+                      "fontSize": 16,
+                      "height": 24,
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                value="30.10.18"
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgb(213, 0, 0)",
+                      "fontSize": 0,
+                      "opacity": 0,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0, 0, 0, .38)",
+                      "fontSize": 12,
+                      "opacity": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <Modal
+        animationType="none"
+        hardwareAccelerated={false}
+        hideModalContentWhileAnimating={false}
+        onModalHide={[Function]}
+        onRequestClose={[Function]}
+        scrollOffset={0}
+        scrollOffsetMax={0}
+        scrollTo={null}
+        supportedOrientations={
+          Array [
+            "portrait",
+            "landscape",
+          ]
+        }
+        swipeThreshold={100}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          accessible={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "black",
+              "bottom": 0,
+              "height": 1334,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 750,
+            }
+          }
+        />
+        <View
+          hideModalContentWhileAnimating={false}
+          onModalHide={[Function]}
+          pointerEvents="box-none"
+          scrollOffset={0}
+          scrollOffsetMax={0}
+          scrollTo={null}
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "flex-end",
+              "margin": 10,
+              "transform": Array [
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+          supportedOrientations={
+            Array [
+              "portrait",
+              "landscape",
+            ]
+          }
+          swipeThreshold={100}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "white",
+                  "borderRadius": 13,
+                  "marginBottom": 8,
+                  "overflow": "hidden",
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "#d5d5d5",
+                  "borderBottomWidth": 0.5,
+                  "padding": 14,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#8f8f8f",
+                      "fontSize": 13,
+                      "textAlign": "center",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                Pick a date
+              </Text>
+            </View>
+            <View
+              onStartShouldSetResponderCapture={[Function]}
+            >
+              <View>
+                <RCTDatePicker
+                  date={1540857600000}
+                  minuteInterval={1}
+                  mode="date"
+                  onChange={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "height": 216,
+                    }
+                  }
+                />
+              </View>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderColor": "#d5d5d5",
+                  "borderTopWidth": 0.5,
+                  "height": 57,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#007ff9",
+                      "fontSize": 20,
+                      "fontWeight": "normal",
+                      "textAlign": "center",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                Confirm
+              </Text>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "white",
+                "borderRadius": 13,
+                "height": 57,
+                "justifyContent": "center",
+                "marginBottom": 0,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#007ff9",
+                    "fontSize": 20,
+                    "fontWeight": "600",
+                    "padding": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Cancel
+            </Text>
+          </View>
+        </View>
+      </Modal>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingBottom": 48,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 20,
+          "marginBottom": 16,
+        }
+      }
+    >
+      Miten haluaisit valmistautua?
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#777",
+          "fontSize": 16,
+        }
+      }
+    >
+      Valitse ensin itselle sopiva tavoiteaika maratonille. Tossu42 ehdottaa tavoitteellesi sopivimmat juoksuohjelmat
+    </Text>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        accessible={true}
+        hitSlop={
+          Object {
+            "bottom": 6,
+            "left": 4,
+            "right": 4,
+            "top": 6,
+          }
+        }
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        pointerEvents="box-only"
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="none"
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomColor": "rgba(0, 0, 0, 0.38)",
+                "borderBottomWidth": 0.5,
+                "height": 63,
+                "paddingBottom": 8,
+                "paddingTop": 31,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "position": "absolute",
+                  "top": 15,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.38)",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                Tavoiteaika
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <TextInput
+                absoluteRTLLayout={false}
+                allowFontScaling={true}
+                autoCapitalize="sentences"
+                data={
+                  Array [
+                    Object {
+                      "label": "3:00",
+                      "value": 180,
+                    },
+                    Object {
+                      "label": "3:15",
+                      "value": 195,
+                    },
+                    Object {
+                      "label": "3:30",
+                      "value": 210,
+                    },
+                    Object {
+                      "label": "3:45",
+                      "value": 225,
+                    },
+                    Object {
+                      "label": "4:00",
+                      "value": 240,
+                    },
+                    Object {
+                      "label": "4:15",
+                      "value": 255,
+                    },
+                    Object {
+                      "label": "4:30",
+                      "value": 270,
+                    },
+                    Object {
+                      "label": "4:45",
+                      "value": 285,
+                    },
+                    Object {
+                      "label": "5:00",
+                      "value": 300,
+                    },
+                  ]
+                }
+                disableFullscreenUI={true}
+                dropdownMargins={
+                  Object {
+                    "max": 16,
+                    "min": 8,
+                  }
+                }
+                dropdownOffset={
+                  Object {
+                    "left": 0,
+                    "top": 32,
+                  }
+                }
+                editable={false}
+                itemColor="rgba(0, 0, 0, .54)"
+                itemCount={4}
+                itemPadding={8}
+                labelExtractor={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onChangeText={[Function]}
+                onContentSizeChange={[Function]}
+                onFocus={[Function]}
+                propsExtractor={[Function]}
+                renderAccessory={[Function]}
+                rippleDuration={400}
+                selectionColor="rgb(0, 145, 234)"
+                shadeOpacity={0.12}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "margin": 0,
+                      "padding": 0,
+                      "top": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, .87)",
+                      "fontSize": 16,
+                      "height": 24,
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                useNativeDriver={false}
+                value="4:00"
+                valueExtractor={[Function]}
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "justifyContent": "center",
+                    "top": 2,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 24,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "transparent",
+                        "height": 6,
+                        "overflow": "hidden",
+                        "width": 12,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "height": 8,
+                            "transform": Array [
+                              Object {
+                                "translateY": -4,
+                              },
+                              Object {
+                                "rotate": "45deg",
+                              },
+                            ],
+                            "width": 8,
+                          },
+                          Object {
+                            "backgroundColor": "rgba(0, 0, 0, .38)",
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgb(213, 0, 0)",
+                      "fontSize": 0,
+                      "opacity": 0,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0, 0, 0, .38)",
+                      "fontSize": 12,
+                      "opacity": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          onLayout={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onRippleAnimation={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="box-only"
+          rippleCentered={false}
+          rippleColor="rgba(0, 0, 0, .38)"
+          rippleDuration={400}
+          rippleFades={true}
+          rippleOpacity={0.54}
+          rippleSequential={true}
+          rippleSize={0}
+          style={
+            Object {
+              "height": 48,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 16,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "borderRadius": 0,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+      <Modal
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        supportedOrientations={
+          Array [
+            "portrait",
+            "portrait-upside-down",
+            "landscape",
+            "landscape-left",
+            "landscape-right",
+          ]
+        }
+        transparent={true}
+        visible={false}
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <View
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(255, 255, 255, 1.0)",
+                  "borderRadius": 2,
+                  "position": "absolute",
+                  "shadowColor": "rgba(0, 0, 0, 1.0)",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.54,
+                  "shadowRadius": 2,
+                },
+                Object {
+                  "height": 176,
+                  "left": undefined,
+                  "top": undefined,
+                  "transform": Array [
+                    Object {
+                      "translateY": -48,
+                    },
+                  ],
+                  "width": undefined,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </Modal>
+    </View>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        accessible={true}
+        hitSlop={
+          Object {
+            "bottom": 6,
+            "left": 4,
+            "right": 4,
+            "top": 6,
+          }
+        }
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        pointerEvents="box-only"
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="none"
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomColor": "rgba(0, 0, 0, 0.38)",
+                "borderBottomWidth": 0.5,
+                "height": 63,
+                "paddingBottom": 8,
+                "paddingTop": 31,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "position": "absolute",
+                  "top": 15,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.38)",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                Juoksuohjelma
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <TextInput
+                absoluteRTLLayout={false}
+                allowFontScaling={true}
+                autoCapitalize="sentences"
+                data={
+                  Array [
+                    Object {
+                      "value": "Tossu.com 4 tunnin täysohjelma",
+                    },
+                    Object {
+                      "value": "Tossu.com 4 tunnin väliohjelma",
+                    },
+                  ]
+                }
+                disableFullscreenUI={true}
+                dropdownMargins={
+                  Object {
+                    "max": 16,
+                    "min": 8,
+                  }
+                }
+                dropdownOffset={
+                  Object {
+                    "left": 0,
+                    "top": 32,
+                  }
+                }
+                editable={false}
+                itemColor="rgba(0, 0, 0, .54)"
+                itemCount={4}
+                itemPadding={8}
+                labelExtractor={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onChangeText={[Function]}
+                onContentSizeChange={[Function]}
+                onFocus={[Function]}
+                propsExtractor={[Function]}
+                renderAccessory={[Function]}
+                rippleDuration={400}
+                selectionColor="rgb(0, 145, 234)"
+                shadeOpacity={0.12}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "margin": 0,
+                      "padding": 0,
+                      "top": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, .87)",
+                      "fontSize": 16,
+                      "height": 24,
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                useNativeDriver={false}
+                value="Tossu.com 4 tunnin täysohjelma"
+                valueExtractor={[Function]}
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "justifyContent": "center",
+                    "top": 2,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 24,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "transparent",
+                        "height": 6,
+                        "overflow": "hidden",
+                        "width": 12,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "height": 8,
+                            "transform": Array [
+                              Object {
+                                "translateY": -4,
+                              },
+                              Object {
+                                "rotate": "45deg",
+                              },
+                            ],
+                            "width": 8,
+                          },
+                          Object {
+                            "backgroundColor": "rgba(0, 0, 0, .38)",
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgb(213, 0, 0)",
+                      "fontSize": 0,
+                      "opacity": 0,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0, 0, 0, .38)",
+                      "fontSize": 12,
+                      "opacity": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          onLayout={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onRippleAnimation={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="box-only"
+          rippleCentered={false}
+          rippleColor="rgba(0, 0, 0, .38)"
+          rippleDuration={400}
+          rippleFades={true}
+          rippleOpacity={0.54}
+          rippleSequential={true}
+          rippleSize={0}
+          style={
+            Object {
+              "height": 48,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 16,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "borderRadius": 0,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+      <Modal
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        supportedOrientations={
+          Array [
+            "portrait",
+            "portrait-upside-down",
+            "landscape",
+            "landscape-left",
+            "landscape-right",
+          ]
+        }
+        transparent={true}
+        visible={false}
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <View
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(255, 255, 255, 1.0)",
+                  "borderRadius": 2,
+                  "position": "absolute",
+                  "shadowColor": "rgba(0, 0, 0, 1.0)",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.54,
+                  "shadowRadius": 2,
+                },
+                Object {
+                  "height": 96,
+                  "left": undefined,
+                  "top": undefined,
+                  "transform": Array [
+                    Object {
+                      "translateY": -48,
+                    },
+                  ],
+                  "width": undefined,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </Modal>
+    </View>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        accessible={true}
+        hitSlop={
+          Object {
+            "bottom": 6,
+            "left": 4,
+            "right": 4,
+            "top": 6,
+          }
+        }
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        pointerEvents="box-only"
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="none"
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomColor": "rgba(0, 0, 0, 0.38)",
+                "borderBottomWidth": 0.5,
+                "height": 63,
+                "paddingBottom": 8,
+                "paddingTop": 31,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "position": "absolute",
+                  "top": 15,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.38)",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                Ohjelman kesto
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <TextInput
+                absoluteRTLLayout={false}
+                allowFontScaling={true}
+                autoCapitalize="sentences"
+                data={
+                  Array [
+                    Object {
+                      "label": "24 viikkoa. (Alkaen 15.5.18)",
+                      "value": 24,
+                    },
+                  ]
+                }
+                disableFullscreenUI={true}
+                dropdownMargins={
+                  Object {
+                    "max": 16,
+                    "min": 8,
+                  }
+                }
+                dropdownOffset={
+                  Object {
+                    "left": 0,
+                    "top": 32,
+                  }
+                }
+                editable={false}
+                itemColor="rgba(0, 0, 0, .54)"
+                itemCount={4}
+                itemPadding={8}
+                labelExtractor={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onChangeText={[Function]}
+                onContentSizeChange={[Function]}
+                onFocus={[Function]}
+                propsExtractor={[Function]}
+                renderAccessory={[Function]}
+                rippleDuration={400}
+                selectionColor="rgb(0, 145, 234)"
+                shadeOpacity={0.12}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "margin": 0,
+                      "padding": 0,
+                      "top": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, .87)",
+                      "fontSize": 16,
+                      "height": 24,
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                useNativeDriver={false}
+                value="24 viikkoa. (Alkaen 15.5.18)"
+                valueExtractor={[Function]}
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "justifyContent": "center",
+                    "top": 2,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 24,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "transparent",
+                        "height": 6,
+                        "overflow": "hidden",
+                        "width": 12,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "height": 8,
+                            "transform": Array [
+                              Object {
+                                "translateY": -4,
+                              },
+                              Object {
+                                "rotate": "45deg",
+                              },
+                            ],
+                            "width": 8,
+                          },
+                          Object {
+                            "backgroundColor": "rgba(0, 0, 0, .38)",
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgb(213, 0, 0)",
+                      "fontSize": 0,
+                      "opacity": 0,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0, 0, 0, .38)",
+                      "fontSize": 12,
+                      "opacity": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          onLayout={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onRippleAnimation={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="box-only"
+          rippleCentered={false}
+          rippleColor="rgba(0, 0, 0, .38)"
+          rippleDuration={400}
+          rippleFades={true}
+          rippleOpacity={0.54}
+          rippleSequential={true}
+          rippleSize={0}
+          style={
+            Object {
+              "height": 48,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 16,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "borderRadius": 0,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+      <Modal
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        supportedOrientations={
+          Array [
+            "portrait",
+            "portrait-upside-down",
+            "landscape",
+            "landscape-left",
+            "landscape-right",
+          ]
+        }
+        transparent={true}
+        visible={false}
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <View
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(255, 255, 255, 1.0)",
+                  "borderRadius": 2,
+                  "position": "absolute",
+                  "shadowColor": "rgba(0, 0, 0, 1.0)",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.54,
+                  "shadowRadius": 2,
+                },
+                Object {
+                  "height": 56,
+                  "left": undefined,
+                  "top": undefined,
+                  "transform": Array [
+                    Object {
+                      "translateY": -8,
+                    },
+                  ],
+                  "width": undefined,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </Modal>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingBottom": 48,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 20,
+          "marginBottom": 16,
+        }
+      }
+    >
+      Raja-arvot
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#777",
+          "fontSize": 16,
+        }
+      }
+    >
+      Maksimisykeen avulla voidaan laskea harjoituksille sykealueet
+    </Text>
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        accessible={true}
+        hitSlop={
+          Object {
+            "bottom": 6,
+            "left": 4,
+            "right": 4,
+            "top": 6,
+          }
+        }
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        pointerEvents="box-only"
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="none"
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderBottomColor": "rgba(0, 0, 0, 0.38)",
+                "borderBottomWidth": 0.5,
+                "height": 63,
+                "paddingBottom": 8,
+                "paddingTop": 31,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "position": "absolute",
+                  "top": 15,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.38)",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                Maksimisyke
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <TextInput
+                absoluteRTLLayout={false}
+                allowFontScaling={true}
+                autoCapitalize="sentences"
+                data={
+                  Array [
+                    Object {
+                      "value": 220,
+                    },
+                    Object {
+                      "value": 219,
+                    },
+                    Object {
+                      "value": 218,
+                    },
+                    Object {
+                      "value": 217,
+                    },
+                    Object {
+                      "value": 216,
+                    },
+                    Object {
+                      "value": 215,
+                    },
+                    Object {
+                      "value": 214,
+                    },
+                    Object {
+                      "value": 213,
+                    },
+                    Object {
+                      "value": 212,
+                    },
+                    Object {
+                      "value": 211,
+                    },
+                    Object {
+                      "value": 210,
+                    },
+                    Object {
+                      "value": 209,
+                    },
+                    Object {
+                      "value": 208,
+                    },
+                    Object {
+                      "value": 207,
+                    },
+                    Object {
+                      "value": 206,
+                    },
+                    Object {
+                      "value": 205,
+                    },
+                    Object {
+                      "value": 204,
+                    },
+                    Object {
+                      "value": 203,
+                    },
+                    Object {
+                      "value": 202,
+                    },
+                    Object {
+                      "value": 201,
+                    },
+                    Object {
+                      "value": 200,
+                    },
+                    Object {
+                      "value": 199,
+                    },
+                    Object {
+                      "value": 198,
+                    },
+                    Object {
+                      "value": 197,
+                    },
+                    Object {
+                      "value": 196,
+                    },
+                    Object {
+                      "value": 195,
+                    },
+                    Object {
+                      "value": 194,
+                    },
+                    Object {
+                      "value": 193,
+                    },
+                    Object {
+                      "value": 192,
+                    },
+                    Object {
+                      "value": 191,
+                    },
+                    Object {
+                      "value": 190,
+                    },
+                    Object {
+                      "value": 189,
+                    },
+                    Object {
+                      "value": 188,
+                    },
+                    Object {
+                      "value": 187,
+                    },
+                    Object {
+                      "value": 186,
+                    },
+                    Object {
+                      "value": 185,
+                    },
+                    Object {
+                      "value": 184,
+                    },
+                    Object {
+                      "value": 183,
+                    },
+                    Object {
+                      "value": 182,
+                    },
+                    Object {
+                      "value": 181,
+                    },
+                    Object {
+                      "value": 180,
+                    },
+                    Object {
+                      "value": 179,
+                    },
+                    Object {
+                      "value": 178,
+                    },
+                    Object {
+                      "value": 177,
+                    },
+                    Object {
+                      "value": 176,
+                    },
+                    Object {
+                      "value": 175,
+                    },
+                    Object {
+                      "value": 174,
+                    },
+                    Object {
+                      "value": 173,
+                    },
+                    Object {
+                      "value": 172,
+                    },
+                    Object {
+                      "value": 171,
+                    },
+                    Object {
+                      "value": 170,
+                    },
+                    Object {
+                      "value": 169,
+                    },
+                    Object {
+                      "value": 168,
+                    },
+                    Object {
+                      "value": 167,
+                    },
+                    Object {
+                      "value": 166,
+                    },
+                    Object {
+                      "value": 165,
+                    },
+                    Object {
+                      "value": 164,
+                    },
+                    Object {
+                      "value": 163,
+                    },
+                    Object {
+                      "value": 162,
+                    },
+                    Object {
+                      "value": 161,
+                    },
+                    Object {
+                      "value": 160,
+                    },
+                    Object {
+                      "value": 159,
+                    },
+                    Object {
+                      "value": 158,
+                    },
+                    Object {
+                      "value": 157,
+                    },
+                    Object {
+                      "value": 156,
+                    },
+                    Object {
+                      "value": 155,
+                    },
+                    Object {
+                      "value": 154,
+                    },
+                    Object {
+                      "value": 153,
+                    },
+                    Object {
+                      "value": 152,
+                    },
+                    Object {
+                      "value": 151,
+                    },
+                    Object {
+                      "value": 150,
+                    },
+                    Object {
+                      "value": 149,
+                    },
+                    Object {
+                      "value": 148,
+                    },
+                    Object {
+                      "value": 147,
+                    },
+                    Object {
+                      "value": 146,
+                    },
+                    Object {
+                      "value": 145,
+                    },
+                    Object {
+                      "value": 144,
+                    },
+                    Object {
+                      "value": 143,
+                    },
+                    Object {
+                      "value": 142,
+                    },
+                    Object {
+                      "value": 141,
+                    },
+                    Object {
+                      "value": 140,
+                    },
+                  ]
+                }
+                disableFullscreenUI={true}
+                dropdownMargins={
+                  Object {
+                    "max": 16,
+                    "min": 8,
+                  }
+                }
+                dropdownOffset={
+                  Object {
+                    "left": 0,
+                    "top": 32,
+                  }
+                }
+                editable={false}
+                itemColor="rgba(0, 0, 0, .54)"
+                itemCount={4}
+                itemPadding={8}
+                labelExtractor={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onChangeText={[Function]}
+                onContentSizeChange={[Function]}
+                onFocus={[Function]}
+                propsExtractor={[Function]}
+                renderAccessory={[Function]}
+                rippleDuration={400}
+                selectionColor="rgb(0, 145, 234)"
+                shadeOpacity={0.12}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "margin": 0,
+                      "padding": 0,
+                      "top": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, .87)",
+                      "fontSize": 16,
+                      "height": 24,
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+                underlineColorAndroid="transparent"
+                useNativeDriver={false}
+                value="185"
+                valueExtractor={[Function]}
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "flex-start",
+                    "justifyContent": "center",
+                    "top": 2,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 24,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "transparent",
+                        "height": 6,
+                        "overflow": "hidden",
+                        "width": 12,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "height": 8,
+                            "transform": Array [
+                              Object {
+                                "translateY": -4,
+                              },
+                              Object {
+                                "rotate": "45deg",
+                              },
+                            ],
+                            "width": 8,
+                          },
+                          Object {
+                            "backgroundColor": "rgba(0, 0, 0, .38)",
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgb(213, 0, 0)",
+                      "fontSize": 0,
+                      "opacity": 0,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "bottom": 0,
+                    "left": 0,
+                    "paddingVertical": 4,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "rgba(0, 0, 0, .38)",
+                      "fontSize": 12,
+                      "opacity": 1,
+                    }
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          onLayout={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onRippleAnimation={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="box-only"
+          rippleCentered={false}
+          rippleColor="rgba(0, 0, 0, .38)"
+          rippleDuration={400}
+          rippleFades={true}
+          rippleOpacity={0.54}
+          rippleSequential={true}
+          rippleSize={0}
+          style={
+            Object {
+              "height": 48,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 16,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "borderRadius": 0,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+      <Modal
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        supportedOrientations={
+          Array [
+            "portrait",
+            "portrait-upside-down",
+            "landscape",
+            "landscape-left",
+            "landscape-right",
+          ]
+        }
+        transparent={true}
+        visible={false}
+      >
+        <View
+          onResponderRelease={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <View
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(255, 255, 255, 1.0)",
+                  "borderRadius": 2,
+                  "position": "absolute",
+                  "shadowColor": "rgba(0, 0, 0, 1.0)",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.54,
+                  "shadowRadius": 2,
+                },
+                Object {
+                  "height": 176,
+                  "left": undefined,
+                  "top": undefined,
+                  "transform": Array [
+                    Object {
+                      "translateY": -48,
+                    },
+                  ],
+                  "width": undefined,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </Modal>
+    </View>
+  </View>
+</View>
+`;
