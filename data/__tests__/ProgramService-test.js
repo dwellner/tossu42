@@ -72,4 +72,46 @@ describe("ProgramService", () => {
 
     expect(programs).toEqual(["Tossu.com3.5tunnintäysohjelma_24"]);
   });
+
+  it("getProgramNames should return unique names", () => {
+    expect(ProgramService.getProgramNames(240)).toEqual([
+      "Tossu.com 4 tunnin täysohjelma",
+      "Tossu.com 4 tunnin väliohjelma"
+    ]);
+    expect(ProgramService.getProgramNames(210)).toEqual([
+      "Tossu.com 3.5 tunnin täysohjelma",
+      "Tossu.com 3.5 tunnin väliohjelma"
+    ]);
+    expect(ProgramService.getProgramNames(60)).toEqual([]);
+  });
+
+  it("getProgramLength should return unique lengths valid for given params", () => {
+    expect(
+      ProgramService.getProgramLengths(210, "Tossu.com 3.5 tunnin täysohjelma")
+    ).toEqual([
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ]);
+    expect(
+      ProgramService.getProgramLengths(210, "Tossu.com 3.5 tunnin väliohjelma")
+    ).toEqual([8, 6, 4, 2]);
+    expect(
+      ProgramService.getProgramLengths(210, "Tossu.com 5 tunnin väliohjelma")
+    ).toEqual([]);
+  });
 });

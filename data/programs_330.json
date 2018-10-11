@@ -2,7 +2,7 @@
   {
     "name": "Tossu.com 3.5 tunnin täysohjelma",
     "targetTime": { "target": 210, "min": 195, "max": 225 },
-    "stretchRules": { "minWeeks": 18, "maxWeeks": 40, "repeat": 3 },
+    "stretchRules": { "minWeeks": 24, "maxWeeks": 40, "repeat": 3 },
     "weeks": [
       [
         { "distance": 6, "type": "pa" },

@@ -11,7 +11,7 @@ import ProgramService from "../../data/ProgramService";
 import Texts from "../../constants/Texts";
 
 const TargetEventSection = ({ name, onNameChanged, date, onDateChanged }) => (
-  <View key="target" style={styles.section}>
+  <View style={styles.section}>
     <Text style={styles.sectionHeader}>{Texts.labels.settingsGoalHeader}</Text>
     <Text style={styles.sectionSubHeader}>
       {Texts.labels.settingsGoalSubHeader}
@@ -41,41 +41,27 @@ const ProgramSection = ({
   programLength,
   onProgramLengthChanged
 }) => {
-  const unique = arr => [...new Set(arr)];
-
-  const range = (min, max) =>
-    Array(max - min)
-      .fill()
-      .map((_, i) => i + min);
-
-  const programNames = unique(
-    ProgramService.getPrograms(targetTime).map(p => p.name)
-  ).map(name => ({
+  const programNames = ProgramService.getProgramNames(targetTime).map(name => ({
     value: name
   }));
 
-  const getValidProgramLengths = p =>
-    p.stretchRules !== undefined
-      ? range(p.stretchRules.minWeeks, p.stretchRules.maxWeeks + 1)
-      : [p.weeks.length];
+  const toStartDate = len => DateUtils.nextDate(eventDate, len * -7);
+  const toStartDateLabel = len => Formatters.dateToDateLabel(toStartDate(len));
+  const toLengthLabel = length => {
+    const startAt =
+      eventDate != null
+        ? ` (${Texts.labels.startingAt} ${toStartDateLabel(length)})`
+        : "";
+    return `${length} ${Texts.labels.weeks}.${startAt}`;
+  };
 
+  const programLengths = ProgramService.getProgramLengths(
+    targetTime,
+    programName
+  ).map(length => ({ value: length, label: toLengthLabel(length) }));
 
-  const startAt = length => eventDate != null ?  `(Alkaen ${Formatters.dateToDateLabel(
-    DateUtils.nextDate(eventDate, length * -7)
-  )})` : "";
-
-  const programLengths = unique(
-    ProgramService.getPrograms(targetTime, programName).map(
-      getValidProgramLengths
-    )
-  )
-    .reduce((a, b) => a.concat(b), [])
-    .map(length => ({
-      value: length,
-      label: `${length} viikkoa. ${startAt(length)}`
-    }));
   return (
-    <View key="program" style={styles.section}>
+    <View style={styles.section}>
       <Text style={styles.sectionHeader}>
         {Texts.labels.settingsProgramHeader}
       </Text>
@@ -98,7 +84,7 @@ const ProgramSection = ({
       />
 
       <Dropdown
-        label={"Ohjelman kesto"}
+        label={Texts.labels.programDuration}
         data={programLengths}
         value={programLength}
         onChangeText={onProgramLengthChanged}
@@ -112,7 +98,7 @@ const heartRates = Array(81)
   .map((_, i) => ({ value: 220 - i }));
 
 const MetadataSection = ({ maxHr, onMaxHrChanged }) => (
-  <View key="meta" style={styles.section}>
+  <View style={styles.section}>
     <Text style={styles.sectionHeader}>{Texts.labels.settingsMetaHeader}</Text>
     <Text style={styles.sectionSubHeader}>
       {Texts.labels.settingsMetaSubHeader}

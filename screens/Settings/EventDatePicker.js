@@ -37,7 +37,7 @@ export default class EventDatePicker extends React.Component {
             editable={false}
             label={Texts.labels.eventDate}
             value={Formatters.dateToDateLabel(value)}
-            error={value == null ? "Pakollinen" : undefined}
+            error={value == null ? Texts.labels.mandatory : undefined}
           />
         </TouchableOpacity>
         <DateTimePicker

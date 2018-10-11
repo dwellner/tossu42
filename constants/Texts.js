@@ -1,5 +1,6 @@
 export default {
   labels: {
+    mandatory: "Pakollinen",
     ivLeg: "Veto",
     takeItEasy: "Ota iisisti 😌",
     goGirl: "💪 Anna palaa",
@@ -20,6 +21,9 @@ export default {
     programType: "Juoksuohjelman tyyppi",
     noProgram: "Et ole vielä asettanut ohjelmaa",
     weekShort: "Vk",
+    weeks: "viikkoa",
+    startingAt: "Alkaen",
+    programDuration: "Ohjelman kesto",
     weekProgram: "Viikon ohjelma",
     settingsGoalHeader: "Mitä maraton aiot juosta seuraavaksi?",
     settingsGoalSubHeader:
@@ -29,6 +33,10 @@ export default {
     settingsMetaHeader: "Raja-arvot",
     settingsMetaSubHeader: "Maksimisykeen avulla voidaan laskea harjoituksille sykealueet",
     maxHeartRate: "Maksimisyke",
+
+    dayScreen: "Päivänäkymä",
+    programScreen: "Ohjelma",
+    settingsScreen: "Asetukset"
   },
 
   weekDays: [

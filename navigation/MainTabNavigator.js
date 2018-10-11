@@ -8,6 +8,7 @@ import TabBarIcon from "../components/TabBarIcon";
 import DayScreen from "../screens/Day/DayScreen";
 import ProgramScreen from "../screens/Program/ProgramScreen";
 import SettingsScreen from "../screens/Settings/SettingsScreen";
+import Texts from "../constants/Texts";
 
 const getIconName = (iosIcon, mdIcon, focused) =>
   Platform.OS === "ios" ? `${iosIcon}${focused ? "" : "-outline"}` : mdIcon;
@@ -28,21 +29,21 @@ const createNavigator = (stack, label, iosIcon, mdIcon) => {
 
 const DayStack = createNavigator(
   { Day: DayScreen },
-  "Päivänäkymä",
+  Texts.labels.dayScreen,
   "ios-calendar",
   "md-calendar"
 );
 
 const ProgramStack = createNavigator(
   { Program: ProgramScreen },
-  "Ohjelma",
+  Texts.labels.programScreen,
   "ios-list",
   "md-list"
 );
 
 const SettingsStack = createNavigator(
   { Settings: SettingsScreen },
-  "Asetukset",
+  Texts.labels.settingsScreen,
   "ios-options",
   "md-options"
 );
@@ -56,12 +57,8 @@ export default createBottomTabNavigator(
   {
     tabBarOptions: {
       activeTintColor: "#FFF",
-      labelStyle: {
-        fontSize: 12
-      },
-      style: {
-        backgroundColor: "#111"
-      }
+      labelStyle: { fontSize: 12 },
+      style: { backgroundColor: "#111" }
     }
   }
 );
