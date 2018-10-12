@@ -71,6 +71,11 @@ const programSchema = Joi.object().keys({
 });
 
 describe("Program schema should be valid for", () => {
+  it("3:00 programs", () => {
+    const programs = require("../programs_300.json");
+    programs.forEach(p => Joi.assert(p, programSchema));
+  });
+
   it("3:30 programs", () => {
     const programs = require("../programs_330.json");
     programs.forEach(p => Joi.assert(p, programSchema));
