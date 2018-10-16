@@ -7,8 +7,21 @@ import Styles from "../../constants/Styles";
 import {
   dateToDayLabelShort,
   dayToDistanceDesc,
+  dayToDistanceUnitDesc,
   dayToTypeDescShort
 } from "../../utils/Formatters";
+
+const Triangle = () => (
+  <View
+    style={{
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center"
+    }}
+  >
+    <View style={styles.TriangleShapeCSS} />
+  </View>
+);
 
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {
@@ -18,11 +31,18 @@ export default class WeekSummaryComponent extends React.Component {
 
   render() {
     const { day, selected } = this.props;
+
+    const triangle = selected ? <Triangle /> : undefined;
+    const distance = `${dayToDistanceDesc(day)}${dayToDistanceUnitDesc(day)}`;
+
     return (
-      <View style={selected ? styles.component_selected : styles.component}>
-        <Text style={styles.text_day}>{dateToDayLabelShort(day.date)}</Text>
-        <Text style={styles.text_distance}>{dayToDistanceDesc(day)}</Text>
-        <Text style={styles.text_type}>{dayToTypeDescShort(day)}</Text>
+      <View style={{ flex: 1 }}>
+        <View style={selected ? styles.component_selected : styles.component}>
+          <Text style={styles.text_day}>{dateToDayLabelShort(day.date)}</Text>
+          <Text style={styles.text_distance}>{distance}</Text>
+          <Text style={styles.text_type}>{dayToTypeDescShort(day)}</Text>
+        </View>
+        {triangle}
       </View>
     );
   }
@@ -30,35 +50,44 @@ export default class WeekSummaryComponent extends React.Component {
 
 const containerStyles = {
   flex: 1,
-  justifyContent: "center",
   alignItems: "center",
-  borderWidth: 1,
-  paddingBottom: 8,
-  margin: 1
+  paddingTop: 24,
+  paddingBottom: 24
 };
 
 const styles = StyleSheet.create({
   component: {
-    ...containerStyles,
-    backgroundColor: "#777",
-    borderColor: "#444"
+    ...containerStyles
   },
 
   component_selected: {
     ...containerStyles,
-    backgroundColor: "#999",
-    borderColor: Colors.tintColor
+    backgroundColor: Colors.tintColor
   },
 
   text_day: {
-    ...Styles.defaultContent,
+    ...Styles.largeContent,
     marginBottom: 8
   },
 
   text_distance: {
-    ...Styles.smallContent,
-    fontWeight: "bold"
+    ...Styles.strongContent,
+    fontSize: 12
   },
 
-  text_type: { ...Styles.smallContent }
+  text_type: { ...Styles.lightContent, fontSize: 12 },
+
+  TriangleShapeCSS: {
+    width: 0,
+    height: 0,
+    borderLeftWidth: 18,
+    borderRightWidth: 18,
+    borderTopWidth: 24,
+    borderStyle: "solid",
+    backgroundColor: "transparent",
+    borderLeftColor: "transparent",
+    borderRightColor: "transparent",
+    borderTopColor: Colors.tintColor,
+    marginBottom: 10
+  }
 });

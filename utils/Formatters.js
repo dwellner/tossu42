@@ -1,10 +1,17 @@
 import Texts from "../constants/Texts";
 import moment from "moment";
+import { Platform } from "react-native";
+
+export const dayToDistanceUnitDesc = day => {
+  if (day.type === "iv") return "m";
+  if (day.type === "lepo") return "";
+  return "km";
+};
 
 export const dayToDistanceDesc = day => {
-  if (day.type === "iv") return `${day.repeat}x${day.distance * 1000}m`;
-  if (day.type === "lepo") return " ";
-  return `${day.distance} km`;
+  if (day.type === "iv") return `${day.repeat}x${day.distance * 1000}`;
+  if (day.type === "lepo") return "";
+  return day.distance.toFixed(0);
 };
 
 export const dateToDayLabelShort = date => {
@@ -34,6 +41,11 @@ export const minutesToTimeLabel = mins => {
   const m = `${mins % 60}`.padStart(2, "0");
   return `${h}:${m}`;
 };
+
+export const getIconName = (icon, focused) =>
+  Platform.OS === "ios"
+    ? `ios-${icon}${focused ? "" : "-outline"}`
+    : `md-${icon}`;
 
 export const dayToTypeDesc = day => Texts.runTypes[day.type];
 export const dayToTypeDescShort = day => Texts.runTypesShort[day.type];

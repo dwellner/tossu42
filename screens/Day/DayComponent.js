@@ -1,70 +1,65 @@
 import React from "react";
 import propTypes from "prop-types";
-import { StyleSheet, View, Text } from "react-native";
-import Styles from "../../constants/Styles";
-import Texts from "../../constants/Texts";
-import { dayToDistanceDesc, dayToTypeDesc } from "../../utils/Formatters";
-import DayGoalModel from "../../utils/DayGoalModel";
+import { View, TouchableOpacity, Text } from "react-native";
+import DayContentComponent from "./DayContentComponent";
 import WeekSummaryComponent from "./WeekSummaryComponent";
-
-const DayGoal = ({ day, maxHr, targetTime }) => (
-  <View style={styles.component}>
-    <Text style={styles.text_label}>{Texts.labels.dayProgram}</Text>
-    <Text style={styles.text_days_until}>
-      {day.type !== "lepo" ? dayToDistanceDesc(day) : "😎"}
-    </Text>
-    <Text style={styles.text_runType}>{dayToTypeDesc(day)}</Text>
-    <Text style={styles.text_bpmRange}>
-      {DayGoalModel.getTargetMetricsGoals(day, maxHr, targetTime)}
-    </Text>
-  </View>
-);
+import Dimensions from "Dimensions";
+import Carousel from "react-native-snap-carousel";
+import NoProgram from "../../components/NoProgram";
 
 export default class DayComponent extends React.Component {
   static propTypes = {
-    week: propTypes.object.isRequired,
+    weekProgram: propTypes.object.isRequired,
     date: propTypes.string.isRequired,
-    maxHr: propTypes.number,
+    targetEvent: propTypes.object.isRequired,
     targetTime: propTypes.number.isRequired,
+    maxHr: propTypes.number,
     changeDate: propTypes.func.isRequired
   };
 
-  render() {
-    const { week, date, maxHr, targetTime, changeDate } = this.props;
-    const day = week.days.find(day => day.date === date);
+  _renderDay(day) {
+    const { maxHr, targetEvent, targetTime } = this.props;
 
     return (
-      <View>
-        <DayGoal day={day} maxHr={maxHr} targetTime={targetTime} />
+      <DayContentComponent
+        day={day}
+        maxHr={maxHr}
+        targetEvent={targetEvent}
+        targetTime={targetTime}
+      />
+    );
+  }
+
+  render() {
+    const { weekProgram, date, changeDate } = this.props;
+    if (weekProgram == null) return <NoProgram />;
+
+    const week = weekProgram.weeks.find(
+      week => week.days.findIndex(d => d.date === date) >= 0
+    );
+    if (week == null) return <NoProgram />;
+    let days = weekProgram.weeks
+      .map(w => w.days)
+      .reduce((a, b) => a.concat(b), []);
+
+    let dayIndex = days.findIndex(day => day.date === date);
+
+    return (
+      <View style={{ flex: 1, alignItems: "stretch" }}>
         <WeekSummaryComponent week={week} date={date} changeDate={changeDate} />
+        <View style={{ flex: 1 }}>
+          <Carousel
+            data={days}
+            renderItem={({ item }) => this._renderDay(item)}
+            sliderWidth={Dimensions.get("window").width}
+            firstItem={dayIndex}
+            initialNumToRender={Math.max(dayIndex, 25)}
+            itemWidth={300}
+            enableMomentum={true}
+            onBeforeSnapToItem={index => changeDate(days[index].date)}
+          />
+        </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  component: {
-    ...Styles.widgetContainer,
-    alignItems: "center"
-  },
-
-  text_label: {
-    color: "#bbb",
-    fontSize: 16
-  },
-
-  text_days_until: {
-    color: "#f442df",
-    fontSize: 64
-  },
-
-  text_runType: {
-    color: "#fff",
-    fontSize: 24
-  },
-
-  text_bpmRange: {
-    color: "#fff",
-    fontSize: 24
-  }
-});

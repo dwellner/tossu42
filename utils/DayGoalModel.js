@@ -7,13 +7,13 @@ const getPaceGoal = targetTime => {
     const minutes = `${Math.round((pace * 60) % 60)}`.padStart(2, "0");
     return `${hours}:${minutes}`;
   };
-  return `⏱  ${getPace(0.95)} - ${getPace(1.05)}`;
+  return `${getPace(0.95)} - ${getPace(1.05)} min/km`;
 };
 
 const getHeartRateGoal = (maxHr, low, high) => {
   if (maxHr == null) return "";
   const getHrPct = pct => Math.round(maxHr * pct);
-  return `❤ ${getHrPct(low)} - ${getHrPct(high)} bpm`;
+  return `${getHrPct(low)} - ${getHrPct(high)} bpm`;
 };
 
 const getTargetMetricsGoals = (day, maxHr, targetTime) => {

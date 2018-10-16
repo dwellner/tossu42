@@ -1,30 +1,34 @@
-import Colors from "./Colors"
+import Colors from "./Colors";
 
 export default {
-    defaultContent: {
-        fontSize: 20,
-        color: Colors.defaultText,
-    },
+  defaultContent: {
+    fontFamily: "OpenSans",
+    fontSize: 16,
+    color: Colors.defaultText
+  },
 
-    smallContent: {
-        color: Colors.defaultText,
-        fontSize: 12,    
-    }, 
+  largeContent: {
+    fontFamily: "OpenSans",
+    fontSize: 20,
+    color: Colors.defaultText
+  },
 
-    label: {
-        fontSize: 16,
-        color: Colors.labelText,
-        marginBottom: 8
-    },
+  strongContent: {
+    fontFamily: "OpenSans-Bold",
+    color: Colors.defaultText,
+    fontSize: 16
+  },
 
-    widgetContainer: {
-        flex: 1,
-        marginBottom: 16,
-        backgroundColor: Colors.widgetBackground,
-        paddingTop: 8,
-        paddingBottom: 16,
-        borderTopWidth: 1,
-        borderBottomWidth: 1,
-        borderColor: Colors.defaultBorder,
-    }
-}
+  strongLargeContent: {
+    fontFamily: "OpenSans-Bold",
+    color: Colors.defaultText,
+    fontSize: 20
+  },
+
+
+  lightContent: {
+    fontFamily: "OpenSans-Light",
+    color: Colors.defaultText,
+    fontSize: 16
+  }
+};

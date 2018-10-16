@@ -14,13 +14,13 @@ export default {
     intensity: "Intensiteetti",
     programSetFor: "Juoksuohjelma on asetettu jaksolle",
     eventName: "Tapahtuman nimi",
-    eventDate: "Ajankohta",
+    eventDate: "Pvm",
     targetTime: "Tavoiteaika",
     nextMaraton: "Seuraava maraton",
     program: "Juoksuohjelma",
     programType: "Juoksuohjelman tyyppi",
     noProgram: "Et ole vielä asettanut ohjelmaa",
-    weekShort: "Vk",
+    weekShort: "Viikko",
     weeks: "viikkoa",
     startingAt: "Alkaen",
     programDuration: "Ohjelman kesto",
@@ -33,10 +33,11 @@ export default {
     settingsMetaHeader: "Raja-arvot",
     settingsMetaSubHeader: "Maksimisykeen avulla voidaan laskea harjoituksille sykealueet",
     maxHeartRate: "Maksimisyke",
-
-    dayScreen: "Päivänäkymä",
+    programHeader: "Nykyinen harjoitusohjelma",
+    programGuide: "Alla naet ohjelman harjoitusviikot, pääset tarkastelemaan viikkoa klikkaamalla",
+    dayScreen: "Päivä",
     programScreen: "Ohjelma",
-    settingsScreen: "Asetukset"
+    settingsScreen: "Muokkaa"
   },
 
   weekDays: [

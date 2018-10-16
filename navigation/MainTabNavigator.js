@@ -1,5 +1,4 @@
 import React from "react";
-import { Platform } from "react-native";
 import {
   createStackNavigator,
   createBottomTabNavigator
@@ -8,20 +7,16 @@ import TabBarIcon from "../components/TabBarIcon";
 import DayScreen from "../screens/Day/DayScreen";
 import ProgramScreen from "../screens/Program/ProgramScreen";
 import SettingsScreen from "../screens/Settings/SettingsScreen";
+import { getIconName } from "../utils/Formatters";
 import Texts from "../constants/Texts";
+import Colors from "../constants/Colors";
 
-const getIconName = (iosIcon, mdIcon, focused) =>
-  Platform.OS === "ios" ? `${iosIcon}${focused ? "" : "-outline"}` : mdIcon;
-
-const createNavigator = (stack, label, iosIcon, mdIcon) => {
+const createNavigator = (stack, label, icon) => {
   const navigator = createStackNavigator(stack);
   navigator.navigationOptions = {
     tabBarLabel: label,
     tabBarIcon: ({ focused }) => (
-      <TabBarIcon
-        focused={focused}
-        name={getIconName(iosIcon, mdIcon, focused)}
-      />
+      <TabBarIcon focused={focused} name={getIconName(icon, focused)} />
     )
   };
   return navigator;
@@ -30,22 +25,19 @@ const createNavigator = (stack, label, iosIcon, mdIcon) => {
 const DayStack = createNavigator(
   { Day: DayScreen },
   Texts.labels.dayScreen,
-  "ios-calendar",
-  "md-calendar"
+  "calendar"
 );
 
 const ProgramStack = createNavigator(
   { Program: ProgramScreen },
   Texts.labels.programScreen,
-  "ios-list",
-  "md-list"
+  "list"
 );
 
 const SettingsStack = createNavigator(
   { Settings: SettingsScreen },
   Texts.labels.settingsScreen,
-  "ios-options",
-  "md-options"
+  "options"
 );
 
 export default createBottomTabNavigator(
@@ -56,9 +48,9 @@ export default createBottomTabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: "#FFF",
+      activeTintColor: Colors.defaultText,
       labelStyle: { fontSize: 12 },
-      style: { backgroundColor: "#111" }
+      style: { backgroundColor: "#F9F9F9" }
     }
   }
 );

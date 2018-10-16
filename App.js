@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { NavigationActions } from "react-navigation";
-import { AppLoading, Asset, Font, Icon } from "expo";
+import { AppLoading, Font, Icon } from "expo";
 import AppNavigator from "./navigation/AppNavigator";
 import createAndHydrateStore from "./Store";
 
@@ -11,7 +11,7 @@ export default class App extends React.Component {
   state = {
     isStoreHydrated: false,
     isLoadingComplete: false,
-    shouldNavigateToInitialRoute: true,
+    shouldNavigateToInitialRoute: true
   };
 
   storeHydrated() {
@@ -34,9 +34,9 @@ export default class App extends React.Component {
   render() {
     const store = this.store;
     if (
-      !this.state.isLoadingComplete &&
-      !this.state.isStoreHydrated &&
-      !this.props.skipLoadingScreen
+      !this.state.isLoadingComplete ||
+      !this.state.isStoreHydrated ||
+      this.props.skipLoadingScreen
     ) {
       return (
         <AppLoading
@@ -63,10 +63,11 @@ export default class App extends React.Component {
 
   _loadResourcesAsync = async () => {
     return Promise.all([
-      Asset.loadAsync([require("./assets/images/darkroad.png")]),
       Font.loadAsync({
-        // This is the font that we are using for our tab bar
-        ...Icon.Ionicons.font
+        ...Icon.Ionicons.font,
+        OpenSans: require("./assets/fonts/OpenSans-Regular.ttf"),
+        "OpenSans-Bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+        "OpenSans-Light": require("./assets/fonts/OpenSans-Light.ttf")
       })
     ]);
   };
@@ -83,6 +84,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#333"
+    backgroundColor: "#FFF",
+    marginTop: 30
   }
 });

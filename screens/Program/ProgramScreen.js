@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import Texts from "../../constants/Texts";
 import ProgramComponent from "./ProgramComponent";
 import ProgramModel from "../../utils/ProgramModel";
+import DateUtils from "../../utils/DateUtils";
 import NoProgram from "../../components/NoProgram";
-import BackgroundContainer from "../../components/BackgroundContainer";
 
 class ProgramScreen extends React.Component {
   static navigationOptions = {
@@ -18,13 +18,12 @@ class ProgramScreen extends React.Component {
     if (weekProgram === null) return <NoProgram />;
 
     return (
-      <BackgroundContainer>
-        <ProgramComponent
-          targetEvent={targetEvent}
-          weekProgram={weekProgram}
-          onWeekClicked={date => navigate("Day", { date })}
-        />
-      </BackgroundContainer>
+      <ProgramComponent
+        targetEvent={targetEvent}
+        weekProgram={weekProgram}
+        date={DateUtils.currentDate}
+        onWeekClicked={date => navigate("Day", { date })}
+      />
     );
   }
 }
