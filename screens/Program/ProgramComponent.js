@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from "react-native";
 import Styles from "../../constants/Styles";
-import Formatters from "../../utils/Formatters";
+import { dateToDateLabel } from "../../utils/Formatters";
 import ProgressBar from "react-native-progress/Bar";
 import Colors from "../../constants/Colors";
 import Texts from "../../constants/Texts";
@@ -29,9 +29,7 @@ const LevelBar = ({ value, filled, empty }) => (
 const RaceInfo = ({ targetEvent }) => (
   <View style={{ flex: 1, flexDirection: "row" }}>
     <Text style={{ flex: 1 }} />
-    <Text style={styles.raceDate}>
-      {Formatters.dateToDateLabel(targetEvent.date)}
-    </Text>
+    <Text style={styles.raceDate}>{dateToDateLabel(targetEvent.date)}</Text>
     <Text style={styles.raceEventName}>{targetEvent.name}</Text>
   </View>
 );
@@ -69,7 +67,7 @@ const Week = ({ weekNumber, week }) => {
       </View>
       <View style={{ flex: 2 }}>
         <Text style={{ ...Styles.defaultContent }}>
-          {Formatters.dateToDateLabel(week.days[0].date)}
+          {dateToDateLabel(week.days[0].date)}
         </Text>
       </View>
       <View style={{ flex: 2, alignItems: "flex-end", marginRight: 4 }}>

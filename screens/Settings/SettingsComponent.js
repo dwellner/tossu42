@@ -5,7 +5,7 @@ import { Dropdown } from "react-native-material-dropdown";
 import { TextField } from "react-native-material-textfield";
 
 import DateUtils from "../../utils/DateUtils";
-import Formatters from "../../utils/Formatters";
+import { minutesToTimeLabel, dateToDateLabel } from "../../utils/Formatters";
 import EventDatePicker from "./EventDatePicker";
 import ProgramService from "../../data/ProgramService";
 import Texts from "../../constants/Texts";
@@ -29,7 +29,7 @@ const TargetEventSection = ({ name, onNameChanged, date, onDateChanged }) => (
 
 const targetTimes = [180, 195, 210, 225, 240, 255, 270, 285, 300].map(v => ({
   value: v,
-  label: Formatters.minutesToTimeLabel(v)
+  label: minutesToTimeLabel(v)
 }));
 
 const ProgramSection = ({
@@ -46,7 +46,7 @@ const ProgramSection = ({
   }));
 
   const toStartDate = len => DateUtils.nextDate(eventDate, len * -7);
-  const toStartDateLabel = len => Formatters.dateToDateLabel(toStartDate(len));
+  const toStartDateLabel = len => dateToDateLabel(toStartDate(len));
   const toLengthLabel = length => {
     const startAt =
       eventDate != null

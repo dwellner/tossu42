@@ -4,7 +4,11 @@ import { StyleSheet, Text, View } from "react-native";
 import Colors from "../../constants/Colors";
 import Styles from "../../constants/Styles";
 
-import Formatters from "../../utils/Formatters";
+import {
+  dateToDayLabelShort,
+  dayToDistanceDesc,
+  dayToTypeDescShort
+} from "../../utils/Formatters";
 
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {
@@ -16,15 +20,9 @@ export default class WeekSummaryComponent extends React.Component {
     const { day, selected } = this.props;
     return (
       <View style={selected ? styles.component_selected : styles.component}>
-        <Text style={styles.text_day}>
-          {Formatters.dateToDayLabelShort(day.date)}
-        </Text>
-        <Text style={styles.text_distance}>
-          {Formatters.dayToDistanceDesc(day)}
-        </Text>
-        <Text style={styles.text_type}>
-          {Formatters.dayToTypeDescShort(day)}
-        </Text>
+        <Text style={styles.text_day}>{dateToDayLabelShort(day.date)}</Text>
+        <Text style={styles.text_distance}>{dayToDistanceDesc(day)}</Text>
+        <Text style={styles.text_type}>{dayToTypeDescShort(day)}</Text>
       </View>
     );
   }
@@ -37,19 +35,19 @@ const containerStyles = {
   borderWidth: 1,
   paddingBottom: 8,
   margin: 1
-}
+};
 
 const styles = StyleSheet.create({
   component: {
     ...containerStyles,
     backgroundColor: "#777",
-    borderColor: "#444",
+    borderColor: "#444"
   },
-  
+
   component_selected: {
     ...containerStyles,
     backgroundColor: "#999",
-    borderColor: Colors.tintColor,
+    borderColor: Colors.tintColor
   },
 
   text_day: {

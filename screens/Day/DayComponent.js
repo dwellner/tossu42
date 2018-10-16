@@ -1,19 +1,19 @@
 import React from "react";
 import propTypes from "prop-types";
 import { StyleSheet, View, Text } from "react-native";
-import Styles from "../../constants/Styles"
-import Texts from "../../constants/Texts"
-import Formatters from "../../utils/Formatters"
-import DayGoalModel from "../../utils/DayGoalModel"
+import Styles from "../../constants/Styles";
+import Texts from "../../constants/Texts";
+import { dayToDistanceDesc, dayToTypeDesc } from "../../utils/Formatters";
+import DayGoalModel from "../../utils/DayGoalModel";
 import WeekSummaryComponent from "./WeekSummaryComponent";
 
 const DayGoal = ({ day, maxHr, targetTime }) => (
   <View style={styles.component}>
     <Text style={styles.text_label}>{Texts.labels.dayProgram}</Text>
     <Text style={styles.text_days_until}>
-      {day.type !== "lepo" ? Formatters.dayToDistanceDesc(day) : "😎"}
+      {day.type !== "lepo" ? dayToDistanceDesc(day) : "😎"}
     </Text>
-    <Text style={styles.text_runType}>{Formatters.dayToTypeDesc(day)}</Text>
+    <Text style={styles.text_runType}>{dayToTypeDesc(day)}</Text>
     <Text style={styles.text_bpmRange}>
       {DayGoalModel.getTargetMetricsGoals(day, maxHr, targetTime)}
     </Text>

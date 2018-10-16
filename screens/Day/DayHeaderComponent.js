@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Formatters from "../../utils/Formatters";
+import { dateToDateLabel, dateToDayLabel } from "../../utils/Formatters";
 import DateUtils from "../../utils/DateUtils";
 import Texts from "../../constants/Texts";
 import { StyleSheet, Text, View, Button } from "react-native";
@@ -8,10 +8,8 @@ import Colors from "../../constants/Colors";
 import Styles from "../../constants/Styles";
 
 NoDayProgram = ({ weekProgram }) => {
-  const firstDate = Formatters.dateToDateLabel(
-    weekProgram.weeks[0].days[0].date
-  );
-  const lastDate = Formatters.dateToDateLabel(
+  const firstDate = dateToDateLabel(weekProgram.weeks[0].days[0].date);
+  const lastDate = dateToDateLabel(
     weekProgram.weeks.slice(-1)[0].days.slice(-1)[0].date
   );
 
@@ -39,7 +37,7 @@ const DaysUntilTargetEvent = ({ targetEvent, daysUntil }) => (
       </Text>
     </View>
     <Text style={styles.text_targetName}>
-      {targetEvent.name} - {Formatters.dateToDateLabel(targetEvent.date)}
+      {targetEvent.name} - {dateToDateLabel(targetEvent.date)}
     </Text>
   </View>
 );
@@ -75,9 +73,7 @@ export default class DayHeaderComponent extends React.Component {
             <Button color="#333" title="◀" onPress={prevWeek} />
           </View>
           <View style={{ flex: 4, alignItems: "center" }}>
-            <Text style={styles.text_date}>
-              {Formatters.dateToDayLabel(date)}
-            </Text>
+            <Text style={styles.text_date}>{dateToDayLabel(date)}</Text>
           </View>
           <View style={{ flex: 1 }}>
             <Button color="#333" title="▶" onPress={nextWeek} />
