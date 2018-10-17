@@ -1,20 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import Styles from "../../constants/Styles";
 import Colors from "../../constants/Colors";
 import { dateToDateLabel } from "../../utils/Formatters";
 import Texts from "../../constants/Texts";
 
 const RaceInfo = ({ targetEvent }) => (
-  <View
-    style={{
-      margin: 16,
-      flex: 1,
-      alignItems: "center"
-    }}
-  >
+  <View style={styles.raceInfo}>
     <Text style={{ ...Styles.strongContent }}>{targetEvent.name}</Text>
     <Text style={{ ...Styles.defaultContent }}>
       {dateToDateLabel(targetEvent.date)}
@@ -22,12 +16,7 @@ const RaceInfo = ({ targetEvent }) => (
   </View>
 );
 
-const LabeledValue = ({
-  label,
-  value,
-  valueStyle = Styles.largeContent,
-  isPast
-}) => {
+const LabeledValue = ({ label, value, valueStyle, isPast }) => {
   const color = isPast ? Colors.inactiveText : Colors.defaultText;
   return (
     <View style={{ margin: 16 }}>
@@ -51,16 +40,14 @@ export default class ProgramWeekComponent extends React.Component {
     const { weekNumber, targetEvent, week, isPast } = this.props;
     const race =
       weekNumber == 1 ? <RaceInfo targetEvent={targetEvent} /> : undefined;
+    const weekDates = `${dateToDateLabel(
+      week.days[0].date
+    )} - ${dateToDateLabel(week.days[6].date)}`;
+    const distance = week.distance.toFixed(0);
 
     return (
       <View>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between"
-          }}
-        >
+        <View style={styles.weekInfoRow}>
           <LabeledValue
             isPast={isPast}
             label={Texts.labels.weekShort}
@@ -70,14 +57,13 @@ export default class ProgramWeekComponent extends React.Component {
           <LabeledValue
             isPast={isPast}
             label={Texts.labels.eventDate}
-            value={`${dateToDateLabel(week.days[0].date)} - ${dateToDateLabel(
-              week.days[6].date
-            )}`}
+            value={weekDates}
+            valueStyle={Styles.largeContent}
           />
           <LabeledValue
             isPast={isPast}
             label={"km"}
-            value={week.distance.toFixed(0)}
+            value={distance}
             valueStyle={Styles.strongLargeContent}
           />
         </View>
@@ -86,3 +72,17 @@ export default class ProgramWeekComponent extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  raceInfo: {
+    margin: 16,
+    flex: 1,
+    alignItems: "center"
+  },
+
+  weekInfoRow: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between"
+  }
+});

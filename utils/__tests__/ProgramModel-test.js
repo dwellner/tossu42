@@ -4,7 +4,7 @@ describe("ProgramModel", () => {
   it("Should match original program", () => {
     const program = ProgramModel.getWeekProgram("2018-10-01", {
       targetTime: 210,
-      name: "Tossu.com 3.5 tunnin täysohjelma",
+      name: "Tossu 3.5 tunnin täysohjelma",
       length: 24
     });
     expect(program.weeks.length).toEqual(24);
@@ -20,7 +20,7 @@ describe("ProgramModel", () => {
   it("Should be extended when stretched with 6 weeks", () => {
     const program = ProgramModel.getWeekProgram("2018-09-29", {
       targetTime: 210,
-      name: "Tossu.com 3.5 tunnin täysohjelma",
+      name: "Tossu 3.5 tunnin täysohjelma",
       length: 30
     });
     expect(program.weeks.length).toEqual(30);
@@ -42,7 +42,7 @@ describe("ProgramModel", () => {
   it("Should be extended when stretched with 4 weeks", () => {
     const program = ProgramModel.getWeekProgram("2018-09-29", {
       targetTime: 210,
-      name: "Tossu.com 3.5 tunnin täysohjelma",
+      name: "Tossu 3.5 tunnin täysohjelma",
       length: 28
     });
     expect(program.weeks.length).toEqual(28);

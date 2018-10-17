@@ -35,7 +35,7 @@ describe("SettingsReducer", () => {
         targetEvent: { date: null, name: null },
         maxHr: null,
         program: {
-          name: "Tossu.com 4 tunnin täysohjelma",
+          name: "Tossu 4 tunnin täysohjelma",
           targetTime: 240,
           length: 24
         }
@@ -81,7 +81,7 @@ describe("SettingsReducer", () => {
     const expectedState = {
       program: {
         targetTime: 300,
-        name: "Tossu.com 5 tunnin täysohjelma",
+        name: "Tossu 5 tunnin täysohjelma",
         length: 24
       }
     };
@@ -102,12 +102,12 @@ describe("SettingsReducer", () => {
       {
         program: {
           ...initState.program,
-          name: "Tossu.com 4 tunnin väliohjelma",
+          name: "Tossu 4 tunnin väliohjelma",
           length: 8
         }
       },
       initState,
-      programNameChanged("Tossu.com 4 tunnin väliohjelma")
+      programNameChanged("Tossu 4 tunnin väliohjelma")
     );
   });
 
@@ -121,12 +121,12 @@ describe("SettingsReducer", () => {
       {
         program: {
           ...initState.program,
-          name: "Tossu.com 4 tunnin väliohjelma",
+          name: "Tossu 4 tunnin väliohjelma",
           length: 4
         }
       },
       currentState,
-      programNameChanged("Tossu.com 4 tunnin väliohjelma")
+      programNameChanged("Tossu 4 tunnin väliohjelma")
     );
   });
 

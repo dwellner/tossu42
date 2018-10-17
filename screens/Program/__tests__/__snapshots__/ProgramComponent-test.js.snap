@@ -4,7 +4,6 @@ exports[`renders correctly 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#0009",
       "flex": 1,
     }
   }
@@ -12,10 +11,8 @@ exports[`renders correctly 1`] = `
   <View
     style={
       Object {
-        "flex": 0,
-        "flexDirection": "row",
-        "padding": 8,
-        "paddingTop": 30,
+        "alignItems": "stretch",
+        "margin": 16,
       }
     }
   >
@@ -25,45 +22,29 @@ exports[`renders correctly 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#bbb",
-          "flex": 1,
-          "fontSize": 16,
-          "marginBottom": 8,
-        }
-      }
-    >
-      Vk
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#bbb",
-          "flex": 2,
-          "fontSize": 16,
-          "marginBottom": 8,
-        }
-      }
-    >
-      Ajankohta
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#bbb",
-          "flex": 5,
-          "fontSize": 16,
-          "marginBottom": 8,
+          "color": "#535353",
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 20,
           "textAlign": "center",
         }
       }
     >
-      Viikon ohjelma
+      Nykyinen harjoitusohjelma
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#535353",
+          "fontFamily": "OpenSans",
+          "fontSize": 16,
+          "textAlign": "center",
+        }
+      }
+    >
+      Alla naet ohjelman harjoitusviikot, pääset tarkastelemaan viikkoa klikkaamalla
     </Text>
   </View>
 </View>

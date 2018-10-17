@@ -7,7 +7,7 @@ import ProgramModel from "../../../utils/ProgramModel";
 it("renders correctly", () => {
   const weekProgram = ProgramModel.getWeekProgram("2018-10-30", {
     targetTime: 240,
-    name: "Tossu.com 4 tunnin täysohjelma",
+    name: "Tossu 4 tunnin täysohjelma",
     length: 24
   });
 
@@ -15,8 +15,9 @@ it("renders correctly", () => {
   const tree = renderer
     .create(
       <DayComponent
-        week={week}
+        weekProgram={weekProgram}
         date={week.days[0].date}
+        targetEvent={{ date: "2018-10-30", name: "Foo Mara" }}
         targetTime={240}
         changeDate={() => {}}
       />

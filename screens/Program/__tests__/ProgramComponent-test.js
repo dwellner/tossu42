@@ -9,15 +9,15 @@ it("renders correctly", () => {
 
   const weekProgram = ProgramModel.getWeekProgram("2018-10-30", {
     targetTime: 240,
-    name: "Tossu.com 4 tunnin täysohjelma",
+    name: "Tossu 4 tunnin täysohjelma",
     length: 24
   });
 
-  const week = weekProgram.weeks[0];
   const tree = renderer
     .create(
       <ProgramComponent
         weekProgram={weekProgram}
+        date={weekProgram.weeks[10].days[3].date}
         targetEvent={targetEvent}
         onWeekClicked={() => {}}
       />

@@ -14,27 +14,24 @@ export const dayToDistanceDesc = day => {
   return day.distance.toFixed(0);
 };
 
-export const dateToDayLabelShort = date => {
-  const dayLabel = Texts.weekDays[new Date(date).getDay()];
-  return dayLabel.substr(0, 2);
-};
+export const formattedDate = (date, format) => moment.utc(date).format(format);
 
-export const dateToDayLabel = date => {
-  const d = new Date(date);
-  const dayLabel = Texts.weekDays[d.getDay()];
-  return `${dayLabel} ${d.getDate()}.${d.getMonth() + 1}.`;
-};
+export const dateToDayName = date => Texts.weekDays[new Date(date).getDay()];
+
+export const dateToDayLabelShort = date => dateToDayName(date).substr(0, 2);
+
+export const dateToDayLabel = date =>
+  `${dateToDayName(date)} ${formattedDate(date, "D.M.")}`;
+
+export const dateToDayLabelFull = date =>
+  `${dateToDayName(date)} ${formattedDate(date, "D.M.YYYY")}`;
 
 export const dateToDateLabel = date => {
   return date != null ? moment.utc(date).format("D.M.YY") : "";
 };
 
-export const dateRangetoLabel = (date1, date2) => {
-  const d1 = moment.utc(date1);
-  const d2 = moment.utc(date2);
-
-  return `${d1.format("D.M.")} - ${d2.format("D.M.YY")}`;
-};
+export const dateRangetoLabel = (date1, date2) =>
+  `${formattedDate(d1, "D.M.")} - ${formattedDate(d2, "D.M.YY")}`;
 
 export const minutesToTimeLabel = mins => {
   const h = Math.trunc(mins / 60).toFixed(0);

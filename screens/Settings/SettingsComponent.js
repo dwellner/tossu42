@@ -1,49 +1,74 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Dropdown } from "react-native-material-dropdown";
-import { TextField } from "react-native-material-textfield";
+import StyledDropdown from "../../components/StyledDropDown";
 
 import DateUtils from "../../utils/DateUtils";
 import { minutesToTimeLabel, dateToDateLabel } from "../../utils/Formatters";
 import EventDatePicker from "./EventDatePicker";
 import ProgramService from "../../data/ProgramService";
 import Texts from "../../constants/Texts";
+import Styles from "../../constants/Styles";
+import StyledTextField from "../../components/StyledTextField";
+import Colors from "../../constants/Colors";
+
+const SessionCircle = ({ content, radius = 40 }) => (
+  <View style={{ alignSelf: "stretch", alignItems: "center" }}>
+    <View
+      style={{
+        height: 2 * radius,
+        width: 2 * radius,
+        backgroundColor: Colors.tintColor,
+        borderRadius: 50,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: -0.5 * radius,
+        marginBottom: -0.5 * radius,
+        zIndex: 1
+      }}
+    >
+      <Text style={{ ...Styles.largeContent }}>{content}</Text>
+    </View>
+  </View>
+);
 
 const TargetEventSection = ({ name, onNameChanged, date, onDateChanged }) => (
   <View style={styles.section}>
-    <Text style={styles.sectionHeader}>{Texts.labels.settingsGoalHeader}</Text>
+    <EventDatePicker value={date} onChange={onDateChanged} />
     <Text style={styles.sectionSubHeader}>
       {Texts.labels.settingsGoalSubHeader}
     </Text>
 
-    <TextField
+    <StyledTextField
       label={Texts.labels.eventName}
-      maxLength={30}
       value={name}
-      onChangeText={onNameChanged}
+      onChange={onNameChanged}
     />
-    <EventDatePicker value={date} onChange={onDateChanged} />
   </View>
 );
 
-const targetTimes = [180, 195, 210, 225, 240, 255, 270, 285, 300].map(v => ({
-  value: v,
-  label: minutesToTimeLabel(v)
-}));
+const TargetTimeSection = ({ targetTime, onTargetTimeChanged }) => (
+  <View style={styles.section}>
+    <StyledDropdown
+      label={Texts.labels.targetTime}
+      data={[180, 195, 210, 225, 240, 255, 270, 285, 300]}
+      valueFormatter={minutesToTimeLabel}
+      value={targetTime}
+      onChange={onTargetTimeChanged}
+    />
+  </View>
+);
 
 const ProgramSection = ({
   eventDate,
   targetTime,
-  onTargetTimeChanged,
   programName,
   onProgramNameChanged,
   programLength,
   onProgramLengthChanged
 }) => {
-  const programNames = ProgramService.getProgramNames(targetTime).map(name => ({
-    value: name
-  }));
+  const programNames = ProgramService.getProgramNames(targetTime);
 
   const toStartDate = len => DateUtils.nextDate(eventDate, len * -7);
   const toStartDateLabel = len => dateToDateLabel(toStartDate(len));
@@ -58,61 +83,52 @@ const ProgramSection = ({
   const programLengths = ProgramService.getProgramLengths(
     targetTime,
     programName
-  ).map(length => ({ value: length, label: toLengthLabel(length) }));
-
+  );
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionHeader}>
-        {Texts.labels.settingsProgramHeader}
-      </Text>
-      <Text style={styles.sectionSubHeader}>
-        {Texts.labels.settingsProgramSubHeader}
-      </Text>
-
-      <Dropdown
-        label={Texts.labels.targetTime}
-        data={targetTimes}
-        value={targetTime}
-        onChangeText={onTargetTimeChanged}
-      />
-
-      <Dropdown
+      <StyledDropdown
         label={Texts.labels.program}
         data={programNames}
         value={programName}
         onChangeText={onProgramNameChanged}
       />
 
-      <Dropdown
+      <StyledDropdown
         label={Texts.labels.programDuration}
         data={programLengths}
         value={programLength}
+        valueFormatter={toLengthLabel}
         onChangeText={onProgramLengthChanged}
       />
     </View>
   );
 };
 
-const heartRates = Array(81)
-  .fill()
-  .map((_, i) => ({ value: 220 - i }));
+const MetadataSection = ({ maxHr, onMaxHrChanged }) => {
+  const heartRates = Array(81)
+    .fill()
+    .map((_, i) => 220 - i);
 
-const MetadataSection = ({ maxHr, onMaxHrChanged }) => (
-  <View style={styles.section}>
-    <Text style={styles.sectionHeader}>{Texts.labels.settingsMetaHeader}</Text>
-    <Text style={styles.sectionSubHeader}>
-      {Texts.labels.settingsMetaSubHeader}
-    </Text>
-    <Dropdown
-      label={Texts.labels.maxHeartRate}
-      data={heartRates}
-      value={maxHr || undefined}
-      onChangeText={onMaxHrChanged}
-    />
-  </View>
-);
+  return (
+    <View style={{ marginTop: 48 }}>
+      <View style={styles.section}>
+        <StyledDropdown
+          label={Texts.labels.maxHeartRate}
+          data={heartRates}
+          value={maxHr || undefined}
+          valueFormatter={v => `${v} bpm`}
+          onChange={onMaxHrChanged}
+        />
 
-export default class SettingsScreen extends React.Component {
+        <Text style={styles.sectionSubHeader}>
+          {Texts.labels.settingsMetaSubHeader}
+        </Text>
+      </View>
+    </View>
+  );
+};
+
+export default class SettingsComponent extends React.Component {
   static propTypes = {
     eventName: PropTypes.string,
     onEventNameChanged: PropTypes.func.isRequired,
@@ -135,41 +151,62 @@ export default class SettingsScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <TargetEventSection
-          name={this.props.eventName}
-          onNameChanged={this.props.onEventNameChanged}
-          date={this.props.eventDate}
-          onDateChanged={this.props.onEventDateChanged}
-        />
-        <ProgramSection
-          eventDate={this.props.eventDate}
-          targetTime={this.props.targetTime}
-          onTargetTimeChanged={this.props.onTargetTimeChanged}
-          programName={this.props.programName}
-          onProgramNameChanged={this.props.onProgramNameChanged}
-          programLength={this.props.programLength}
-          onProgramLengthChanged={this.props.onProgramLengthChanged}
-        />
-        <MetadataSection
-          maxHr={this.props.maxHr}
-          onMaxHrChanged={this.props.onMaxHrChanged}
-        />
+      <View style={styles.component}>
+        <View style={styles.header}>
+          <Text style={{ ...Styles.strongLargeContent }}>Harjoitusohjelma</Text>
+          <Text style={{ ...Styles.lightContent }}>Aseta harjoitusohjelma</Text>
+        </View>
+        <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
+          <TargetEventSection
+            name={this.props.eventName}
+            onNameChanged={this.props.onEventNameChanged}
+            date={this.props.eventDate}
+            onDateChanged={this.props.onEventDateChanged}
+          />
+
+          <SessionCircle content={"+"} />
+
+          <TargetTimeSection
+            targetTime={this.props.targetTime}
+            onTargetTimeChanged={this.props.onTargetTimeChanged}
+          />
+
+          <SessionCircle content={"v"} />
+
+          <ProgramSection
+            eventDate={this.props.eventDate}
+            targetTime={this.props.targetTime}
+            programName={this.props.programName}
+            onProgramNameChanged={this.props.onProgramNameChanged}
+            programLength={this.props.programLength}
+            onProgramLengthChanged={this.props.onProgramLengthChanged}
+          />
+          <MetadataSection
+            maxHr={this.props.maxHr}
+            onMaxHrChanged={this.props.onMaxHrChanged}
+          />
+        </ScrollView>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  section: {
-    paddingBottom: 48
+  component: {
+    flex: 1,
+    alignItems: "center"
   },
-  sectionHeader: {
-    fontSize: 20,
-    marginBottom: 16
+
+  header: { margin: 16 },
+
+  section: {
+    marginLeft: 24,
+    marginRight: 24,
+    padding: 48,
+    backgroundColor: "#fff"
   },
   sectionSubHeader: {
-    fontSize: 16,
-    color: "#777"
+    ...Styles.lightContent,
+    textAlign: "center"
   }
 });

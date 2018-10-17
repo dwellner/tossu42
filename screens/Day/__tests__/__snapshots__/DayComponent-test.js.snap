@@ -1,300 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "flex": 1,
+    }
+  }
+>
   <View
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#1119",
-        "borderBottomWidth": 1,
-        "borderColor": "#333",
-        "borderTopWidth": 1,
         "flex": 1,
-        "marginBottom": 16,
-        "paddingBottom": 16,
-        "paddingTop": 8,
+        "flexDirection": "row",
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#bbb",
-          "fontSize": 16,
-        }
-      }
-    >
-      Päivän ohjelma
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#f442df",
-          "fontSize": 64,
-        }
-      }
-    >
-      6 km
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#fff",
-          "fontSize": 24,
-        }
-      }
-    >
-      Verryttely
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#fff",
-          "fontSize": 24,
-        }
-      }
-    >
-      Kevyt liikunta tai kuntosali
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#1119",
-        "borderBottomWidth": 1,
-        "borderColor": "#333",
-        "borderTopWidth": 1,
-        "flex": 1,
-        "marginBottom": 16,
-        "paddingBottom": 16,
-        "paddingTop": 8,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#bbb",
-          "fontSize": 16,
-          "marginBottom": 8,
-        }
-      }
-    >
-      Viikon ohjelma
-    </Text>
     <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "flex": 1,
-          "flexDirection": "row",
+          "opacity": 1,
         }
       }
     >
       <View
         style={
           Object {
-            "alignItems": "center",
             "flex": 1,
-            "marginBottom": 8,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#bbb",
-              "fontSize": 16,
-              "marginBottom": 8,
-            }
-          }
-        >
-          Kokonaismatka
-        </Text>
-        <View
-          animated={true}
-          animationConfig={
-            Object {
-              "bounciness": 0,
-            }
-          }
-          animationType="spring"
-          indeterminate={false}
-          onLayout={[Function]}
-          progress={0.5694444444444444}
-          style={
-            Array [
-              Object {
-                "backgroundColor": "#226",
-                "borderColor": "#000",
-                "borderRadius": 4,
-                "borderWidth": 1,
-                "overflow": "hidden",
-                "width": 150,
-              },
-              undefined,
-            ]
-          }
-          useNativeDriver={false}
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#55f",
-                "height": 8,
-                "transform": Array [
-                  Object {
-                    "translateX": 0,
-                  },
-                  Object {
-                    "translateX": -31.861111111111114,
-                  },
-                  Object {
-                    "scaleX": 0.5694874999999999,
-                  },
-                ],
-              }
-            }
-          />
-        </View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#fff",
-              "fontSize": 20,
-            }
-          }
-        >
-          41 km
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "marginBottom": 8,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#bbb",
-              "fontSize": 16,
-              "marginBottom": 8,
-            }
-          }
-        >
-          Intensiteetti
-        </Text>
-        <View
-          animated={true}
-          animationConfig={
-            Object {
-              "bounciness": 0,
-            }
-          }
-          animationType="spring"
-          indeterminate={false}
-          onLayout={[Function]}
-          progress={0.48872180451127817}
-          style={
-            Array [
-              Object {
-                "backgroundColor": "#633",
-                "borderColor": "#000",
-                "borderRadius": 4,
-                "borderWidth": 1,
-                "overflow": "hidden",
-                "width": 150,
-              },
-              undefined,
-            ]
-          }
-          useNativeDriver={false}
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#f442df",
-                "height": 8,
-                "transform": Array [
-                  Object {
-                    "translateX": 0,
-                  },
-                  Object {
-                    "translateX": -37.83458646616542,
-                  },
-                  Object {
-                    "scaleX": 0.488772932330827,
-                  },
-                ],
-              }
-            }
-          />
-        </View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#fff",
-              "fontSize": 20,
-            }
-          }
-        >
-          2.4
-        </Text>
-      </View>
-    </View>
-    <View
-      style={
-        Object {
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    >
-      <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "flex": 1,
-            "opacity": 1,
           }
         }
       >
@@ -302,13 +45,10 @@ exports[`renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#999",
-              "borderColor": "#f442df",
-              "borderWidth": 1,
+              "backgroundColor": "#FFC221",
               "flex": 1,
-              "justifyContent": "center",
-              "margin": 1,
-              "paddingBottom": 8,
+              "paddingBottom": 24,
+              "paddingTop": 24,
             }
           }
         >
@@ -318,7 +58,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans",
                 "fontSize": 20,
                 "marginBottom": 8,
               }
@@ -332,13 +73,13 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Bold",
                 "fontSize": 12,
-                "fontWeight": "bold",
               }
             }
           >
-            6 km
+            6km
           </Text>
           <Text
             accessible={true}
@@ -346,7 +87,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Light",
                 "fontSize": 12,
               }
             }
@@ -354,20 +96,55 @@ exports[`renders correctly 1`] = `
             Verryttely
           </Text>
         </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderLeftColor": "transparent",
+                "borderLeftWidth": 18,
+                "borderRightColor": "transparent",
+                "borderRightWidth": 18,
+                "borderStyle": "solid",
+                "borderTopColor": "#FFC221",
+                "borderTopWidth": 24,
+                "height": 0,
+                "marginBottom": 10,
+                "width": 0,
+              }
+            }
+          />
+        </View>
       </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "flex": 1,
-            "opacity": 1,
           }
         }
       >
@@ -375,13 +152,9 @@ exports[`renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#777",
-              "borderColor": "#444",
-              "borderWidth": 1,
               "flex": 1,
-              "justifyContent": "center",
-              "margin": 1,
-              "paddingBottom": 8,
+              "paddingBottom": 24,
+              "paddingTop": 24,
             }
           }
         >
@@ -391,7 +164,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans",
                 "fontSize": 20,
                 "marginBottom": 8,
               }
@@ -405,13 +179,13 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Bold",
                 "fontSize": 12,
-                "fontWeight": "bold",
               }
             }
           >
-            5 km
+            5km
           </Text>
           <Text
             accessible={true}
@@ -419,7 +193,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Light",
                 "fontSize": 12,
               }
             }
@@ -428,19 +203,27 @@ exports[`renders correctly 1`] = `
           </Text>
         </View>
       </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "flex": 1,
-            "opacity": 1,
           }
         }
       >
@@ -448,13 +231,9 @@ exports[`renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#777",
-              "borderColor": "#444",
-              "borderWidth": 1,
               "flex": 1,
-              "justifyContent": "center",
-              "margin": 1,
-              "paddingBottom": 8,
+              "paddingBottom": 24,
+              "paddingTop": 24,
             }
           }
         >
@@ -464,7 +243,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans",
                 "fontSize": 20,
                 "marginBottom": 8,
               }
@@ -478,13 +258,13 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Bold",
                 "fontSize": 12,
-                "fontWeight": "bold",
               }
             }
           >
-            7 km
+            7km
           </Text>
           <Text
             accessible={true}
@@ -492,7 +272,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Light",
                 "fontSize": 12,
               }
             }
@@ -501,19 +282,27 @@ exports[`renders correctly 1`] = `
           </Text>
         </View>
       </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "flex": 1,
-            "opacity": 1,
           }
         }
       >
@@ -521,13 +310,9 @@ exports[`renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#777",
-              "borderColor": "#444",
-              "borderWidth": 1,
               "flex": 1,
-              "justifyContent": "center",
-              "margin": 1,
-              "paddingBottom": 8,
+              "paddingBottom": 24,
+              "paddingTop": 24,
             }
           }
         >
@@ -537,7 +322,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans",
                 "fontSize": 20,
                 "marginBottom": 8,
               }
@@ -551,13 +337,13 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Bold",
                 "fontSize": 12,
-                "fontWeight": "bold",
               }
             }
           >
-            5 km
+            5km
           </Text>
           <Text
             accessible={true}
@@ -565,7 +351,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Light",
                 "fontSize": 12,
               }
             }
@@ -574,19 +361,27 @@ exports[`renders correctly 1`] = `
           </Text>
         </View>
       </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "flex": 1,
-            "opacity": 1,
           }
         }
       >
@@ -594,13 +389,9 @@ exports[`renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#777",
-              "borderColor": "#444",
-              "borderWidth": 1,
               "flex": 1,
-              "justifyContent": "center",
-              "margin": 1,
-              "paddingBottom": 8,
+              "paddingBottom": 24,
+              "paddingTop": 24,
             }
           }
         >
@@ -610,7 +401,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans",
                 "fontSize": 20,
                 "marginBottom": 8,
               }
@@ -624,13 +416,13 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Bold",
                 "fontSize": 12,
-                "fontWeight": "bold",
               }
             }
           >
-             
+            
           </Text>
           <Text
             accessible={true}
@@ -638,7 +430,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Light",
                 "fontSize": 12,
               }
             }
@@ -647,19 +440,27 @@ exports[`renders correctly 1`] = `
           </Text>
         </View>
       </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "flex": 1,
-            "opacity": 1,
           }
         }
       >
@@ -667,13 +468,9 @@ exports[`renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#777",
-              "borderColor": "#444",
-              "borderWidth": 1,
               "flex": 1,
-              "justifyContent": "center",
-              "margin": 1,
-              "paddingBottom": 8,
+              "paddingBottom": 24,
+              "paddingTop": 24,
             }
           }
         >
@@ -683,7 +480,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans",
                 "fontSize": 20,
                 "marginBottom": 8,
               }
@@ -697,13 +495,13 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Bold",
                 "fontSize": 12,
-                "fontWeight": "bold",
               }
             }
           >
-            6 km
+            6km
           </Text>
           <Text
             accessible={true}
@@ -711,7 +509,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Light",
                 "fontSize": 12,
               }
             }
@@ -720,19 +519,27 @@ exports[`renders correctly 1`] = `
           </Text>
         </View>
       </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
       <View
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "flex": 1,
-            "opacity": 1,
           }
         }
       >
@@ -740,13 +547,9 @@ exports[`renders correctly 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#777",
-              "borderColor": "#444",
-              "borderWidth": 1,
               "flex": 1,
-              "justifyContent": "center",
-              "margin": 1,
-              "paddingBottom": 8,
+              "paddingBottom": 24,
+              "paddingTop": 24,
             }
           }
         >
@@ -756,7 +559,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans",
                 "fontSize": 20,
                 "marginBottom": 8,
               }
@@ -770,13 +574,13 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Bold",
                 "fontSize": 12,
-                "fontWeight": "bold",
               }
             }
           >
-            12 km
+            12km
           </Text>
           <Text
             accessible={true}
@@ -784,7 +588,8 @@ exports[`renders correctly 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#fff",
+                "color": "#535353",
+                "fontFamily": "OpenSans-Light",
                 "fontSize": 12,
               }
             }
@@ -795,5 +600,12 @@ exports[`renders correctly 1`] = `
       </View>
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
 </View>
 `;

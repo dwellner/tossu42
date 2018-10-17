@@ -13,7 +13,7 @@ it("renders correctly", () => {
         eventName={"Foo maraton"}
         eventDate={"2018-10-30"}
         targetTime={240}
-        programName={"Tossu.com 4 tunnin täysohjelma"}
+        programName={"Tossu 4 tunnin täysohjelma"}
         programLength={24}
         maxHr={185}
         onEventNameChanged={() => {}}

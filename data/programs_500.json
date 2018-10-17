@@ -1,6 +1,6 @@
 [
   {
-    "name": "Tossu.com 5 tunnin täysohjelma",
+    "name": "Tossu 5 tunnin täysohjelma",
     "targetTime": { "target": 300, "min": 255, "max": 330 },
     "weeks": [
       [
@@ -222,7 +222,7 @@
     ]
   },
   {
-    "name": "Tossu.com 5 tunnin väliohjelma",
+    "name": "Tossu 5 tunnin väliohjelma",
     "targetTime": { "target": 300, "min": 255, "max": 330 },
     "weeks": [
       [
@@ -300,7 +300,7 @@
     ]
   },
   {
-    "name": "Tossu.com 5 tunnin väliohjelma",
+    "name": "Tossu 5 tunnin väliohjelma",
     "targetTime": { "target": 300, "min": 255, "max": 330 },
     "weeks": [
       [
@@ -360,7 +360,7 @@
     ]
   },
   {
-    "name": "Tossu.com 5 tunnin väliohjelma",
+    "name": "Tossu 5 tunnin väliohjelma",
     "targetTime": { "target": 300, "min": 255, "max": 330 },
     "weeks": [
       [
@@ -402,7 +402,7 @@
     ]
   },
   {
-    "name": "Tossu.com 5 tunnin väliohjelma",
+    "name": "Tossu 5 tunnin väliohjelma",
     "targetTime": { "target": 300, "min": 255, "max": 330 },
     "weeks": [
       [

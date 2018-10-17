@@ -1,6 +1,6 @@
 import React from "react";
 import propTypes from "prop-types";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View } from "react-native";
 import DayContentComponent from "./DayContentComponent";
 import WeekSummaryComponent from "./WeekSummaryComponent";
 import Dimensions from "Dimensions";
@@ -9,7 +9,7 @@ import NoProgram from "../../components/NoProgram";
 
 export default class DayComponent extends React.Component {
   static propTypes = {
-    weekProgram: propTypes.object.isRequired,
+    weekProgram: propTypes.object,
     date: propTypes.string.isRequired,
     targetEvent: propTypes.object.isRequired,
     targetTime: propTypes.number.isRequired,
