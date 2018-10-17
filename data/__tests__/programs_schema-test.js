@@ -50,7 +50,7 @@ const stretchRuleSchema = Joi.object().keys({
 const targetTimeSchema = Joi.number()
   .integer()
   .min(120)
-  .max(300);
+  .max(330);
 
 const programSchema = Joi.object().keys({
   name: Joi.string()
@@ -85,4 +85,10 @@ describe("Program schema should be valid for", () => {
     const programs = require("../programs_400.json");
     programs.forEach(p => Joi.assert(p, programSchema));
   });
+
+  it("5:00 programs", () => {
+    const programs = require("../programs_500.json");
+    programs.forEach(p => Joi.assert(p, programSchema));
+  });
+
 });

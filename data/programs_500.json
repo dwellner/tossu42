@@ -5,219 +5,219 @@
     "weeks": [
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 10, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 10, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 16, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 6, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 18, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 10, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 20, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 7, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 16, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 10, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 16, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 6, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 18, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 10, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 20, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 7, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 16, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 10, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 20, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 8, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 26, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 14, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 28, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 18, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 30, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 18, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 4, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 3, "type": "pi" },
+        { "distance": 42.2, "type": "r" }
       ]
     ]
   },
@@ -229,73 +229,73 @@
         { "type": "lepo" },
         { "type": "lepo" },
         { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 14, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 28, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 16, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 30, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 16, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 4, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 3, "type": "pi" },
+        { "distance": 42.2, "type": "r" }
       ]
     ]
   },
@@ -307,55 +307,55 @@
         { "type": "lepo" },
         { "type": "lepo" },
         { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 8, "type": "pe" },
+        { "distance": 10, "type": "pa" },
+        { "distance": 8, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 18, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 7, "type": "pe" },
+        { "distance": 9, "type": "pa" },
+        { "distance": 7, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 30, "type": "pi" },
+        { "distance": 5, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 18, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 4, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 3, "type": "pi" },
+        { "distance": 42.2, "type": "r" }
       ]
     ]
   },
@@ -367,37 +367,37 @@
         { "type": "lepo" },
         { "type": "lepo" },
         { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 6, "type": "pe" },
+        { "distance": 8, "type": "pa" },
+        { "distance": 6, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 18, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 5, "type": "pe" },
+        { "distance": 7, "type": "pa" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
-        { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 4, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 3, "type": "pi" },
+        { "distance": 42.2, "type": "r" }
       ]
     ]
   },
@@ -409,19 +409,19 @@
         { "type": "lepo" },
         { "type": "lepo" },
         { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 12, "type": "pi" },
+        { "distance": 4, "type": "ve" }
       ],
       [
         { "type": "lepo" },
+        { "distance": 4, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 5, "type": "pa" },
-        { "distance": 6, "type": "k" },
+        { "distance": 5, "type": "pe" },
         { "type": "lepo" },
-        { "distance": 6, "type": "pa" },
-        { "distance": 12, "type": "pi" }
+        { "distance": 3, "type": "pi" },
+        { "distance": 42.2, "type": "r" }
       ]
     ]
   }
