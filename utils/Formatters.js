@@ -18,13 +18,16 @@ export const formattedDate = (date, format) => moment.utc(date).format(format);
 
 export const dateToDayName = date => Texts.weekDays[new Date(date).getDay()];
 
-export const dateToDayLabelShort = date => dateToDayName(date).substr(0, 2);
+export const dateToDayLabelShort = date =>
+  date != null ? dateToDayName(date).substr(0, 2) : "";
 
 export const dateToDayLabel = date =>
-  `${dateToDayName(date)} ${formattedDate(date, "D.M.")}`;
+  date != null ? `${dateToDayName(date)} ${formattedDate(date, "D.M.")}` : "";
 
 export const dateToDayLabelFull = date =>
-  `${dateToDayName(date)} ${formattedDate(date, "D.M.YYYY")}`;
+  date != null
+    ? `${dateToDayName(date)} ${formattedDate(date, "D.M.YYYY")}`
+    : "";
 
 export const dateToDateLabel = date => {
   return date != null ? moment.utc(date).format("D.M.YY") : "";

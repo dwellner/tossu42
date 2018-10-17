@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import WeekSummaryDayComponent from "./WeekSummaryDayComponent";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
-import Styles from "../../constants/Styles";
 
 export default class WeekSummaryComponent extends React.Component {
   static propTypes = {

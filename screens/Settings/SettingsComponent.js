@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-import { Dropdown } from "react-native-material-dropdown";
+import { LinearGradient } from "expo";
 import StyledDropdown from "../../components/StyledDropDown";
 
 import DateUtils from "../../utils/DateUtils";
@@ -151,7 +151,10 @@ export default class SettingsComponent extends React.Component {
 
   render() {
     return (
-      <View style={styles.component}>
+      <LinearGradient
+        style={styles.component}
+        colors={["#fff", "#eee", "#fff"]}
+      >
         <View style={styles.header}>
           <Text style={{ ...Styles.strongLargeContent }}>Harjoitusohjelma</Text>
           <Text style={{ ...Styles.lightContent }}>Aseta harjoitusohjelma</Text>
@@ -186,7 +189,7 @@ export default class SettingsComponent extends React.Component {
             onMaxHrChanged={this.props.onMaxHrChanged}
           />
         </ScrollView>
-      </View>
+      </LinearGradient>
     );
   }
 }
@@ -194,7 +197,8 @@ export default class SettingsComponent extends React.Component {
 const styles = StyleSheet.create({
   component: {
     flex: 1,
-    alignItems: "center"
+    alignItems: "center",
+    alignSelf: "stretch"
   },
 
   header: { margin: 16 },

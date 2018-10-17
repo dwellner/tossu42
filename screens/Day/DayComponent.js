@@ -1,11 +1,12 @@
 import React from "react";
 import propTypes from "prop-types";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import DayContentComponent from "./DayContentComponent";
 import WeekSummaryComponent from "./WeekSummaryComponent";
 import Dimensions from "Dimensions";
 import Carousel from "react-native-snap-carousel";
 import NoProgram from "../../components/NoProgram";
+import { LinearGradient } from "expo";
 
 export default class DayComponent extends React.Component {
   static propTypes = {
@@ -45,21 +46,30 @@ export default class DayComponent extends React.Component {
     let dayIndex = days.findIndex(day => day.date === date);
 
     return (
-      <View style={{ flex: 1, alignItems: "stretch" }}>
-        <WeekSummaryComponent week={week} date={date} changeDate={changeDate} />
-        <View style={{ flex: 1 }}>
-          <Carousel
-            data={days}
-            renderItem={({ item }) => this._renderDay(item)}
-            sliderWidth={Dimensions.get("window").width}
-            firstItem={dayIndex}
-            initialNumToRender={Math.max(dayIndex, 25)}
-            itemWidth={300}
-            enableMomentum={true}
-            onBeforeSnapToItem={index => changeDate(days[index].date)}
+      <LinearGradient
+        style={{ flex: 1, alignSelf: "stretch", alignItems: "stretch" }}
+        colors={["#fff", "#eee", "#fff"]}
+      >
+        <ScrollView>
+          <WeekSummaryComponent
+            week={week}
+            date={date}
+            changeDate={changeDate}
           />
-        </View>
-      </View>
+          <View style={{ flex: 1 }}>
+            <Carousel
+              data={days}
+              renderItem={({ item }) => this._renderDay(item)}
+              sliderWidth={Dimensions.get("window").width}
+              firstItem={dayIndex}
+              initialNumToRender={Math.max(dayIndex, 25)}
+              itemWidth={300}
+              enableMomentum={true}
+              onBeforeSnapToItem={index => changeDate(days[index].date)}
+            />
+          </View>
+        </ScrollView>
+      </LinearGradient>
     );
   }
 }

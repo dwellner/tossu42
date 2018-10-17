@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import {
   ScrollView,
   StyleSheet,
@@ -12,6 +11,7 @@ import Colors from "../../constants/Colors";
 import Styles from "../../constants/Styles";
 import Texts from "../../constants/Texts";
 import ProgramWeekComponent from "./ProgramWeekComponent";
+import { LinearGradient } from "expo";
 
 const Header = () => (
   <View
@@ -66,12 +66,15 @@ export default class ProgramComponent extends React.Component {
     });
 
     return (
-      <View style={{ flex: 1 }}>
+      <LinearGradient
+        style={{ flex: 1, alignSelf: "stretch" }}
+        colors={["#fff", "#eee", "#fff"]}
+      >
         <Header />
         <ScrollView style={{ flex: 1 }}>
           <View style={styles.listContainer}>{weeks}</View>
         </ScrollView>
-      </View>
+      </LinearGradient>
     );
   }
 }

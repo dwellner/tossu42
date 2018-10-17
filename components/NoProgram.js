@@ -1,12 +1,16 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import Styles from "../constants/Styles";
 import Texts from "../constants/Texts";
+import { LinearGradient } from "expo";
 
 export default class NoProgram extends React.Component {
   render() {
     return (
-      <View>
+      <LinearGradient
+        style={{ flex: 1, alignSelf: "stretch" }}
+        colors={["#fff", "#eee", "#fff"]}
+      >
         <Text
           style={{
             ...Styles.largeContent,
@@ -26,7 +30,7 @@ export default class NoProgram extends React.Component {
         >
           {Texts.labels.noProgram}
         </Text>
-      </View>
+      </LinearGradient>
     );
   }
 }

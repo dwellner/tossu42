@@ -1,10 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View
+<ExponentLinearGradient
+  colors={
+    Array [
+      4294967295,
+      4293848814,
+      4294967295,
+    ]
+  }
+  locations={null}
   style={
     Object {
       "alignItems": "center",
+      "alignSelf": "stretch",
       "flex": 1,
     }
   }
@@ -45,5 +54,5 @@ exports[`renders correctly 1`] = `
       Aseta harjoitusohjelma
     </Text>
   </View>
-</View>
+</ExponentLinearGradient>
 `;

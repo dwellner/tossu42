@@ -31,6 +31,12 @@ export default class StyledTextField extends React.Component {
           ...Styles.strongContent,
           textAlign: "center"
         }}
+        titleTextStyle={{
+          fontFamily: Styles.defaultContent.fontFamily,
+          fontSize: 12,
+          alignSelf: "center",
+          textAlign: "center"
+        }}
         inputContainerStyle={{
           flex: 1,
           alignItems: "center",

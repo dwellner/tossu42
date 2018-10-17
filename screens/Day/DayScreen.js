@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import DayComponent from "./DayComponent";
 import Texts from "../../constants/Texts";
-import { ScrollView } from "react-native";
 import ProgramModel from "../../utils/ProgramModel";
 import DateUtils from "../../utils/DateUtils";
 
@@ -36,7 +35,6 @@ class DayScreen extends React.Component {
     const date = getValidDate(weekProgram, requestedDate);
 
     return (
-      <ScrollView style={{ backgroundColor: "#F9F9F9" }}>
         <DayComponent
           date={date}
           weekProgram={weekProgram}
@@ -45,7 +43,6 @@ class DayScreen extends React.Component {
           maxHr={maxHr}
           changeDate={date => this.selectDate(date)}
         />
-      </ScrollView>
     );
   }
 }
