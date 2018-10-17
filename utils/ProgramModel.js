@@ -72,7 +72,7 @@ const getProgramWeeks = (program, length) => {
 export default {
   getWeekProgram: (targetDate, { targetTime, name, length }) => {
     if (targetDate === null) return null;
-    
+
     const programs = ProgramService.getPrograms(targetTime, name, length);
     if (programs.length === 0) return null;
     const program = programs[0];
@@ -91,7 +91,8 @@ export default {
       .reduce((max, w) => Math.max(max, w), 0);
 
     let i = 0;
-    const weeks = programWeeks.map(week => {
+    const weeks = programWeeks.map((week, index) => {
+      const weekNumber = programWeeks.length - index;
       const distance = getWeekDistance(week);
       const intensityLevel = getIntensity(week) / maxIntensity;
       const distanceLevel = distance / maxWeekDistance;
@@ -99,7 +100,7 @@ export default {
         ...day,
         date: DateUtils.nextDate(firstDate, i++)
       }));
-      return { distance, intensityLevel, distanceLevel, days };
+      return { weekNumber, distance, intensityLevel, distanceLevel, days };
     });
     return { weeks };
   }

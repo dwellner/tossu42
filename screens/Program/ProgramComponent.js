@@ -12,6 +12,7 @@ import Styles from "../../constants/Styles";
 import Texts from "../../constants/Texts";
 import ProgramWeekComponent from "./ProgramWeekComponent";
 import { LinearGradient } from "expo";
+import Logo from "../../components/Logo";
 
 const Header = () => (
   <View
@@ -41,8 +42,6 @@ export default class ProgramComponent extends React.Component {
     const { date, weekProgram, targetEvent, onWeekClicked } = this.props;
 
     const weeks = weekProgram.weeks.map((week, index) => {
-      const weekNumber = weekProgram.weeks.length - index;
-
       const isCurrent = week.days.findIndex(day => day.date === date) >= 0;
       const isPast = week.days[0].date < date;
 
@@ -57,7 +56,7 @@ export default class ProgramComponent extends React.Component {
         >
           <ProgramWeekComponent
             targetEvent={targetEvent}
-            weekNumber={weekNumber}
+            weekNumber={week.weekNumber}
             week={week}
             isPast={isPast}
           />
@@ -70,6 +69,7 @@ export default class ProgramComponent extends React.Component {
         style={{ flex: 1, alignSelf: "stretch" }}
         colors={["#fff", "#eee", "#fff"]}
       >
+        <Logo />
         <Header />
         <ScrollView style={{ flex: 1 }}>
           <View style={styles.listContainer}>{weeks}</View>

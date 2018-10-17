@@ -21,6 +21,43 @@ exports[`renders correctly 1`] = `
   <View
     style={
       Object {
+        "alignItems": "flex-start",
+        "alignSelf": "stretch",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#535353",
+          "borderRadius": 50,
+          "height": 60,
+          "justifyContent": "center",
+          "marginLeft": 8,
+          "width": 60,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+            "fontFamily": "OpenSans",
+            "fontSize": 20,
+          }
+        }
+      >
+        T42
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
         "margin": 16,
       }
     }

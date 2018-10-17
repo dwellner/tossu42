@@ -17,5 +17,50 @@ exports[`renders correctly 1`] = `
       "flex": 1,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#535353",
+        "borderRadius": 50,
+        "height": 60,
+        "justifyContent": "center",
+        "marginLeft": 8,
+        "width": 60,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#fff",
+          "fontFamily": "OpenSans",
+          "fontSize": 20,
+        }
+      }
+    >
+      T42
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#535353",
+        "fontFamily": "OpenSans",
+        "fontSize": 20,
+        "textAlign": "center",
+      }
+    }
+  >
+    Viikko 
+    24
+  </Text>
+</ExponentLinearGradient>
 `;

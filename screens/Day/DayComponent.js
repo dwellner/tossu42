@@ -1,12 +1,14 @@
 import React from "react";
 import propTypes from "prop-types";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 import DayContentComponent from "./DayContentComponent";
 import WeekSummaryComponent from "./WeekSummaryComponent";
 import Dimensions from "Dimensions";
 import Carousel from "react-native-snap-carousel";
 import NoProgram from "../../components/NoProgram";
 import { LinearGradient } from "expo";
+import Logo from "../../components/Logo";
+import Styles from "../../constants/Styles";
 
 export default class DayComponent extends React.Component {
   static propTypes = {
@@ -50,6 +52,10 @@ export default class DayComponent extends React.Component {
         style={{ flex: 1, alignSelf: "stretch", alignItems: "stretch" }}
         colors={["#fff", "#eee", "#fff"]}
       >
+        <Logo />
+        <Text style={{ ...Styles.largeContent, textAlign: "center" }}>
+          Viikko {week.weekNumber}
+        </Text>
         <ScrollView>
           <WeekSummaryComponent
             week={week}

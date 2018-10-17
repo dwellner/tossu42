@@ -32,7 +32,9 @@ const styles = StyleSheet.create({
   component: {
     alignItems: "center",
     flex: 1,
-    flexDirection: "row"
+    flexDirection: "row",
+    marginLeft: 8,
+    marginRight: 8
   },
   levelContainer: {
     flex: 1,
@@ -41,5 +43,5 @@ const styles = StyleSheet.create({
   },
   dayComponentContainer: {
     flex: 1
-  },
+  }
 });

@@ -12,24 +12,21 @@ import Texts from "../../constants/Texts";
 import Styles from "../../constants/Styles";
 import StyledTextField from "../../components/StyledTextField";
 import Colors from "../../constants/Colors";
+import Circle from "../../components/Circle";
+import Logo from "../../components/Logo";
 
-const SessionCircle = ({ content, radius = 40 }) => (
+const SessionCircle = ({ content }) => (
   <View style={{ alignSelf: "stretch", alignItems: "center" }}>
-    <View
+    <Circle
+      content={content}
+      radius={40}
+      color={Colors.tintColor}
       style={{
-        height: 2 * radius,
-        width: 2 * radius,
-        backgroundColor: Colors.tintColor,
-        borderRadius: 50,
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: -0.5 * radius,
-        marginBottom: -0.5 * radius,
+        marginTop: -20,
+        marginBottom: -20,
         zIndex: 1
       }}
-    >
-      <Text style={{ ...Styles.largeContent }}>{content}</Text>
-    </View>
+    />
   </View>
 );
 
@@ -155,6 +152,10 @@ export default class SettingsComponent extends React.Component {
         style={styles.component}
         colors={["#fff", "#eee", "#fff"]}
       >
+        <View style={{ alignSelf: "stretch", alignItems: "flex-start" }}>
+          <Logo />
+        </View>
+
         <View style={styles.header}>
           <Text style={{ ...Styles.strongLargeContent }}>Harjoitusohjelma</Text>
           <Text style={{ ...Styles.lightContent }}>Aseta harjoitusohjelma</Text>
