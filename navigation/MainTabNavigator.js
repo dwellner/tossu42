@@ -50,7 +50,7 @@ export default createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: Colors.defaultText,
       labelStyle: { fontSize: 12 },
-      style: { backgroundColor: "#F9F9F9" }
+      style: { backgroundColor: "#fff" }
     }
   }
 );

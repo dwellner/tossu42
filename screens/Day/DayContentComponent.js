@@ -10,29 +10,25 @@ import {
   dayToDistanceUnitDesc,
   dayToTypeDesc,
   dateToDayLabel,
-  dateToDateLabel,
   getIconName
 } from "../../utils/Formatters";
 import DayGoalModel from "../../utils/DayGoalModel";
 import DateUtils from "../../utils/DateUtils";
 
 const TargetEvent = ({ eventName }) => (
-  <View style={{ flex: 1 }}>
+  <View>
     <Text style={styles.text_targetName}>{eventName}</Text>
   </View>
 );
 
-const DaysUntilTargetEvent = ({ targetEvent, daysUntil }) => {
+const DaysUntilTargetEvent = ({ daysUntil }) => {
   const daysUntilLabel =
     daysUntil > 1 ? Texts.labels.daysUntil : Texts.labels.dayUntil;
-  const targetEventDate = dateToDateLabel(targetEvent.date);
 
   return (
-    <View style={{ flex: 1, alignItems: "center" }}>
+    <View style={{ alignItems: "center" }}>
       <Text style={{ ...Styles.strongContent }}>{daysUntil}</Text>
       <Text style={{ ...Styles.lightContent }}>{daysUntilLabel}</Text>
-      <Text style={{ ...Styles.largeContent }}>{targetEvent.name}</Text>
-      <Text style={{ ...Styles.lightContent }}>{targetEventDate}</Text>
     </View>
   );
 };
@@ -40,11 +36,29 @@ const DaysUntilTargetEvent = ({ targetEvent, daysUntil }) => {
 const DayMetricsGoal = ({ day, maxHr, targetTime }) => {
   if (day.type === "lepo") return null;
   const goal = DayGoalModel.getTargetMetricsGoals(day, maxHr, targetTime);
-  const iconName = getIconName(goal.indexOf("bpm") > 0 ? "heart" : "timer");
+  console.log({ day, maxHr, targetTime, goal });
+  if (goal == null || goal.length == 0) return null;
+  const iconId =
+    goal.indexOf("bpm") > 0
+      ? "heart"
+      : goal.indexOf("min/km") > 0
+        ? "timer"
+        : null;
+
+  const icon =
+    iconId != null ? (
+      <Icon.Ionicons
+        name={getIconName(iconId)}
+        size={26}
+        color={Colors.defaultText}
+      />
+    ) : (
+      undefined
+    );
 
   return (
     <View style={{ flex: 1, flexDirection: "row", alignItems: "flex-end" }}>
-      <Icon.Ionicons name={iconName} size={26} color={Colors.defaultText} />
+      {icon}
       <Text style={{ ...Styles.largeContent }}> {goal}</Text>
     </View>
   );
@@ -64,7 +78,7 @@ export default class DayContentComponent extends React.PureComponent {
 
     const targetComponent =
       daysUntil > 0 ? (
-        <DaysUntilTargetEvent targetEvent={targetEvent} daysUntil={daysUntil} />
+        <DaysUntilTargetEvent daysUntil={daysUntil} />
       ) : (
         <TargetEvent eventName={targetEvent.name} />
       );
@@ -89,7 +103,7 @@ export default class DayContentComponent extends React.PureComponent {
         <Text style={{ ...Styles.strongContent }}>
           {dateToDayLabel(day.date)}
         </Text>
-        <View style={{ flex: 1, flexDirection: "row" }}>
+        <View style={{ flexDirection: "row" }}>
           <Text style={styles.text_distance}>
             {day.type !== "lepo" ? dayToDistanceDesc(day) : "😎"}
           </Text>
@@ -107,8 +121,12 @@ export default class DayContentComponent extends React.PureComponent {
 const styles = StyleSheet.create({
   component: {
     alignItems: "center",
+    justifyContent: "flex-start",
     backgroundColor: "#FFF",
-    flex: 1
+    padding: 24,
+    flex: 1,
+    borderWidth: 1,
+    borderColor: "#fafafa"
   },
 
   text_distance: {
@@ -122,6 +140,6 @@ const styles = StyleSheet.create({
     color: Colors.defaultText,
     fontSize: 12,
     paddingBottom: 20,
-    alignSelf: "flex-end" 
+    alignSelf: "flex-end"
   }
 });

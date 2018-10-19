@@ -4,7 +4,7 @@ export default {
     ivLeg: "Veto",
     takeItEasy: "Ota iisisti 😌",
     goGirl: "💪 Anna palaa",
-    lightExercise: "Kevyt liikunta tai kuntosali",
+    lightExercise: "Juoksu tai muu liikunta",
     race: "Fiiliksen mukaan kohti 🏁",
     dayProgram: "Päivän ohjelma",
     weekProgram: "Viikon ohjelma",
@@ -61,7 +61,7 @@ export default {
     k: "Kilpavauhti",
     m: "Mäkivedot",
     r: "Maraton",
-    ve: "Verryttely"
+    ve: "Vapaa"
   },
   runTypesShort: {
     iv: "IV",
@@ -73,6 +73,6 @@ export default {
     k: "Kilpa",
     m: "Mäki",
     r: "Kilpailu",
-    ve: "Verryttely"
+    ve: "Vapaa"
   }
 };

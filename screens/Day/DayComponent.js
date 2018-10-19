@@ -9,6 +9,8 @@ import NoProgram from "../../components/NoProgram";
 import { LinearGradient } from "expo";
 import Logo from "../../components/Logo";
 import Styles from "../../constants/Styles";
+import { dateToDateLabel } from "../../utils/Formatters";
+import Colors from "../../constants/Colors";
 
 export default class DayComponent extends React.Component {
   static propTypes = {
@@ -34,7 +36,7 @@ export default class DayComponent extends React.Component {
   }
 
   render() {
-    const { weekProgram, date, changeDate } = this.props;
+    const { targetEvent, weekProgram, date, changeDate } = this.props;
     if (weekProgram == null) return <NoProgram />;
 
     const week = weekProgram.weeks.find(
@@ -46,36 +48,72 @@ export default class DayComponent extends React.Component {
       .reduce((a, b) => a.concat(b), []);
 
     let dayIndex = days.findIndex(day => day.date === date);
+    const targetEventDate = dateToDateLabel(targetEvent.date);
 
     return (
-      <LinearGradient
-        style={{ flex: 1, alignSelf: "stretch", alignItems: "stretch" }}
-        colors={["#fff", "#eee", "#fff"]}
+      <View
+        style={{
+          flex: 1,
+          alignSelf: "stretch",
+          alignItems: "stretch",
+          backgroundColor: "#fff"
+        }}
       >
-        <Logo />
-        <Text style={{ ...Styles.largeContent, textAlign: "center" }}>
-          Viikko {week.weekNumber}
-        </Text>
-        <ScrollView>
-          <WeekSummaryComponent
-            week={week}
-            date={date}
-            changeDate={changeDate}
-          />
-          <View style={{ flex: 1 }}>
-            <Carousel
-              data={days}
-              renderItem={({ item }) => this._renderDay(item)}
-              sliderWidth={Dimensions.get("window").width}
-              firstItem={dayIndex}
-              initialNumToRender={Math.max(dayIndex, 25)}
-              itemWidth={300}
-              enableMomentum={true}
-              onBeforeSnapToItem={index => changeDate(days[index].date)}
-            />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "stretch"
+          }}
+        >
+          <Logo />
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+              marginLeft: -68
+            }}
+          >
+            <Text style={{ ...Styles.largeContent }}>{targetEvent.name}</Text>
+            <Text style={{ ...Styles.lightContent }}>{targetEventDate}</Text>
           </View>
-        </ScrollView>
-      </LinearGradient>
+        </View>
+        <Text
+          style={{
+            ...Styles.largeContent,
+            marginTop: 0,
+            textAlign: "center",
+            borderColor: "#eaeaea",
+            borderBottomWidth: 1
+          }}
+        >
+          Harjoitusviikko {week.weekNumber}
+        </Text>
+        <LinearGradient
+          style={{ flex: 1, alignSelf: "stretch", alignItems: "stretch" }}
+          colors={["#fff", "#eee", "#fff"]}
+        >
+          <ScrollView>
+            <WeekSummaryComponent
+              week={week}
+              date={date}
+              changeDate={changeDate}
+            />
+            <View style={{ flex: 1 }}>
+              <Carousel
+                data={days}
+                renderItem={({ item }) => this._renderDay(item)}
+                sliderWidth={Dimensions.get("window").width}
+                firstItem={dayIndex}
+                initialNumToRender={Math.max(dayIndex, 25)}
+                itemWidth={300}
+                enableMomentum={true}
+                onBeforeSnapToItem={index => changeDate(days[index].date)}
+              />
+            </View>
+          </ScrollView>
+        </LinearGradient>
+      </View>
     );
   }
 }
