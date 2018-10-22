@@ -1,7 +1,7 @@
 import ProgramService from "../data/ProgramService";
 import { ActionTypes } from "../Actions";
 
-const defaultTargetTime = 240;
+const defaultTargetTime = 210;
 const defaultProgram = ProgramService.getBestMatch(defaultTargetTime);
 
 const getValidProgramName = (targetTime, currentName) => {

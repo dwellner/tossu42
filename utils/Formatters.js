@@ -1,6 +1,7 @@
 import Texts from "../constants/Texts";
 import moment from "moment";
 import { Platform } from "react-native";
+import { padStart } from "lodash";
 
 export const dayToDistanceUnitDesc = day => {
   if (day.type === "iv") return "m";
@@ -38,8 +39,8 @@ export const dateRangetoLabel = (date1, date2) =>
 
 export const minutesToTimeLabel = mins => {
   const h = Math.trunc(mins / 60).toFixed(0);
-  const m = `${mins % 60}`.padStart(2, "0");
-  return `${h}:${m}`;
+  const m = `${mins % 60}`;
+  return `${h}:${padStart(m, 2, "0")}`;
 };
 
 export const getIconName = (icon, focused) =>

@@ -10,7 +10,6 @@ import { LinearGradient } from "expo";
 import Logo from "../../components/Logo";
 import Styles from "../../constants/Styles";
 import { dateToDateLabel } from "../../utils/Formatters";
-import Colors from "../../constants/Colors";
 
 export default class DayComponent extends React.Component {
   static propTypes = {

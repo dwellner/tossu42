@@ -1,29 +1,41 @@
 import React from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import { StyleSheet, View, Text } from "react-native";
 import Styles from "../../constants/Styles";
-import { Icon } from "expo";
 import Texts from "../../constants/Texts";
-import Colors from "../../constants/Colors";
 import {
   dayToDistanceDesc,
   dayToDistanceUnitDesc,
   dayToTypeDesc,
-  dateToDayLabel,
-  getIconName
+  dateToDayLabel
 } from "../../utils/Formatters";
-import DayGoalModel from "../../utils/DayGoalModel";
 import DateUtils from "../../utils/DateUtils";
+import DayMetricsGoal from "./DayMetricsGoalComponent";
 
-const TargetEvent = ({ eventName }) => (
-  <View>
-    <Text style={styles.text_targetName}>{eventName}</Text>
-  </View>
+const Border = () => (
+  <View
+    style={{
+      borderColor: "#E8E8E8",
+      alignSelf: "stretch",
+      borderBottomWidth: 1,
+      marginTop: 24,
+      marginBottom: 24,
+      marginLeft: 48,
+      marginRight: 48
+    }}
+  />
 );
 
-const DaysUntilTargetEvent = ({ daysUntil }) => {
+const DaysUntilTargetEvent = ({ daysUntil, eventName }) => {
+  if (daysUntil == 0)
+    return (
+      <View>
+        <Text style={styles.text_targetName}>{eventName}</Text>
+      </View>
+    );
+
   const daysUntilLabel =
-    daysUntil > 1 ? Texts.labels.daysUntil : Texts.labels.dayUntil;
+    daysUntil == 1 ? Texts.labels.dayUntil : Texts.labels.daysUntil;
 
   return (
     <View style={{ alignItems: "center" }}>
@@ -33,85 +45,58 @@ const DaysUntilTargetEvent = ({ daysUntil }) => {
   );
 };
 
-const DayMetricsGoal = ({ day, maxHr, targetTime }) => {
-  if (day.type === "lepo") return null;
-  const goal = DayGoalModel.getTargetMetricsGoals(day, maxHr, targetTime);
-  console.log({ day, maxHr, targetTime, goal });
-  if (goal == null || goal.length == 0) return null;
-  const iconId =
-    goal.indexOf("bpm") > 0
-      ? "heart"
-      : goal.indexOf("min/km") > 0
-        ? "timer"
-        : null;
+const DayGoal = ({ day }) => {
+  if (day.type == "lepo") return <Text style={{ fontSize: 48 }}>😎</Text>;
 
-  const icon =
-    iconId != null ? (
-      <Icon.Ionicons
-        name={getIconName(iconId)}
-        size={26}
-        color={Colors.defaultText}
-      />
-    ) : (
-      undefined
+  if (day.type == "ve") {
+    const time = Math.round(day.distance * 0.8) * 10;
+    return (
+      <View style={{ flexDirection: "row" }}>
+        <Text style={styles.text_daygoal_double}>{day.distance}</Text>
+        <Text style={styles.text_daygoal_unit}>km</Text>
+        <Text style={styles.text_daygoal_separator}>/</Text>
+        <Text style={styles.text_daygoal_double}>{time}</Text>
+        <Text style={styles.text_daygoal_unit}>min</Text>
+      </View>
     );
-
+  }
   return (
-    <View style={{ flex: 1, flexDirection: "row", alignItems: "flex-end" }}>
-      {icon}
-      <Text style={{ ...Styles.largeContent }}> {goal}</Text>
+    <View style={{ flexDirection: "row" }}>
+      <Text style={styles.text_daygoal_single}>{dayToDistanceDesc(day)}</Text>
+      <Text style={styles.text_daygoal_unit}>{dayToDistanceUnitDesc(day)}</Text>
     </View>
   );
 };
 
 export default class DayContentComponent extends React.PureComponent {
   static propTypes = {
-    day: propTypes.object.isRequired,
-    targetEvent: propTypes.object.isRequired,
-    targetTime: propTypes.number.isRequired,
-    maxHr: propTypes.number
+    day: PropTypes.object.isRequired,
+    targetEvent: PropTypes.object.isRequired,
+    targetTime: PropTypes.number.isRequired,
+    maxHr: PropTypes.number
   };
 
   render() {
     const { day, maxHr, targetEvent, targetTime } = this.props;
     const daysUntil = DateUtils.difference(targetEvent.date, day.date);
 
-    const targetComponent =
-      daysUntil > 0 ? (
-        <DaysUntilTargetEvent daysUntil={daysUntil} />
-      ) : (
-        <TargetEvent eventName={targetEvent.name} />
-      );
-
     return (
       <View style={styles.component}>
-        {targetComponent}
-        <View
-          style={{
-            borderColor: "#E8E8E8",
-            alignSelf: "stretch",
-            borderBottomWidth: 1,
-            marginTop: 24,
-            marginBottom: 24,
-            marginLeft: 48,
-            marginRight: 48
-          }}
+        <DaysUntilTargetEvent
+          daysUntil={daysUntil}
+          eventName={targetEvent.name}
         />
+        <Border />
         <Text style={{ ...Styles.lightContent }}>
           {Texts.labels.dayProgram}
         </Text>
         <Text style={{ ...Styles.strongContent }}>
           {dateToDayLabel(day.date)}
         </Text>
-        <View style={{ flexDirection: "row" }}>
-          <Text style={styles.text_distance}>
-            {day.type !== "lepo" ? dayToDistanceDesc(day) : "😎"}
-          </Text>
-          <Text style={styles.text_distance_unit}>
-            {day.type !== "lepo" ? dayToDistanceUnitDesc(day) : ""}
-          </Text>
+        <View style={{ alignItems: "center" }}>
+          <DayGoal day={day} />
+          <Text style={{ ...Styles.largeContent }}>{dayToTypeDesc(day)}</Text>
         </View>
-        <Text style={{ ...Styles.largeContent }}>{dayToTypeDesc(day)}</Text>
         <DayMetricsGoal day={day} maxHr={maxHr} targetTime={targetTime} />
       </View>
     );
@@ -121,25 +106,35 @@ export default class DayContentComponent extends React.PureComponent {
 const styles = StyleSheet.create({
   component: {
     alignItems: "center",
-    justifyContent: "flex-start",
     backgroundColor: "#FFF",
     padding: 24,
-    flex: 1,
     borderWidth: 1,
     borderColor: "#fafafa"
   },
 
-  text_distance: {
-    color: Colors.defaultText,
+  text_daygoal_single: {
+    ...Styles.strongContent,
     paddingLeft: 16,
-    fontSize: 84,
+    fontSize: 84
+  },
+
+  text_daygoal_double: {
+    ...Styles.strongContent,
+    fontSize: 84
+  },
+
+  text_daygoal_unit: {
+    ...Styles.defaultContent,
+    fontSize: 12,
+    paddingBottom: 21,
     alignSelf: "flex-end"
   },
 
-  text_distance_unit: {
-    color: Colors.defaultText,
-    fontSize: 12,
-    paddingBottom: 20,
-    alignSelf: "flex-end"
+  text_daygoal_separator: {
+    ...Styles.lightContent,
+    marginLeft: 8,
+    marginRight: 8,
+    paddingTop: 10,
+    fontSize: 72
   }
 });

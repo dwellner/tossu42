@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { ActionTypes } from "../Actions";
 import ProgramReducer from "./ProgramReducer";
 
-const targetEvent = (state = { name: null, date: null }, action) => {
+const targetEvent = (state = { name: null, date: "2019-01-03" }, action) => {
   switch (action.type) {
     case ActionTypes.targetEventNameChanged:
       return { ...state, name: action.name };
@@ -13,7 +13,7 @@ const targetEvent = (state = { name: null, date: null }, action) => {
   }
 };
 
-const maxHr = (state = null, action) => {
+const maxHr = (state = 189, action) => {
   switch (action.type) {
     case ActionTypes.maxHrChanged:
       return action.hr;

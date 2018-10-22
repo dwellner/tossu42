@@ -1,11 +1,12 @@
 import Texts from "../constants/Texts";
+import { padStart } from "lodash";
 
 const getPaceGoal = targetTime => {
   const getPace = pct => {
     const pace = (targetTime / 42.2) * pct;
     const hours = Math.trunc(pace);
-    const minutes = `${Math.round((pace * 60) % 60)}`.padStart(2, "0");
-    return `${hours}:${minutes}`;
+    const minutes = `${Math.round((pace * 60) % 60)}`;
+    return `${hours}:${padStart(minutes, 2, "0")}`;
   };
   return `${getPace(0.95)} - ${getPace(1.05)} min/km`;
 };
