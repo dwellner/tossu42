@@ -54,7 +54,7 @@ const mapDispatchToProps = dispatch => ({
   onEventDateChanged: date => dispatch(targetEventDateChanged(date)),
   onMaxHrChanged: hr => dispatch(maxHrChanged(hr)),
   onTargetTimeChanged: time => dispatch(targetTimeChanged(time)),
-  onProgramNameChanged: id => dispatch(programNameChanged(id)),
+  onProgramNameChanged: name => dispatch(programNameChanged(name)),
   onProgramLengthChanged: id => dispatch(programLengthChanged(id))
 });
 

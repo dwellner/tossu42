@@ -87,7 +87,7 @@ const ProgramSection = ({
         label={Texts.labels.program}
         data={programNames}
         value={programName}
-        onChangeText={onProgramNameChanged}
+        onChange={onProgramNameChanged}
       />
 
       <StyledDropdown
@@ -95,7 +95,7 @@ const ProgramSection = ({
         data={programLengths}
         value={programLength}
         valueFormatter={toLengthLabel}
-        onChangeText={onProgramLengthChanged}
+        onChange={onProgramLengthChanged}
       />
     </View>
   );

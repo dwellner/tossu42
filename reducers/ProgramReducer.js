@@ -45,7 +45,7 @@ const programNameUpdated = (newName, state) => {
   return { ...state, name: newName, length: newLength };
 };
 
-export default ProgramReducer = (
+export default (ProgramReducer = (
   state = {
     targetTime: defaultTargetTime,
     name: defaultProgram.name,
@@ -63,4 +63,4 @@ export default ProgramReducer = (
     default:
       return state;
   }
-};
+});

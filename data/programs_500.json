@@ -2,6 +2,7 @@
   {
     "name": "Tossu 5 tunnin täysohjelma",
     "targetTime": { "target": 300, "min": 255, "max": 330 },
+    "stretchRules": { "minWeeks": 24, "maxWeeks": 40, "repeat": 3 },
     "weeks": [
       [
         { "type": "lepo" },
