@@ -115,12 +115,12 @@ const styles = StyleSheet.create({
   text_daygoal_single: {
     ...Styles.strongContent,
     paddingLeft: 16,
-    fontSize: 84
+    fontSize: 72
   },
 
   text_daygoal_double: {
     ...Styles.strongContent,
-    fontSize: 84
+    fontSize: 72
   },
 
   text_daygoal_unit: {
@@ -134,7 +134,6 @@ const styles = StyleSheet.create({
     ...Styles.lightContent,
     marginLeft: 8,
     marginRight: 8,
-    paddingTop: 10,
     fontSize: 72
   }
 });

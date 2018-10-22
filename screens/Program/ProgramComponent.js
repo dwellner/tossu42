@@ -43,7 +43,7 @@ export default class ProgramComponent extends React.Component {
 
     const weeks = weekProgram.weeks.map((week, index) => {
       const isCurrent = week.days.findIndex(day => day.date === date) >= 0;
-      const isPast = week.days[0].date < date;
+      const isPast = week.days[6].date < date;
 
       const itemStyles = isCurrent
         ? [styles.listItem, styles.currentItem]
