@@ -40,7 +40,7 @@ export default class DayMetricsGoal extends React.Component {
     const iconId = getIconId(goal);
 
     return (
-      <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
         <GoalIcon iconId={iconId} />
         <Text style={{ ...Styles.largeContent }}> {goal}</Text>
       </View>

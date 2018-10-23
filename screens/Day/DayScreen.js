@@ -29,7 +29,7 @@ class DayScreen extends React.Component {
   render() {
     const requestedDate = this.props.navigation.getParam(
       "date",
-      DateUtils.currentDate
+      DateUtils.currentDate()
     );
     const { targetEvent, targetTime, maxHr, weekProgram } = this.props;
     const date = getValidDate(weekProgram, requestedDate);

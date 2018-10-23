@@ -103,8 +103,9 @@ export default class DayContentComponent extends React.PureComponent {
   }
 }
 
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
   component: {
+    height: 400,
     alignItems: "center",
     backgroundColor: "#FFF",
     padding: 24,

@@ -21,7 +21,7 @@ class ProgramScreen extends React.Component {
       <ProgramComponent
         targetEvent={targetEvent}
         weekProgram={weekProgram}
-        date={DateUtils.currentDate}
+        date={DateUtils.currentDate()}
         onWeekClicked={date => navigate("Day", { date })}
       />
     );

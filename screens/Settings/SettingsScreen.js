@@ -55,7 +55,7 @@ const mapDispatchToProps = dispatch => ({
   onMaxHrChanged: hr => dispatch(maxHrChanged(hr)),
   onTargetTimeChanged: time => dispatch(targetTimeChanged(time)),
   onProgramNameChanged: name => dispatch(programNameChanged(name)),
-  onProgramLengthChanged: id => dispatch(programLengthChanged(id))
+  onProgramLengthChanged: length => dispatch(programLengthChanged(length))
 });
 
 export default connect(

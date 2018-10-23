@@ -1,6 +1,12 @@
 import React from "react";
 import propTypes from "prop-types";
-import { View, ScrollView, Text } from "react-native";
+import {
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  ScrollView,
+  Text
+} from "react-native";
 import DayContentComponent from "./DayContentComponent";
 import WeekSummaryComponent from "./WeekSummaryComponent";
 import Dimensions from "Dimensions";
@@ -10,6 +16,8 @@ import { LinearGradient } from "expo";
 import Logo from "../../components/Logo";
 import Styles from "../../constants/Styles";
 import { dateToDateLabel } from "../../utils/Formatters";
+import DateUtils from "../../utils/DateUtils";
+import { InteractionManager } from "react-native";
 
 export default class DayComponent extends React.Component {
   static propTypes = {
@@ -20,6 +28,16 @@ export default class DayComponent extends React.Component {
     maxHr: propTypes.number,
     changeDate: propTypes.func.isRequired
   };
+
+  getActiveDate() {
+    const { weekProgram } = this.props;
+    const currentDate = DateUtils.currentDate();
+    const firstDate = weekProgram.weeks[0].days[0].date;
+    const lastDate = weekProgram.weeks.slice(-1)[0].days[6].date;
+    if (currentDate < firstDate) return firstDate;
+    if (currentDate > lastDate) return lastDate;
+    return currentDate;
+  }
 
   _renderDay(day) {
     const { maxHr, targetEvent, targetTime } = this.props;
@@ -36,6 +54,7 @@ export default class DayComponent extends React.Component {
 
   render() {
     const { targetEvent, weekProgram, date, changeDate } = this.props;
+
     if (weekProgram == null) return <NoProgram />;
 
     const week = weekProgram.weeks.find(
@@ -49,45 +68,25 @@ export default class DayComponent extends React.Component {
     let dayIndex = days.findIndex(day => day.date === date);
     const targetEventDate = dateToDateLabel(targetEvent.date);
 
+    snapToDate = date => {
+      if (this._carousel == null) return;
+      this._carousel.snapToItem(days.findIndex(day => day.date === date));
+    };
+
+    InteractionManager.runAfterInteractions(() => snapToDate(date));
+
     return (
-      <View
-        style={{
-          flex: 1,
-          alignSelf: "stretch",
-          alignItems: "stretch",
-          backgroundColor: "#fff"
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "stretch"
-          }}
-        >
-          <Logo />
-          <View
-            style={{
-              flex: 1,
-              alignItems: "center",
-              marginLeft: -68
-            }}
-          >
+      <View style={styles.component}>
+        <View style={styles.headerRow}>
+          <TouchableOpacity onPress={() => snapToDate(this.getActiveDate())}>
+            <Logo />
+          </TouchableOpacity>
+          <View style={styles.headerTextContainer}>
             <Text style={{ ...Styles.largeContent }}>{targetEvent.name}</Text>
             <Text style={{ ...Styles.lightContent }}>{targetEventDate}</Text>
           </View>
         </View>
-        <Text
-          style={{
-            ...Styles.largeContent,
-            marginTop: 0,
-            textAlign: "center",
-            borderColor: "#eaeaea",
-            borderBottomWidth: 1
-          }}
-        >
-          Harjoitusviikko {week.weekNumber}
-        </Text>
+        <Text style={styles.subheader}>Harjoitusviikko {week.weekNumber}</Text>
         <LinearGradient
           style={{ flex: 1, alignSelf: "stretch", alignItems: "stretch" }}
           colors={["#fff", "#eee", "#fff"]}
@@ -96,15 +95,18 @@ export default class DayComponent extends React.Component {
             <WeekSummaryComponent
               week={week}
               date={date}
-              changeDate={changeDate}
+              changeDate={snapToDate}
             />
             <View style={{ flex: 1 }}>
               <Carousel
+                ref={c => {
+                  this._carousel = c;
+                }}
                 data={days}
                 renderItem={({ item }) => this._renderDay(item)}
                 sliderWidth={Dimensions.get("window").width}
                 firstItem={dayIndex}
-                initialNumToRender={Math.max(dayIndex, 25)}
+                initialNumToRender={days.length}
                 itemWidth={300}
                 enableMomentum={true}
                 onBeforeSnapToItem={index => changeDate(days[index].date)}
@@ -116,3 +118,32 @@ export default class DayComponent extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  component: {
+    flex: 1,
+    alignSelf: "stretch",
+    alignItems: "stretch",
+    backgroundColor: "#fff"
+  },
+
+  headerRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignContent: "stretch"
+  },
+
+  headerTextContainer: {
+    flex: 1,
+    alignItems: "center",
+    marginLeft: -68
+  },
+
+  subheader: {
+    ...Styles.largeContent,
+    marginTop: 0,
+    textAlign: "center",
+    borderColor: "#eaeaea",
+    borderBottomWidth: 1
+  }
+});

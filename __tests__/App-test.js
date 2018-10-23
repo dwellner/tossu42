@@ -8,7 +8,7 @@ import DateUtils from "../utils/DateUtils"
 describe('App snapshot', () => {
   jest.useFakeTimers();
   beforeEach(() => {
-    DateUtils.currentDate = "2018-10-01"
+    DateUtils.currentDate = () => "2018-10-01"
     NavigationTestUtils.resetInternalState();
   });
 

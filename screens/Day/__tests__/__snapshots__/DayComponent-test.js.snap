@@ -21,32 +21,48 @@ exports[`renders correctly 1`] = `
     }
   >
     <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#535353",
-          "borderRadius": 50,
-          "height": 60,
-          "justifyContent": "center",
-          "marginLeft": 8,
-          "width": 60,
+          "opacity": 1,
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
           Object {
-            "color": "#fff",
-            "fontFamily": "OpenSans",
-            "fontSize": 20,
+            "alignItems": "center",
+            "backgroundColor": "#535353",
+            "borderRadius": 50,
+            "height": 60,
+            "justifyContent": "center",
+            "marginLeft": 8,
+            "width": 60,
           }
         }
       >
-        T42
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#fff",
+              "fontFamily": "OpenSans",
+              "fontSize": 20,
+            }
+          }
+        >
+          T42
+        </Text>
+      </View>
     </View>
     <View
       style={

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "tossu42",
-    "description": "A very interesting project.",
+    "description": "a very simple app that helps you train for running a maraton.",
     "slug": "tossu42",
     "privacy": "public",
     "sdkVersion": "30.0.0",
@@ -13,6 +13,9 @@
       "image": "./assets/images/splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#000000"
+    },
+    "android": {
+        "package": "fi.dwellner.tossu42" 
     },
     "updates": {
       "fallbackToCacheTimeout": 0
