@@ -1,23 +1,14 @@
 import React from "react";
 import propTypes from "prop-types";
-import {
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  ScrollView,
-  Text
-} from "react-native";
-import DayContentComponent from "./DayContentComponent";
+import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
 import WeekSummaryComponent from "./WeekSummaryComponent";
-import Dimensions from "Dimensions";
-import Carousel from "react-native-snap-carousel";
 import NoProgram from "../../components/NoProgram";
 import { LinearGradient } from "expo";
 import Logo from "../../components/Logo";
 import Styles from "../../constants/Styles";
 import { dateToDateLabel } from "../../utils/Formatters";
 import DateUtils from "../../utils/DateUtils";
-import { InteractionManager } from "react-native";
+import DayCarousel from "./DayCarouselComponent";
 
 export default class DayComponent extends React.Component {
   static propTypes = {
@@ -29,6 +20,7 @@ export default class DayComponent extends React.Component {
     changeDate: propTypes.func.isRequired
   };
 
+  /** returns current date if within program, otherwise programs first or last date depending on whichever is closest */
   getActiveDate() {
     const { weekProgram } = this.props;
     const currentDate = DateUtils.currentDate();
@@ -39,46 +31,29 @@ export default class DayComponent extends React.Component {
     return currentDate;
   }
 
-  _renderDay(day) {
-    const { maxHr, targetEvent, targetTime } = this.props;
-
-    return (
-      <DayContentComponent
-        day={day}
-        maxHr={maxHr}
-        targetEvent={targetEvent}
-        targetTime={targetTime}
-      />
-    );
-  }
-
   render() {
-    const { targetEvent, weekProgram, date, changeDate } = this.props;
+    const {
+      targetEvent,
+      targetTime,
+      weekProgram,
+      date,
+      changeDate,
+      maxHr
+    } = this.props;
 
     if (weekProgram == null) return <NoProgram />;
-
-    const week = weekProgram.weeks.find(
+    const weekIndex = weekProgram.weeks.findIndex(
       week => week.days.findIndex(d => d.date === date) >= 0
     );
-    if (week == null) return <NoProgram />;
-    let days = weekProgram.weeks
-      .map(w => w.days)
-      .reduce((a, b) => a.concat(b), []);
+    if (weekIndex < 0) return <NoProgram />;
 
-    let dayIndex = days.findIndex(day => day.date === date);
+    const week = weekProgram.weeks[weekIndex];
     const targetEventDate = dateToDateLabel(targetEvent.date);
-
-    snapToDate = date => {
-      if (this._carousel == null) return;
-      this._carousel.snapToItem(days.findIndex(day => day.date === date));
-    };
-
-    InteractionManager.runAfterInteractions(() => snapToDate(date));
 
     return (
       <View style={styles.component}>
         <View style={styles.headerRow}>
-          <TouchableOpacity onPress={() => snapToDate(this.getActiveDate())}>
+          <TouchableOpacity onPress={() => changeDate(this.getActiveDate())}>
             <Logo />
           </TouchableOpacity>
           <View style={styles.headerTextContainer}>
@@ -87,32 +62,20 @@ export default class DayComponent extends React.Component {
           </View>
         </View>
         <Text style={styles.subheader}>Harjoitusviikko {week.weekNumber}</Text>
-        <LinearGradient
-          style={{ flex: 1, alignSelf: "stretch", alignItems: "stretch" }}
-          colors={["#fff", "#eee", "#fff"]}
-        >
-          <ScrollView>
-            <WeekSummaryComponent
-              week={week}
-              date={date}
-              changeDate={snapToDate}
-            />
-            <View style={{ flex: 1 }}>
-              <Carousel
-                ref={c => {
-                  this._carousel = c;
-                }}
-                data={days}
-                renderItem={({ item }) => this._renderDay(item)}
-                sliderWidth={Dimensions.get("window").width}
-                firstItem={dayIndex}
-                initialNumToRender={days.length}
-                itemWidth={300}
-                enableMomentum={true}
-                onBeforeSnapToItem={index => changeDate(days[index].date)}
-              />
-            </View>
-          </ScrollView>
+        <LinearGradient colors={["#fff", "#eee", "#fff"]}>
+          <WeekSummaryComponent
+            week={week}
+            date={date}
+            changeDate={changeDate}
+          />
+          <DayCarousel
+            weeks={weekProgram.weeks}
+            date={date}
+            targetEvent={targetEvent}
+            targetTime={targetTime}
+            maxHr={maxHr}
+            changeDate={changeDate}
+          />
         </LinearGradient>
       </View>
     );

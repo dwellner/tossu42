@@ -131,13 +131,591 @@ exports[`renders correctly 1`] = `
       ]
     }
     locations={null}
-    style={
-      Object {
-        "alignItems": "stretch",
-        "alignSelf": "stretch",
-        "flex": 1,
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "height": 150,
+          "marginLeft": 8,
+          "marginRight": 8,
+        }
       }
-    }
-  />
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFC221",
+                "paddingBottom": 24,
+                "paddingTop": 24,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans",
+                  "fontSize": 20,
+                  "marginBottom": 8,
+                }
+              }
+            >
+              Ke
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Bold",
+                  "fontSize": 12,
+                }
+              }
+            >
+              6 km
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Light",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Vapaa
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 18,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 18,
+                  "borderStyle": "solid",
+                  "borderTopColor": "#FFC221",
+                  "borderTopWidth": 24,
+                  "height": 0,
+                  "marginBottom": 10,
+                  "width": 0,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "paddingBottom": 24,
+                "paddingTop": 24,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans",
+                  "fontSize": 20,
+                  "marginBottom": 8,
+                }
+              }
+            >
+              To
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Bold",
+                  "fontSize": 12,
+                }
+              }
+            >
+              5 km
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Light",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Perus
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "paddingBottom": 24,
+                "paddingTop": 24,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans",
+                  "fontSize": 20,
+                  "marginBottom": 8,
+                }
+              }
+            >
+              Pe
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Bold",
+                  "fontSize": 12,
+                }
+              }
+            >
+              7 km
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Light",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Palautus
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "paddingBottom": 24,
+                "paddingTop": 24,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans",
+                  "fontSize": 20,
+                  "marginBottom": 8,
+                }
+              }
+            >
+              La
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Bold",
+                  "fontSize": 12,
+                }
+              }
+            >
+              5 km
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Light",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Perus
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "paddingBottom": 24,
+                "paddingTop": 24,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans",
+                  "fontSize": 20,
+                  "marginBottom": 8,
+                }
+              }
+            >
+              Su
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Bold",
+                  "fontSize": 12,
+                }
+              }
+            >
+               
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Light",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Lepo
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "paddingBottom": 24,
+                "paddingTop": 24,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans",
+                  "fontSize": 20,
+                  "marginBottom": 8,
+                }
+              }
+            >
+              Ma
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Bold",
+                  "fontSize": 12,
+                }
+              }
+            >
+              6 km
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Light",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Kilpa
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "paddingBottom": 24,
+                "paddingTop": 24,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans",
+                  "fontSize": 20,
+                  "marginBottom": 8,
+                }
+              }
+            >
+              Ti
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Bold",
+                  "fontSize": 12,
+                }
+              }
+            >
+              12 km
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#535353",
+                  "fontFamily": "OpenSans-Light",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Pitkä
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </ExponentLinearGradient>
 </View>
 `;

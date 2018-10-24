@@ -14,7 +14,6 @@ import {
 const Triangle = () => (
   <View
     style={{
-      flex: 1,
       justifyContent: "center",
       alignItems: "center"
     }}
@@ -33,7 +32,7 @@ export default class WeekSummaryComponent extends React.Component {
     const { day, selected } = this.props;
 
     const triangle = selected ? <Triangle /> : undefined;
-    const distance = `${dayToDistanceDesc(day)}${dayToDistanceUnitDesc(day)}`;
+    const distance = `${dayToDistanceDesc(day)} ${dayToDistanceUnitDesc(day)}`;
 
     return (
       <View style={{ flex: 1 }}>
@@ -49,7 +48,6 @@ export default class WeekSummaryComponent extends React.Component {
 }
 
 const containerStyles = {
-  flex: 1,
   alignItems: "center",
   paddingTop: 24,
   paddingBottom: 24

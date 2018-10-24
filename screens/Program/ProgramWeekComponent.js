@@ -28,7 +28,7 @@ const LabeledValue = ({ label, value, valueStyle, isPast }) => {
   );
 };
 
-export default class ProgramWeekComponent extends React.Component {
+export default class ProgramWeekComponent extends React.PureComponent {
   static propTypes = {
     weekNumber: PropTypes.number.isRequired,
     targetEvent: PropTypes.object.isRequired,

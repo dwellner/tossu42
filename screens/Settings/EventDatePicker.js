@@ -7,7 +7,7 @@ import Texts from "../../constants/Texts";
 import moment from "moment";
 import StyledTextField from "../../components/StyledTextField";
 
-export default class EventDatePicker extends React.Component {
+export default class EventDatePicker extends React.PureComponent {
   static propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func.isRequired

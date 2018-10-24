@@ -16,7 +16,7 @@ export default class WeekSummaryComponent extends React.Component {
 
     const dayComponents = week.days.map(day => (
       <TouchableOpacity
-        style={styles.dayComponentContainer}
+        style={styles.dayContainer}
         onPress={() => changeDate(day.date)}
         key={day.date}
       >
@@ -30,18 +30,12 @@ export default class WeekSummaryComponent extends React.Component {
 
 const styles = StyleSheet.create({
   component: {
-    alignItems: "center",
-    flex: 1,
     flexDirection: "row",
+    height: 150,
     marginLeft: 8,
     marginRight: 8
   },
-  levelContainer: {
-    flex: 1,
-    alignItems: "center",
-    marginBottom: 8
-  },
-  dayComponentContainer: {
+  dayContainer: {
     flex: 1
   }
 });
