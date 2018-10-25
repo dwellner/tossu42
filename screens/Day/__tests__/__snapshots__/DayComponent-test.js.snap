@@ -37,15 +37,19 @@ exports[`renders correctly 1`] = `
     >
       <View
         style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#535353",
-            "borderRadius": 50,
-            "height": 60,
-            "justifyContent": "center",
-            "marginLeft": 8,
-            "width": 60,
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#535353",
+              "borderRadius": 50,
+              "height": 60,
+              "justifyContent": "center",
+              "width": 60,
+            },
+            Object {
+              "marginLeft": 8,
+            },
+          ]
         }
       >
         <Text
@@ -53,11 +57,16 @@ exports[`renders correctly 1`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "#fff",
-              "fontFamily": "OpenSans",
-              "fontSize": 20,
-            }
+            Array [
+              Object {
+                "color": "#535353",
+                "fontFamily": "OpenSans",
+                "fontSize": 20,
+              },
+              Object {
+                "color": "#fff",
+              },
+            ]
           }
         >
           T42

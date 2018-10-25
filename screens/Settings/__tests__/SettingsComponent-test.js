@@ -6,7 +6,6 @@ import renderer from "react-test-renderer";
 it("renders correctly", () => {
   Date.now = jest.fn(() => 1539074812374);
 
-
   const tree = renderer
     .create(
       <SettingsComponent
@@ -22,6 +21,7 @@ it("renders correctly", () => {
         onProgramNameChanged={() => {}}
         onProgramLengthChanged={() => {}}
         onMaxHrChanged={() => {}}
+        onGotoToday={() => {}}
       />
     )
     .toJSON();
