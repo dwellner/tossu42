@@ -14,6 +14,7 @@ import StyledTextField from "../../components/StyledTextField";
 import Colors from "../../constants/Colors";
 import Circle from "../../components/Circle";
 import Logo from "../../components/Logo";
+import Button from "../../components/Button";
 
 const SessionCircle = ({ content }) => (
   <View style={{ alignSelf: "stretch", alignItems: "center" }}>
@@ -105,20 +106,18 @@ const MetadataSection = ({ maxHr, onMaxHrChanged }) => {
     .map((_, i) => 220 - i);
 
   return (
-    <View style={{ marginTop: 48 }}>
-      <View style={styles.section}>
-        <StyledDropdown
-          label={Labels.maxHeartRate}
-          data={heartRates}
-          value={maxHr || undefined}
-          valueFormatter={v => `${v} bpm`}
-          onChange={onMaxHrChanged}
-        />
+    <View style={[styles.section, { marginTop: 48 }]}>
+      <StyledDropdown
+        label={Labels.maxHeartRate}
+        data={heartRates}
+        value={maxHr || undefined}
+        valueFormatter={v => `${v} bpm`}
+        onChange={onMaxHrChanged}
+      />
 
-        <Text style={styles.sectionSubHeader}>
-          {Labels.settingsMetaSubHeader}
-        </Text>
-      </View>
+      <Text style={styles.sectionSubHeader}>
+        {Labels.settingsMetaSubHeader}
+      </Text>
     </View>
   );
 };
@@ -141,17 +140,20 @@ export default class SettingsComponent extends React.Component {
     onProgramLengthChanged: PropTypes.func.isRequired,
 
     maxHr: PropTypes.number,
-    onMaxHrChanged: PropTypes.func.isRequired
+    onMaxHrChanged: PropTypes.func.isRequired,
+
+    onGotoToday: PropTypes.func.isRequired
   };
 
   render() {
+
     return (
       <LinearGradient
         style={styles.component}
         colors={["#fff", "#eee", "#fff"]}
       >
         <View style={{ alignSelf: "stretch", alignItems: "flex-start" }}>
-          <Logo />
+          <Logo onPress={this.props.onGotoToday}/>
         </View>
 
         <View style={styles.header}>
@@ -187,6 +189,15 @@ export default class SettingsComponent extends React.Component {
             maxHr={this.props.maxHr}
             onMaxHrChanged={this.props.onMaxHrChanged}
           />
+
+          <View
+            style={[styles.section, { alignItems: "center", marginTop: 48 }]}
+          >
+            <Button
+              label="Valmis"
+              onPress={this.props.onGotoToday}
+            />
+          </View>
         </ScrollView>
       </LinearGradient>
     );

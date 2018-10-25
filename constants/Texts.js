@@ -20,14 +20,21 @@ export const Labels = {
   settingsGoalSubHeader:
     "Juoksuohjelma räätelöidään sinua varten valitusta maratonin ajankohdasta taaksepäin",
   settingsMetaSubHeader:
-    "Maksimisykeen avulla voidaan laskea harjoituksille sykealueet",
+    "Maksimisykeen avulla näet harjoituksien sykealueet.\nJos et tiedä omaa maksimisykettä, voit arvioida sen kaavalla \n \"220 miinus oma ikä\"; \nesimerkiksi 30v = 190 bpm.",
   maxHeartRate: "Maksimisyke",
   programHeader: "Nykyinen harjoitusohjelma",
   programGuide:
     "Alla naet ohjelman harjoitusviikot, pääset tarkastelemaan viikkoa klikkaamalla",
   dayScreen: "Päivä",
   programScreen: "Ohjelma",
-  settingsScreen: "Muokkaa"
+  settingsScreen: "Muokkaa",
+
+  welcomeHeader: "Tervetuloa",
+  welcomeSubHeader: "Treenaa itsesi maratonkuntoon",
+  welcomeBullet1: "Syötä päivämäärä johon tähtäät",
+  welcomeBullet2: "Valitse sinulle sopiva juoksuohjelma",
+  welcomeBullet3: "Näet joka päivä mitä tulisi tehdä",
+  start: "Aloita"
 };
 
 export const WeekDays = [

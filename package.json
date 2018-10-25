@@ -28,6 +28,7 @@
     "react-native-snap-carousel": "^3.7.5",
     "react-navigation": "^2.18.0",
     "react-redux": "^5.0.7",
+    "react-style-proptype": "^3.2.2",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0"
   },

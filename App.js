@@ -2,16 +2,18 @@ import React from "react";
 import { Provider } from "react-redux";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { NavigationActions } from "react-navigation";
-import { AppLoading, Font, Icon } from "expo";
+import { AppLoading, Font, Icon, Asset } from "expo";
 import AppNavigator from "./navigation/AppNavigator";
 import createAndHydrateStore from "./Store";
+import WelcomeScreen from "./screens/Welcome/WelcomeScreen";
 
 export default class App extends React.Component {
   store = createAndHydrateStore(() => this.storeHydrated());
   state = {
     isStoreHydrated: false,
     isLoadingComplete: false,
-    shouldNavigateToInitialRoute: true
+    shouldNavigateToInitialRoute: true,
+    initialSetupStarted: false
   };
 
   storeHydrated() {
@@ -45,24 +47,40 @@ export default class App extends React.Component {
           onFinish={this._handleFinishLoading}
         />
       );
-    } else {
+    }
+
+    if (
+      store.getState().settings.targetEvent.date == null &&
+      !this.state.initialSetupStarted
+    ) {
       return (
-        <Provider store={store}>
-          <View style={styles.container}>
-            {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-            <AppNavigator
-              ref={navigator =>
-                this.navigateToInitialRoute(navigator, store.getState())
-              }
-            />
-          </View>
-        </Provider>
+        <WelcomeScreen
+          onStart={() =>
+            this.setState(() => ({
+              initialSetupStarted: true
+            }))
+          }
+        />
       );
     }
+
+    return (
+      <Provider store={store}>
+        <View style={styles.container}>
+          {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+          <AppNavigator
+            ref={navigator =>
+              this.navigateToInitialRoute(navigator, store.getState())
+            }
+          />
+        </View>
+      </Provider>
+    );
   }
 
   _loadResourcesAsync = async () => {
     return Promise.all([
+      Asset.loadAsync([require("./assets/images/splash.png")]),
       Font.loadAsync({
         ...Icon.Ionicons.font,
         OpenSans: require("./assets/fonts/OpenSans-Regular.ttf"),

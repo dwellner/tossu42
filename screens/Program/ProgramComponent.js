@@ -35,7 +35,8 @@ export default class ProgramComponent extends React.Component {
     weekProgram: PropTypes.object.isRequired,
     targetEvent: PropTypes.object.isRequired,
     date: PropTypes.string.isRequired,
-    onWeekClicked: PropTypes.func.isRequired
+    onWeekClicked: PropTypes.func.isRequired,
+    onGotoToday: PropTypes.func.isRequired
   };
 
   render() {
@@ -69,7 +70,8 @@ export default class ProgramComponent extends React.Component {
         style={{ flex: 1, alignSelf: "stretch" }}
         colors={["#fff", "#eee", "#fff"]}
       >
-        <Logo />
+        <Logo onPress={this.props.onGotoToday} />
+
         <Header />
         <ScrollView style={{ flex: 1 }}>
           <View style={styles.listContainer}>{weeks}</View>

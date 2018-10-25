@@ -20,17 +20,6 @@ export default class DayComponent extends React.Component {
     changeDate: propTypes.func.isRequired
   };
 
-  /** returns current date if within program, otherwise programs first or last date depending on whichever is closest */
-  getActiveDate() {
-    const { weekProgram } = this.props;
-    const currentDate = DateUtils.currentDate();
-    const firstDate = weekProgram.weeks[0].days[0].date;
-    const lastDate = weekProgram.weeks.slice(-1)[0].days[6].date;
-    if (currentDate < firstDate) return firstDate;
-    if (currentDate > lastDate) return lastDate;
-    return currentDate;
-  }
-
   render() {
     const {
       targetEvent,
@@ -53,9 +42,9 @@ export default class DayComponent extends React.Component {
     return (
       <View style={styles.component}>
         <View style={styles.headerRow}>
-          <TouchableOpacity onPress={() => changeDate(this.getActiveDate())}>
-            <Logo />
-          </TouchableOpacity>
+          <Logo
+            onPress={() => changeDate(DateUtils.getValidDate(weekProgram))}
+          />
           <View style={styles.headerTextContainer}>
             <Text style={{ ...Styles.largeContent }}>{targetEvent.name}</Text>
             <Text style={{ ...Styles.lightContent }}>{targetEventDate}</Text>

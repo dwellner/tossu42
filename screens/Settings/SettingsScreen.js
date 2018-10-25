@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import SettingsComponent from "./SettingsComponent";
-
+import DateUtils from "../../utils/DateUtils";
 
 import {
   targetEventNameChanged,
@@ -18,6 +18,8 @@ class SettingsScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <SettingsComponent
         eventName={this.props.eventName}
@@ -32,6 +34,9 @@ class SettingsScreen extends React.Component {
         onProgramLengthChanged={this.props.onProgramLengthChanged}
         maxHr={this.props.maxHr}
         onMaxHrChanged={this.props.onMaxHrChanged}
+        onGotoToday={() => {
+          navigate("Day", { date: DateUtils.currentDate() });
+        }}
       />
     );
   }

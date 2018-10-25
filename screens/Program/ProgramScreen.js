@@ -23,6 +23,10 @@ class ProgramScreen extends React.Component {
         weekProgram={weekProgram}
         date={DateUtils.currentDate()}
         onWeekClicked={date => navigate("Day", { date })}
+        onGotoToday={() => {
+          navigate("Day", { date: DateUtils.currentDate() });
+        }}
+
       />
     );
   }

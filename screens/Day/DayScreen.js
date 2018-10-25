@@ -5,18 +5,6 @@ import { Labels } from "../../constants/Texts";
 import ProgramModel from "../../utils/ProgramModel";
 import DateUtils from "../../utils/DateUtils";
 
-const getValidDate = (weekProgram, date) => {
-  if (weekProgram != null) {
-    const weeks = weekProgram.weeks;
-    const firstDate = weeks[0].days[0].date;
-    if (firstDate > date) return firstDate;
-
-    const lastDate = weeks[weeks.length - 1].days[6].date;
-    if (lastDate < date) return lastDate;
-  }
-  return date;
-};
-
 class DayScreen extends React.Component {
   static navigationOptions = {
     header: null
@@ -32,7 +20,7 @@ class DayScreen extends React.Component {
       DateUtils.currentDate()
     );
     const { targetEvent, targetTime, maxHr, weekProgram } = this.props;
-    const date = getValidDate(weekProgram, requestedDate);
+    const date = DateUtils.getValidDate(weekProgram, requestedDate);
 
     return (
       <DayComponent
