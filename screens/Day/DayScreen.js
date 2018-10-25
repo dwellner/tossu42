@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import DayComponent from "./DayComponent";
-import Texts from "../../constants/Texts";
+import { Labels } from "../../constants/Texts";
 import ProgramModel from "../../utils/ProgramModel";
 import DateUtils from "../../utils/DateUtils";
 
@@ -35,14 +35,14 @@ class DayScreen extends React.Component {
     const date = getValidDate(weekProgram, requestedDate);
 
     return (
-        <DayComponent
-          date={date}
-          weekProgram={weekProgram}
-          targetEvent={targetEvent}
-          targetTime={targetTime}
-          maxHr={maxHr}
-          changeDate={date => this.selectDate(date)}
-        />
+      <DayComponent
+        date={date}
+        weekProgram={weekProgram}
+        targetEvent={targetEvent}
+        targetTime={targetTime}
+        maxHr={maxHr}
+        changeDate={date => this.selectDate(date)}
+      />
     );
   }
 }
@@ -52,7 +52,7 @@ const mapStateToProps = state => {
   const { targetTime } = program;
   const targetEvent = {
     ...state.settings.targetEvent,
-    name: state.settings.targetEvent.name || Texts.labels.nextMaraton
+    name: state.settings.targetEvent.name || Labels.nextMaraton
   };
   const weekProgram = ProgramModel.getWeekProgram(targetEvent.date, program);
   return { targetEvent, targetTime, weekProgram, maxHr };

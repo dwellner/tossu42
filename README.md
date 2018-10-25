@@ -12,6 +12,12 @@ get some feedback. Also suggestions for further development are always welcome.
 If you would like to do some development yourself, feel free to do so. 
 All code and documentation is provided to you under the MIT license.
 
+# Credits
+
+The running programs in tossu42 are based on the ones provided by the [tossu.com -site](https://www.tossu.com/).
+
+The splash screen photo was originally made by [Lucas Favre](https://unsplash.com/@we_are_rising)
+
 
 ## Development
 

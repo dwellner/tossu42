@@ -8,7 +8,7 @@ import DayScreen from "../screens/Day/DayScreen";
 import ProgramScreen from "../screens/Program/ProgramScreen";
 import SettingsScreen from "../screens/Settings/SettingsScreen";
 import { getIconName } from "../utils/Formatters";
-import Texts from "../constants/Texts";
+import { Labels } from "../constants/Texts";
 import Colors from "../constants/Colors";
 
 const createNavigator = (stack, label, icon) => {
@@ -24,19 +24,19 @@ const createNavigator = (stack, label, icon) => {
 
 const DayStack = createNavigator(
   { Day: DayScreen },
-  Texts.labels.dayScreen,
+  Labels.dayScreen,
   "calendar"
 );
 
 const ProgramStack = createNavigator(
   { Program: ProgramScreen },
-  Texts.labels.programScreen,
+  Labels.programScreen,
   "list"
 );
 
 const SettingsStack = createNavigator(
   { Settings: SettingsScreen },
-  Texts.labels.settingsScreen,
+  Labels.settingsScreen,
   "options"
 );
 

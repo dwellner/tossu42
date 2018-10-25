@@ -18,7 +18,7 @@ const GoalIcon = ({ iconId }) => {
   return (
     <Icon.Ionicons
       name={getIconName(iconId)}
-      size={26}
+      size={20}
       color={Colors.defaultText}
     />
   );

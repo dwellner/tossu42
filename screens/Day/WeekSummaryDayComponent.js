@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import { StyleSheet, Text, View } from "react-native";
 import Colors from "../../constants/Colors";
 import Styles from "../../constants/Styles";
+import { RunTypes } from "../../constants/Texts";
 
 import {
   dateToDayLabelShort,
   dayToDistanceDesc,
-  dayToDistanceUnitDesc,
-  dayToTypeDescShort
+  dayToDistanceUnitDesc
 } from "../../utils/Formatters";
 
 const Triangle = () => (
@@ -39,7 +39,7 @@ export default class WeekSummaryComponent extends React.Component {
         <View style={selected ? styles.component_selected : styles.component}>
           <Text style={styles.text_day}>{dateToDayLabelShort(day.date)}</Text>
           <Text style={styles.text_distance}>{distance}</Text>
-          <Text style={styles.text_type}>{dayToTypeDescShort(day)}</Text>
+          <Text style={styles.text_type}>{RunTypes[day.type].short}</Text>
         </View>
         {triangle}
       </View>

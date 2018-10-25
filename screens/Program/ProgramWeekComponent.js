@@ -5,7 +5,7 @@ import { Text, View, StyleSheet } from "react-native";
 import Styles from "../../constants/Styles";
 import Colors from "../../constants/Colors";
 import { dateToDateLabel } from "../../utils/Formatters";
-import Texts from "../../constants/Texts";
+import { Labels } from "../../constants/Texts";
 
 const RaceInfo = ({ targetEvent }) => (
   <View style={styles.raceInfo}>
@@ -50,13 +50,13 @@ export default class ProgramWeekComponent extends React.PureComponent {
         <View style={styles.weekInfoRow}>
           <LabeledValue
             isPast={isPast}
-            label={Texts.labels.weekShort}
+            label={Labels.weekShort}
             value={weekNumber}
             valueStyle={Styles.strongLargeContent}
           />
           <LabeledValue
             isPast={isPast}
-            label={Texts.labels.eventDate}
+            label={Labels.eventDate}
             value={weekDates}
             valueStyle={Styles.largeContent}
           />

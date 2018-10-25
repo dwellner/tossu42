@@ -2,11 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, View, Text } from "react-native";
 import Styles from "../../constants/Styles";
-import Texts from "../../constants/Texts";
+import { Labels, RunTypes } from "../../constants/Texts";
 import {
   dayToDistanceDesc,
   dayToDistanceUnitDesc,
-  dayToTypeDesc,
   dateToDayLabel
 } from "../../utils/Formatters";
 import DateUtils from "../../utils/DateUtils";
@@ -34,8 +33,7 @@ const DaysUntilTargetEvent = ({ daysUntil, eventName }) => {
       </View>
     );
 
-  const daysUntilLabel =
-    daysUntil == 1 ? Texts.labels.dayUntil : Texts.labels.daysUntil;
+  const daysUntilLabel = daysUntil == 1 ? Labels.dayUntil : Labels.daysUntil;
 
   return (
     <View style={{ alignItems: "center" }}>
@@ -46,7 +44,12 @@ const DaysUntilTargetEvent = ({ daysUntil, eventName }) => {
 };
 
 const DayGoal = ({ day }) => {
-  if (day.type == "lepo") return <Text style={{ fontSize: 48 }}>😎</Text>;
+  if (day.type == "lepo")
+    return (
+      <View style={{ margin: 4 }}>
+        <Text style={{ ...Styles.strongContent, fontSize: 72 }}>😎</Text>
+      </View>
+    );
 
   if (day.type == "ve") {
     const time = Math.round(day.distance * 0.8) * 10;
@@ -87,23 +90,30 @@ export default class DayContentComponent extends React.PureComponent {
           eventName={targetEvent.name}
         />
         <Border />
-        <Text style={{ ...Styles.lightContent }}>
-          {Texts.labels.dayProgram}
-        </Text>
+        <Text style={{ ...Styles.lightContent }}>{Labels.dayProgram}</Text>
         <Text style={{ ...Styles.strongContent }}>
           {dateToDayLabel(day.date)}
         </Text>
         <View style={{ alignItems: "center" }}>
           <DayGoal day={day} />
-          <Text style={{ ...Styles.largeContent }}>{dayToTypeDesc(day)}</Text>
+          <Text style={{ ...Styles.largeContent }}>
+            {RunTypes[day.type].name}
+          </Text>
         </View>
-        <DayMetricsGoal day={day} maxHr={maxHr} targetTime={targetTime} />
+        <View style={{ margin: 8 }}>
+          <DayMetricsGoal day={day} maxHr={maxHr} targetTime={targetTime} />
+        </View>
+        <Text
+          style={{ ...Styles.lightContent, fontSize: 12, textAlign: "center" }}
+        >
+          {RunTypes[day.type].desc}
+        </Text>
       </View>
     );
   }
 }
 
-  const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   component: {
     height: 400,
     alignItems: "center",
@@ -111,6 +121,9 @@ export default class DayContentComponent extends React.PureComponent {
     padding: 24,
     borderWidth: 1,
     borderColor: "#fafafa"
+  },
+  text_targetName: {
+    ...Styles.lightContent
   },
 
   text_daygoal_single: {
@@ -127,7 +140,7 @@ export default class DayContentComponent extends React.PureComponent {
   text_daygoal_unit: {
     ...Styles.defaultContent,
     fontSize: 12,
-    paddingBottom: 21,
+    paddingBottom: 18,
     alignSelf: "flex-end"
   },
 

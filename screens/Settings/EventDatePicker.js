@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { View, TouchableOpacity } from "react-native";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import { dateToDayLabelFull } from "../../utils/Formatters";
-import Texts from "../../constants/Texts";
+import { Labels } from "../../constants/Texts";
 import moment from "moment";
 import StyledTextField from "../../components/StyledTextField";
 
@@ -35,9 +35,9 @@ export default class EventDatePicker extends React.PureComponent {
         <TouchableOpacity onPress={showPicker}>
           <StyledTextField
             editable={false}
-            label={Texts.labels.settingsTargetDate}
+            label={Labels.settingsTargetDate}
             value={dateToDayLabelFull(value)}
-            error={value == null ? Texts.labels.mandatory : undefined}
+            error={value == null ? Labels.mandatory : undefined}
           />
         </TouchableOpacity>
         <DateTimePicker

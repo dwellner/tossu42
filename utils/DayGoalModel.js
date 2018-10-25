@@ -1,4 +1,3 @@
-import Texts from "../constants/Texts";
 import { padStart } from "lodash";
 
 const getPaceGoal = targetTime => {
@@ -28,17 +27,11 @@ const getTargetMetricsGoals = (day, maxHr, targetTime) => {
     case "t":
       return getHeartRateGoal(maxHr, 0.75, 0.9);
     case "iv":
-      return `${Texts.labels.ivLeg} ${getHeartRateGoal(maxHr, 0.75, 0.9)}`;
+      return `${getHeartRateGoal(maxHr, 0.75, 0.9)}`;
     case "k":
       return getPaceGoal(targetTime);
-    case "m":
-      return Texts.labels.goGirl;
-    case "r":
-      return Texts.labels.race;
-    case "ve":
-      return Texts.labels.lightExercise;
     default:
-      return Texts.labels.takeItEasy;
+      return null;
   }
 };
 

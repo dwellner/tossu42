@@ -8,7 +8,7 @@ import DateUtils from "../../utils/DateUtils";
 import { minutesToTimeLabel, dateToDateLabel } from "../../utils/Formatters";
 import EventDatePicker from "./EventDatePicker";
 import ProgramService from "../../data/ProgramService";
-import Texts from "../../constants/Texts";
+import { Labels } from "../../constants/Texts";
 import Styles from "../../constants/Styles";
 import StyledTextField from "../../components/StyledTextField";
 import Colors from "../../constants/Colors";
@@ -33,12 +33,10 @@ const SessionCircle = ({ content }) => (
 const TargetEventSection = ({ name, onNameChanged, date, onDateChanged }) => (
   <View style={styles.section}>
     <EventDatePicker value={date} onChange={onDateChanged} />
-    <Text style={styles.sectionSubHeader}>
-      {Texts.labels.settingsGoalSubHeader}
-    </Text>
+    <Text style={styles.sectionSubHeader}>{Labels.settingsGoalSubHeader}</Text>
 
     <StyledTextField
-      label={Texts.labels.eventName}
+      label={Labels.eventName}
       value={name}
       onChange={onNameChanged}
     />
@@ -48,7 +46,7 @@ const TargetEventSection = ({ name, onNameChanged, date, onDateChanged }) => (
 const TargetTimeSection = ({ targetTime, onTargetTimeChanged }) => (
   <View style={styles.section}>
     <StyledDropdown
-      label={Texts.labels.targetTime}
+      label={Labels.targetTime}
       data={[180, 195, 210, 225, 240, 255, 270, 285, 300]}
       valueFormatter={minutesToTimeLabel}
       value={targetTime}
@@ -72,9 +70,9 @@ const ProgramSection = ({
   const toLengthLabel = length => {
     const startAt =
       eventDate != null
-        ? ` (${Texts.labels.startingAt} ${toStartDateLabel(length)})`
+        ? ` (${Labels.startingAt} ${toStartDateLabel(length)})`
         : "";
-    return `${length} ${Texts.labels.weeks}.${startAt}`;
+    return `${length} ${Labels.weeks}.${startAt}`;
   };
 
   const programLengths = ProgramService.getProgramLengths(
@@ -84,14 +82,14 @@ const ProgramSection = ({
   return (
     <View style={styles.section}>
       <StyledDropdown
-        label={Texts.labels.program}
+        label={Labels.program}
         data={programNames}
         value={programName}
         onChange={onProgramNameChanged}
       />
 
       <StyledDropdown
-        label={Texts.labels.programDuration}
+        label={Labels.programDuration}
         data={programLengths}
         value={programLength}
         valueFormatter={toLengthLabel}
@@ -110,7 +108,7 @@ const MetadataSection = ({ maxHr, onMaxHrChanged }) => {
     <View style={{ marginTop: 48 }}>
       <View style={styles.section}>
         <StyledDropdown
-          label={Texts.labels.maxHeartRate}
+          label={Labels.maxHeartRate}
           data={heartRates}
           value={maxHr || undefined}
           valueFormatter={v => `${v} bpm`}
@@ -118,7 +116,7 @@ const MetadataSection = ({ maxHr, onMaxHrChanged }) => {
         />
 
         <Text style={styles.sectionSubHeader}>
-          {Texts.labels.settingsMetaSubHeader}
+          {Labels.settingsMetaSubHeader}
         </Text>
       </View>
     </View>

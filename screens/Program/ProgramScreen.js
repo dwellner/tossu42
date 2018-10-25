@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Texts from "../../constants/Texts";
+import { Labels } from "../../constants/Texts";
 import ProgramComponent from "./ProgramComponent";
 import ProgramModel from "../../utils/ProgramModel";
 import DateUtils from "../../utils/DateUtils";
@@ -32,7 +32,7 @@ const mapStateToProps = state => {
   const { program } = state.settings;
   const targetEvent = {
     ...state.settings.targetEvent,
-    name: state.settings.targetEvent.name || Texts.labels.nextMaraton
+    name: state.settings.targetEvent.name || Labels.nextMaraton
   };
   const weekProgram = ProgramModel.getWeekProgram(targetEvent.date, program);
   return { targetEvent, weekProgram };

@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import Colors from "../../constants/Colors";
 import Styles from "../../constants/Styles";
-import Texts from "../../constants/Texts";
+import { Labels } from "../../constants/Texts";
 import ProgramWeekComponent from "./ProgramWeekComponent";
 import { LinearGradient } from "expo";
 import Logo from "../../components/Logo";
@@ -22,10 +22,10 @@ const Header = () => (
     }}
   >
     <Text style={{ ...Styles.strongLargeContent, textAlign: "center" }}>
-      {Texts.labels.programHeader}
+      {Labels.programHeader}
     </Text>
     <Text style={{ ...Styles.defaultContent, textAlign: "center" }}>
-      {Texts.labels.programGuide}
+      {Labels.programGuide}
     </Text>
   </View>
 );

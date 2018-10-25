@@ -1,7 +1,7 @@
 import React from "react";
 import { Text } from "react-native";
 import Styles from "../constants/Styles";
-import Texts from "../constants/Texts";
+import { Labels } from "../constants/Texts";
 import { LinearGradient } from "expo";
 
 export default class NoProgram extends React.Component {
@@ -28,7 +28,7 @@ export default class NoProgram extends React.Component {
             textAlign: "center"
           }}
         >
-          {Texts.labels.noProgram}
+          {Labels.noProgram}
         </Text>
       </LinearGradient>
     );

@@ -1,4 +1,4 @@
-import Texts from "../constants/Texts";
+import { WeekDays } from "../constants/Texts";
 import moment from "moment";
 import { Platform } from "react-native";
 import { padStart } from "lodash";
@@ -17,7 +17,7 @@ export const dayToDistanceDesc = day => {
 
 export const formattedDate = (date, format) => moment.utc(date).format(format);
 
-export const dateToDayName = date => Texts.weekDays[new Date(date).getDay()];
+export const dateToDayName = date => WeekDays[new Date(date).getDay()];
 
 export const dateToDayLabelShort = date =>
   date != null ? dateToDayName(date).substr(0, 2) : "";
@@ -47,6 +47,3 @@ export const getIconName = (icon, focused) =>
   Platform.OS === "ios"
     ? `ios-${icon}${focused ? "" : "-outline"}`
     : `md-${icon}`;
-
-export const dayToTypeDesc = day => Texts.runTypes[day.type];
-export const dayToTypeDescShort = day => Texts.runTypesShort[day.type];
