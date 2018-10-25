@@ -1,13 +1,18 @@
 import { padStart } from "lodash";
 
+const getPace = (targetTime, pct) => {
+  const pace = (targetTime / 42.2) * pct;
+  const hours = Math.trunc(pace);
+  const minutes = `${Math.round((pace * 60) % 60)}`;
+  return `${hours}:${padStart(minutes, 2, "0")}`;
+};
+
 const getPaceGoal = targetTime => {
-  const getPace = pct => {
-    const pace = (targetTime / 42.2) * pct;
-    const hours = Math.trunc(pace);
-    const minutes = `${Math.round((pace * 60) % 60)}`;
-    return `${hours}:${padStart(minutes, 2, "0")}`;
-  };
-  return `${getPace(0.95)} - ${getPace(1.05)} min/km`;
+  return `${getPace(targetTime, 0.95)} - ${getPace(targetTime, 1.05)} min/km`;
+};
+
+const getRaceGoal = targetTime => {
+  return `<= ${getPace(targetTime, 1)} min/km`;
 };
 
 const getHeartRateGoal = (maxHr, low, high) => {
@@ -30,6 +35,8 @@ const getTargetMetricsGoals = (day, maxHr, targetTime) => {
       return `${getHeartRateGoal(maxHr, 0.75, 0.9)}`;
     case "k":
       return getPaceGoal(targetTime);
+    case "r":
+      return getRaceGoal(targetTime);
     default:
       return null;
   }

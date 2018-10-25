@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "margin": 16,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#535353",
+            "fontFamily": "OpenSans-Light",
+            "fontSize": 12,
+          }
+        }
+      >
+        Viikko
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#535353",
+            "fontFamily": "OpenSans-Bold",
+            "fontSize": 20,
+          }
+        }
+      >
+        4
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "margin": 16,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#535353",
+            "fontFamily": "OpenSans-Light",
+            "fontSize": 12,
+          }
+        }
+      >
+        Pvm
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#535353",
+            "fontFamily": "OpenSans",
+            "fontSize": 20,
+          }
+        }
+      >
+        6.6.18 - 12.6.18
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "margin": 16,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#535353",
+            "fontFamily": "OpenSans-Light",
+            "fontSize": 12,
+          }
+        }
+      >
+        km
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#535353",
+            "fontFamily": "OpenSans-Bold",
+            "fontSize": 20,
+          }
+        }
+      >
+        46
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -4,14 +4,14 @@ import PropTypes from "prop-types";
 import { Text, View, StyleSheet } from "react-native";
 import Styles from "../../constants/Styles";
 import Colors from "../../constants/Colors";
-import { dateToDateLabel } from "../../utils/Formatters";
+import { dateToDate, dateRangetoLabel } from "../../utils/Formatters";
 import { Labels } from "../../constants/Texts";
 
 const RaceInfo = ({ targetEvent }) => (
   <View style={styles.raceInfo}>
     <Text style={{ ...Styles.strongContent }}>{targetEvent.name}</Text>
     <Text style={{ ...Styles.defaultContent }}>
-      {dateToDateLabel(targetEvent.date)}
+      {dateToDate(targetEvent.date)}
     </Text>
   </View>
 );
@@ -40,9 +40,7 @@ export default class ProgramWeekComponent extends React.PureComponent {
     const { weekNumber, targetEvent, week, isPast } = this.props;
     const race =
       weekNumber == 1 ? <RaceInfo targetEvent={targetEvent} /> : undefined;
-    const weekDates = `${dateToDateLabel(
-      week.days[0].date
-    )} - ${dateToDateLabel(week.days[6].date)}`;
+    const weekDates = dateRangetoLabel([week.days[0].date, week.days[6].date]);
     const distance = week.distance.toFixed(0);
 
     return (

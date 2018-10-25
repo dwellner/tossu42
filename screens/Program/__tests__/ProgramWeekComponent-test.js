@@ -1,6 +1,6 @@
 import "react-native";
 import React from "react";
-import ProgramComponent from "../ProgramComponent";
+import ProgramWeekComponent from "../ProgramWeekComponent";
 import renderer from "react-test-renderer";
 import ProgramModel from "../../../utils/ProgramModel";
 
@@ -14,12 +14,11 @@ it("renders correctly", () => {
   });
   const tree = renderer
     .create(
-      <ProgramComponent
-        weekProgram={weekProgram}
-        date={weekProgram.weeks[10].days[3].date}
+      <ProgramWeekComponent
+        weekNumber={4}
+        week={weekProgram.weeks[3]}
+        isPast={false}
         targetEvent={targetEvent}
-        onWeekClicked={() => {}}
-        onGotoToday={() => {}}
       />
     )
     .toJSON();

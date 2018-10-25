@@ -3,7 +3,6 @@ import moment from "moment";
 /** curent Date is used to open the UI to the current day by default.
  *  You should overwrite this value in automated tests to prevent changing dates in tests
  */
-
 const currentDate = () => new Date().toISOString().substr(0, 10);
 
 export const nextDate = (date, delta) =>

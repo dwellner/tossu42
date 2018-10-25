@@ -1,12 +1,12 @@
 import React from "react";
 import propTypes from "prop-types";
-import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import WeekSummaryComponent from "./WeekSummaryComponent";
 import NoProgram from "../../components/NoProgram";
 import { LinearGradient } from "expo";
 import Logo from "../../components/Logo";
 import Styles from "../../constants/Styles";
-import { dateToDateLabel } from "../../utils/Formatters";
+import { dateToDate } from "../../utils/Formatters";
 import DateUtils from "../../utils/DateUtils";
 import DayCarousel from "./DayCarouselComponent";
 
@@ -37,7 +37,7 @@ export default class DayComponent extends React.Component {
     if (weekIndex < 0) return <NoProgram />;
 
     const week = weekProgram.weeks[weekIndex];
-    const targetEventDate = dateToDateLabel(targetEvent.date);
+    const targetEventDate = dateToDate(targetEvent.date);
 
     return (
       <View style={styles.component}>

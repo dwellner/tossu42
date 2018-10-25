@@ -18,6 +18,7 @@ The running programs in tossu42 are based on the ones provided by the [tossu.com
 
 The splash screen photo was originally made by [Lucas Favre](https://unsplash.com/@we_are_rising)
 
+UI design made pretty by Heikki Pesonen
 
 ## Development
 
@@ -39,3 +40,7 @@ A substantial part of the code is covered by automated tests. I strongly suggest
 - npm run test
 
 Note that some of the UI components have snapshot tests that verify their rendering. Those tests will fail anytime you make even the smallest changes to the rendering of the component in question. After verifying that the changes are acceptable, you can automatically update the snapshots to reflect the new rendering on the jest prompt when running tests.
+
+# Building the android version
+
+expo build:android (requires expo -account)

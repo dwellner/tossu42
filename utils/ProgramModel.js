@@ -1,18 +1,6 @@
 import DateUtils from "./DateUtils";
 import ProgramService from "../data/ProgramService";
 
-const getIntensityFactor = runType =>
-  ({
-    iv: 2.5,
-    m: 2,
-    r: 2,
-    t: 2,
-    k: 1.5,
-    pi: 1.5,
-    pe: 1.5,
-    ve: 0.5
-  }[runType] || 1);
-
 const getIVTotalDistance = (ivDistance, repeats) => {
   const warmup = 2,
     coolDown = 1,
@@ -26,13 +14,8 @@ const getDayDistance = day => {
   return day.distance;
 };
 
-const getDayIntensity = day =>
-  getIntensityFactor(day.type) * getDayDistance(day);
-
 const getWeekDistance = week =>
   week.map(getDayDistance).reduce((a, b) => a + b);
-
-const getIntensity = week => week.map(getDayIntensity).reduce((a, b) => a + b);
 
 const getStretchedProgramStart = (program, programLength, totalLength) => {
   let repeats = [];
@@ -82,25 +65,16 @@ export default {
       targetDate,
       programWeeks.length * -7 + 1
     );
-    const maxWeekDistance = programWeeks
-      .map(getWeekDistance)
-      .reduce((a, b) => Math.max(a, b), 0);
-
-    const maxIntensity = programWeeks
-      .map(getIntensity)
-      .reduce((max, w) => Math.max(max, w), 0);
 
     let i = 0;
     const weeks = programWeeks.map((week, index) => {
       const weekNumber = programWeeks.length - index;
       const distance = getWeekDistance(week);
-      const intensityLevel = getIntensity(week) / maxIntensity;
-      const distanceLevel = distance / maxWeekDistance;
       const days = week.map(day => ({
         ...day,
         date: DateUtils.nextDate(firstDate, i++)
       }));
-      return { weekNumber, distance, intensityLevel, distanceLevel, days };
+      return { weekNumber, distance, days };
     });
     return { weeks };
   }

@@ -6,7 +6,7 @@ import Styles from "../../constants/Styles";
 import { RunTypes } from "../../constants/Texts";
 
 import {
-  dateToDayLabelShort,
+  dateToDayShort,
   dayToDistanceDesc,
   dayToDistanceUnitDesc
 } from "../../utils/Formatters";
@@ -37,7 +37,7 @@ export default class WeekSummaryComponent extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <View style={selected ? styles.component_selected : styles.component}>
-          <Text style={styles.text_day}>{dateToDayLabelShort(day.date)}</Text>
+          <Text style={styles.text_day}>{dateToDayShort(day.date)}</Text>
           <Text style={styles.text_distance}>{distance}</Text>
           <Text style={styles.text_type}>{RunTypes[day.type].short}</Text>
         </View>

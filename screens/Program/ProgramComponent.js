@@ -42,7 +42,7 @@ export default class ProgramComponent extends React.Component {
   render() {
     const { date, weekProgram, targetEvent, onWeekClicked } = this.props;
 
-    const weeks = weekProgram.weeks.map((week, index) => {
+    const weeks = weekProgram.weeks.map(week => {
       const isCurrent = week.days.findIndex(day => day.date === date) >= 0;
       const isPast = week.days[6].date < date;
 
@@ -64,7 +64,6 @@ export default class ProgramComponent extends React.Component {
         </TouchableOpacity>
       );
     });
-
     return (
       <LinearGradient
         style={{ flex: 1, alignSelf: "stretch" }}

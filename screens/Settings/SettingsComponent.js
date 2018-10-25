@@ -5,7 +5,7 @@ import { LinearGradient } from "expo";
 import StyledDropdown from "../../components/StyledDropDown";
 
 import DateUtils from "../../utils/DateUtils";
-import { minutesToTimeLabel, dateToDateLabel } from "../../utils/Formatters";
+import { minutesToTimeLabel, dateToDate } from "../../utils/Formatters";
 import EventDatePicker from "./EventDatePicker";
 import ProgramService from "../../data/ProgramService";
 import { Labels } from "../../constants/Texts";
@@ -67,7 +67,7 @@ const ProgramSection = ({
   const programNames = ProgramService.getProgramNames(targetTime);
 
   const toStartDate = len => DateUtils.nextDate(eventDate, len * -7);
-  const toStartDateLabel = len => dateToDateLabel(toStartDate(len));
+  const toStartDateLabel = len => dateToDate(toStartDate(len));
   const toLengthLabel = length => {
     const startAt =
       eventDate != null
