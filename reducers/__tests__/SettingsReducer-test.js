@@ -35,7 +35,7 @@ describe("SettingsReducer", () => {
         targetEvent: { date: null, name: null },
         maxHr: null,
         program: {
-          name: "Tossu 4 tunnin täysohjelma",
+          name: "Peruskunto - 4t tavoiteaika",
           targetTime: 240,
           length: 24
         }
@@ -81,7 +81,7 @@ describe("SettingsReducer", () => {
     const expectedState = {
       program: {
         targetTime: 300,
-        name: "Tossu 5 tunnin täysohjelma",
+        name: "Peruskunto - 5t tavoiteaika",
         length: 24
       }
     };
@@ -102,12 +102,12 @@ describe("SettingsReducer", () => {
       {
         program: {
           ...initState.program,
-          name: "Tossu 4 tunnin väliohjelma",
+          name: "Kisakausi - 4t tavoiteaika",
           length: 8
         }
       },
       initState,
-      programNameChanged("Tossu 4 tunnin väliohjelma")
+      programNameChanged("Kisakausi - 4t tavoiteaika")
     );
   });
 
@@ -121,12 +121,12 @@ describe("SettingsReducer", () => {
       {
         program: {
           ...initState.program,
-          name: "Tossu 4 tunnin väliohjelma",
+          name: "Kisakausi - 4t tavoiteaika",
           length: 4
         }
       },
       currentState,
-      programNameChanged("Tossu 4 tunnin väliohjelma")
+      programNameChanged("Kisakausi - 4t tavoiteaika")
     );
   });
 

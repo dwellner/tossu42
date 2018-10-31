@@ -88,6 +88,9 @@ const ProgramSection = ({
         value={programName}
         onChange={onProgramNameChanged}
       />
+      <Text style={styles.sectionSubHeader}>
+        {Labels.programSubHeader}
+      </Text>
 
       <StyledDropdown
         label={Labels.programDuration}
@@ -221,6 +224,7 @@ const styles = StyleSheet.create({
   },
   sectionSubHeader: {
     ...Styles.lightContent,
-    textAlign: "center"
+    textAlign: "center",
+    marginBottom: 24
   }
 });

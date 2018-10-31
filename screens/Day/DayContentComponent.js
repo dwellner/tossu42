@@ -10,6 +10,7 @@ import {
 } from "../../utils/Formatters";
 import DateUtils from "../../utils/DateUtils";
 import DayMetricsGoal from "./DayMetricsGoalComponent";
+import Dimensions from "Dimensions";
 
 const Border = () => (
   <View
@@ -36,9 +37,10 @@ const DaysUntilTargetEvent = ({ daysUntil, eventName }) => {
   const daysUntilLabel = daysUntil == 1 ? Labels.dayUntil : Labels.daysUntil;
 
   return (
-    <View style={{ alignItems: "center" }}>
-      <Text style={{ ...Styles.strongContent }}>{daysUntil}</Text>
-      <Text style={{ ...Styles.lightContent }}>{daysUntilLabel}</Text>
+    <View style={{ flexDirection: "row" }}>
+      <Text style={{ ...Styles.lightContent, fontSize: 16 }}>
+        {daysUntil} {daysUntilLabel}
+      </Text>
     </View>
   );
 };
@@ -85,15 +87,15 @@ export default class DayContentComponent extends React.PureComponent {
 
     return (
       <View style={styles.component}>
+        <Text style={{ ...Styles.strongContent }}>
+          {dateToDayLabel(day.date)}
+        </Text>
         <DaysUntilTargetEvent
           daysUntil={daysUntil}
           eventName={targetEvent.name}
         />
         <Border />
         <Text style={{ ...Styles.lightContent }}>{Labels.dayProgram}</Text>
-        <Text style={{ ...Styles.strongContent }}>
-          {dateToDayLabel(day.date)}
-        </Text>
         <View style={{ alignItems: "center" }}>
           <DayGoal day={day} />
           <Text style={{ ...Styles.largeContent }}>
@@ -104,7 +106,11 @@ export default class DayContentComponent extends React.PureComponent {
           <DayMetricsGoal day={day} maxHr={maxHr} targetTime={targetTime} />
         </View>
         <Text
-          style={{ ...Styles.lightContent, fontSize: 12, textAlign: "center" }}
+          style={{
+            ...Styles.lightContent,
+            fontSize: 12,
+            textAlign: "center"
+          }}
         >
           {RunTypes[day.type].desc}
         </Text>
@@ -115,7 +121,7 @@ export default class DayContentComponent extends React.PureComponent {
 
 const styles = StyleSheet.create({
   component: {
-    height: 400,
+    height: Dimensions.get("window").height - 330,
     alignItems: "center",
     backgroundColor: "#FFF",
     padding: 24,

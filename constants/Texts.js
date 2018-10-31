@@ -18,13 +18,14 @@ export const Labels = {
   programDuration: "Ohjelman kesto",
   settingsTargetDate: "Aseta päivämäärä",
   settingsGoalSubHeader:
-    "Juoksuohjelma räätelöidään sinua varten valitusta maratonin ajankohdasta taaksepäin",
+    "Juoksuohjelma räätälöidään valitsemastasi ajankohdasta taaksepäin",
+    programSubHeader: "Jos valmistaudut kauden ensimmäiseen kisaan, valitse peruskunto. Jos olet kisojen välissä, valitsee kisakausi",
   settingsMetaSubHeader:
-    "Maksimisykeen avulla näet harjoituksien sykealueet.\nJos et tiedä omaa maksimisykettä, voit arvioida sen kaavalla \n \"220 miinus oma ikä\"; \nesimerkiksi 30v = 190 bpm.",
+    "Maksimisykeen syöttämällä näet harjoituksien sykealueet.\nJos et tiedä omaa maksimisykettäsi, voit arvioida sen kaavalla \n \"220 miinus oma ikä\"; \nesim. 30 v = 220-30=190 bpm.",
   maxHeartRate: "Maksimisyke",
   programHeader: "Nykyinen harjoitusohjelma",
   programGuide:
-    "Alla naet ohjelman harjoitusviikot, pääset tarkastelemaan viikkoa klikkaamalla",
+    "Alla näet ohjelman harjoitusviikot",
   dayScreen: "Päivä",
   programScreen: "Ohjelma",
   settingsScreen: "Muokkaa",
@@ -58,12 +59,12 @@ export const RunTypes = {
     name: "Interval",
     short: "IV",
     desc:
-      "1-2 km lämmittely, jonka jälkeen kovia interval vetoja sykealueella. Vetojen välissä 2-3 min palauttava kävely tai hölkkä. Lopuksi 5 - 10 min loppuverryttely"
+      "1-2 km lämmittely, jonka jälkeen kovia interval-vetoja sykealueella. Vetojen välissä 2-3 min palauttava kävely tai hölkkä. Lopuksi 5 - 10 min loppuverryttely"
   },
   t: {
     name: "Tempo",
     short: "Tempo",
-    desc: "Astetta kovempaa lenkkiä tavallista korkeammalla sykealueella."
+    desc: "Astetta kovempaa lenkkiä tavallista korkeammalla sykealueella"
   },
   pi: {
     name: "Pitkä",
@@ -78,7 +79,7 @@ export const RunTypes = {
   pa: {
     name: "Palautus",
     short: "Palautus",
-    desc: "Palauttava hidas lenkki tavallista matalammalla sykealueella."
+    desc: "Palauttava hidas lenkki tavallista matalammalla sykealueella"
   },
   lepo: {
     name: "Lepopäivä",
@@ -89,7 +90,7 @@ export const RunTypes = {
     name: "Kilpavauhti",
     short: "Kilpa",
     desc:
-      "Pyrki pitämään tavoitteelemasi kisavauhtia tasaisesti koko lenkin aikana"
+      "Pyri pitämään tavoittelemaasi kisavauhtia tasaisesti koko lenkin ajan"
   },
   m: {
     name: "Mäkivedot",

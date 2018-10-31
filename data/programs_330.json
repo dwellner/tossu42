@@ -1,6 +1,6 @@
 [
   {
-    "name": "Tossu 3.5 tunnin täysohjelma",
+    "name": "Peruskunto - 3.5t tavoiteaika",
     "targetTime": { "target": 210, "min": 195, "max": 225 },
     "stretchRules": { "minWeeks": 24, "maxWeeks": 40, "repeat": 3 },
     "weeks": [
@@ -223,7 +223,7 @@
     ]
   },
   {
-    "name": "Tossu 3.5 tunnin väliohjelma",
+    "name": "Kisakausi - 3.5t tavoiteaika",
     "targetTime": { "target": 210, "min": 195, "max": 225 },
     "weeks": [
       [
@@ -301,7 +301,7 @@
     ]
   },
   {
-    "name": "Tossu 3.5 tunnin väliohjelma",
+    "name": "Kisakausi - 3.5t tavoiteaika",
     "targetTime": { "target": 210, "min": 195, "max": 225 },
     "weeks": [
       [
@@ -361,7 +361,7 @@
     ]
   },
   {
-    "name": "Tossu 3.5 tunnin väliohjelma",
+    "name": "Kisakausi - 3.5t tavoiteaika",
     "targetTime": { "target": 210, "min": 195, "max": 225 },
     "weeks": [
       [
@@ -403,7 +403,7 @@
     ]
   },
   {
-    "name": "Tossu 3.5 tunnin väliohjelma",
+    "name": "Kisakausi - 3.5t tavoiteaika",
     "targetTime": { "target": 210, "min": 195, "max": 225 },
     "weeks": [
       [

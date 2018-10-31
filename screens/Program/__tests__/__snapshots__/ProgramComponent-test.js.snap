@@ -106,7 +106,7 @@ exports[`renders correctly 1`] = `
         }
       }
     >
-      Alla naet ohjelman harjoitusviikot, pääset tarkastelemaan viikkoa klikkaamalla
+      Alla näet ohjelman harjoitusviikot
     </Text>
   </View>
 </ExponentLinearGradient>

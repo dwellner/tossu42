@@ -13,81 +13,81 @@ describe("ProgramService", () => {
 
   it("getBestMatch should return first match closest to given targetTime", () => {
     expect(ProgramService.getBestMatch(310).id).toEqual(
-      "Tossu5tunnintäysohjelma_24"
+      "Peruskunto5ttavoiteaika_24"
     );
     expect(ProgramService.getBestMatch(270).id).toEqual(
-      "Tossu4tunnintäysohjelma_24"
+      "Peruskunto4ttavoiteaika_24"
     );
     expect(ProgramService.getBestMatch(269).id).toEqual(
-      "Tossu4tunnintäysohjelma_24"
+      "Peruskunto4ttavoiteaika_24"
     );
   });
 
   it("getPrograms by targetTime should return programs within 30 mins from target time", () => {
     const programs = ProgramService.getPrograms(225).map(p => p.id);
     expect(programs).toEqual([
-      "Tossu3.5tunnintäysohjelma_24",
-      "Tossu3.5tunninväliohjelma_8",
-      "Tossu3.5tunninväliohjelma_6",
-      "Tossu3.5tunninväliohjelma_4",
-      "Tossu3.5tunninväliohjelma_2",
-      "Tossu4tunnintäysohjelma_24",
-      "Tossu4tunninväliohjelma_8",
-      "Tossu4tunninväliohjelma_6",
-      "Tossu4tunninväliohjelma_4",
-      "Tossu4tunninväliohjelma_2"
+      "Peruskunto3.5ttavoiteaika_24",
+      "Kisakausi3.5ttavoiteaika_8",
+      "Kisakausi3.5ttavoiteaika_6",
+      "Kisakausi3.5ttavoiteaika_4",
+      "Kisakausi3.5ttavoiteaika_2",
+      "Peruskunto4ttavoiteaika_24",
+      "Kisakausi4ttavoiteaika_8",
+      "Kisakausi4ttavoiteaika_6",
+      "Kisakausi4ttavoiteaika_4",
+      "Kisakausi4ttavoiteaika_2"
     ]);
   });
 
   it("getPrograms by targetTime and name should return only valid programs", () => {
     const programs = ProgramService.getPrograms(
       225,
-      "Tossu 4 tunnin väliohjelma"
+      "Kisakausi - 4t tavoiteaika"
     ).map(p => p.id);
 
     expect(programs).toEqual([
-      "Tossu4tunninväliohjelma_8",
-      "Tossu4tunninväliohjelma_6",
-      "Tossu4tunninväliohjelma_4",
-      "Tossu4tunninväliohjelma_2"
+      "Kisakausi4ttavoiteaika_8",
+      "Kisakausi4ttavoiteaika_6",
+      "Kisakausi4ttavoiteaika_4",
+      "Kisakausi4ttavoiteaika_2"
     ]);
   });
 
   it("getPrograms by targetTime, name and length should return only valid programs", () => {
     const programs = ProgramService.getPrograms(
       225,
-      "Tossu 4 tunnin väliohjelma",
+      "Kisakausi - 4t tavoiteaika",
       6
     ).map(p => p.id);
 
-    expect(programs).toEqual(["Tossu4tunninväliohjelma_6"]);
+    expect(programs).toEqual(["Kisakausi4ttavoiteaika_6"]);
   });
 
   it("getPrograms by targetTime, name and length should validate against stretchRules if defined", () => {
     const programs = ProgramService.getPrograms(
       225,
-      "Tossu 3.5 tunnin täysohjelma",
+      "Peruskunto - 3.5t tavoiteaika",
       26
     ).map(p => p.id);
 
-    expect(programs).toEqual(["Tossu3.5tunnintäysohjelma_24"]);
+    expect(programs).toEqual(["Peruskunto3.5ttavoiteaika_24"]);
   });
 
   it("getProgramNames should return unique names", () => {
     expect(ProgramService.getProgramNames(240)).toEqual([
-      "Tossu 4 tunnin täysohjelma",
-      "Tossu 4 tunnin väliohjelma"
+      "Peruskunto - 4t tavoiteaika",
+      "Kisakausi - 4t tavoiteaika"
     ]);
     expect(ProgramService.getProgramNames(210)).toEqual([
-      "Tossu 3.5 tunnin täysohjelma",
-      "Tossu 3.5 tunnin väliohjelma"
+      "Peruskunto - 3.5t tavoiteaika",
+      "Kisakausi - 3.5t tavoiteaika"
     ]);
     expect(ProgramService.getProgramNames(60)).toEqual([]);
   });
 
   it("getProgramLength should return unique lengths valid for given params", () => {
     expect(
-      ProgramService.getProgramLengths(210, "Tossu 3.5 tunnin täysohjelma")
+      ProgramService.getProgramLengths(210, "Peruskunto - 3.5t tavoiteaika")
     ).toEqual([
       24,
       25,
@@ -108,10 +108,10 @@ describe("ProgramService", () => {
       40
     ]);
     expect(
-      ProgramService.getProgramLengths(210, "Tossu 3.5 tunnin väliohjelma")
+      ProgramService.getProgramLengths(210, "Kisakausi - 3.5t tavoiteaika")
     ).toEqual([8, 6, 4, 2]);
     expect(
-      ProgramService.getProgramLengths(210, "Tossu 5 tunnin väliohjelma")
+      ProgramService.getProgramLengths(210, "Kisakausi - 5t tavoiteaika")
     ).toEqual([]);
   });
 });

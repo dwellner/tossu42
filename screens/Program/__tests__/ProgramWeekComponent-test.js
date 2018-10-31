@@ -9,7 +9,7 @@ it("renders correctly", () => {
 
   const weekProgram = ProgramModel.getWeekProgram("2018-10-30", {
     targetTime: 240,
-    name: "Tossu 4 tunnin täysohjelma",
+    name: "Peruskunto - 4t tavoiteaika",
     length: 24
   });
   const tree = renderer
