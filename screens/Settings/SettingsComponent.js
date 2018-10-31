@@ -66,7 +66,7 @@ const ProgramSection = ({
 }) => {
   const programNames = ProgramService.getProgramNames(targetTime);
 
-  const toStartDate = len => DateUtils.nextDate(eventDate, len * -7);
+  const toStartDate = len => DateUtils.nextDate(eventDate, len * -7 + 1);
   const toStartDateLabel = len => dateToDate(toStartDate(len));
   const toLengthLabel = length => {
     const startAt =
@@ -88,9 +88,7 @@ const ProgramSection = ({
         value={programName}
         onChange={onProgramNameChanged}
       />
-      <Text style={styles.sectionSubHeader}>
-        {Labels.programSubHeader}
-      </Text>
+      <Text style={styles.sectionSubHeader}>{Labels.programSubHeader}</Text>
 
       <StyledDropdown
         label={Labels.programDuration}
@@ -149,14 +147,13 @@ export default class SettingsComponent extends React.Component {
   };
 
   render() {
-
     return (
       <LinearGradient
         style={styles.component}
         colors={["#fff", "#eee", "#fff"]}
       >
         <View style={{ alignSelf: "stretch", alignItems: "flex-start" }}>
-          <Logo onPress={this.props.onGotoToday}/>
+          <Logo onPress={this.props.onGotoToday} />
         </View>
 
         <View style={styles.header}>
@@ -196,10 +193,7 @@ export default class SettingsComponent extends React.Component {
           <View
             style={[styles.section, { alignItems: "center", marginTop: 48 }]}
           >
-            <Button
-              label="Valmis"
-              onPress={this.props.onGotoToday}
-            />
+            <Button label="Valmis" onPress={this.props.onGotoToday} />
           </View>
         </ScrollView>
       </LinearGradient>
